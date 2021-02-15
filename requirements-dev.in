@@ -5,6 +5,7 @@
 pytest
 pytest-cov
 pytest-pythonpath
+pytest-freezegun
 
 # Linting
 yamllint

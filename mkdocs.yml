@@ -5,7 +5,12 @@ site_url: https://lyz-code.github.io/mkdocs-newsletter
 nav:
   - Overview: index.md
   - Reference: reference.md
-  - Contributing: contributing.md
+  - Contributing:
+      - contributing.md
+  - Architecture Decision Records:
+      - '001: High level problem analysis': adr/001-initial_approach.md
+      - '002: Initial mkdocs plugin design': adr/002-initial_plugin_design.md
+      - '003: Select the changes to record': adr/003-select_the_changes_to_record.md
 
 plugins:
   - search
@@ -23,6 +28,7 @@ plugins:
       fallback_to_build_date: true
   - minify:
       minify_html: true
+  - section-index
 
 markdown_extensions:
   - abbr

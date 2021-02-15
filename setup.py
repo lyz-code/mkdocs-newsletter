@@ -6,7 +6,6 @@ from os.path import basename, splitext
 
 from setuptools import find_packages, setup
 
-
 # Avoid loading the package to extract the version
 with open("src/mkdocs_newsletter/version.py") as fp:
     version_match = re.search(r'__version__ = "(?P<version>.*)"', fp.read())
@@ -44,5 +43,5 @@ setup(
         "Topic :: Utilities",
         "Natural Language :: English",
     ],
-    install_requires=[],
+    install_requires=["pydantic", "gitpython", "python-semantic-release"],
 )
