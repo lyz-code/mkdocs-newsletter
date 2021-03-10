@@ -5,7 +5,7 @@ and handlers to achieve the program's purpose.
 """
 
 import datetime
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 from dateutil import tz
 from git import Commit, Repo
@@ -13,39 +13,12 @@ from semantic_release.errors import UnknownCommitMessageStyleError
 from semantic_release.history.parser_angular import parse_commit_message
 from semantic_release.history.parser_helpers import ParsedCommit
 
-from .model import Change, DigitalGardenChanges
+from ..model import Change
 
 
-def digital_garden_changes(repo: Repo) -> DigitalGardenChanges:
-    """Extract the changes that need to be published for digital_garden repositories.
-
-    For a change to be published it needs to:
-
-    * Be made before last Monday.
-    * Be made after the last meaningful tag.
-
-    Args:
-        repo: Git repository to analyze.
-
-    Returns:
-        changes: List of Change objects to publish.
-    """
-    now = datetime.datetime.now(tz.tzlocal())
-    today = now.replace(hour=0, minute=0, second=0, microsecond=0)
-    last_first_weekday = today - datetime.timedelta(days=now.weekday())
-    last_first_monthday = today.replace(day=1)
-    last_first_yearday = today.replace(day=1, month=1)
-
-    changes = semantic_changes(repo)
-
-    return DigitalGardenChanges(
-        weekly=[change for change in changes if change.date < last_first_weekday],
-        monthly=[change for change in changes if change.date < last_first_monthday],
-        yearly=[change for change in changes if change.date < last_first_yearday],
-    )
-
-
-def semantic_changes(repo: Repo) -> List[Change]:
+def semantic_changes(
+    repo: Repo, min_date: Optional[datetime.datetime] = None
+) -> List[Change]:
     """Extract meaningful changes from a git repository.
 
     Args:
@@ -54,14 +27,17 @@ def semantic_changes(repo: Repo) -> List[Change]:
     Returns:
         changes: List of Change objects.
     """
+    now = datetime.datetime.now(tz=tz.tzlocal())
+    if min_date is None:
+        min_date = datetime.datetime(1800, 1, 1, tzinfo=tz.tzlocal())
+
     commits = [
         commit
         for commit in repo.iter_commits(rev=repo.head.reference)
-        if commit.authored_datetime < datetime.datetime.now(tz=tz.tzlocal())
+        if commit.authored_datetime < now and commit.authored_datetime > min_date
     ]
-    changes = commits_to_changes(commits)
 
-    return changes
+    return commits_to_changes(commits)
 
 
 def commits_to_changes(commits: List[Commit]) -> List[Change]:

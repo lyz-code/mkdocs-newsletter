@@ -1,12 +1,15 @@
 """Store the classes and fixtures used throughout the tests."""
 
 import datetime
+import os
 import shutil
 import textwrap
 
 import pytest
 from dateutil import tz
 from git import Actor, Repo
+from mkdocs import config
+from mkdocs.config.base import Config
 from py._path.local import LocalPath
 
 
@@ -19,6 +22,7 @@ def repo_(tmpdir: LocalPath) -> Repo:
     """
     # Copy the content from `tests/assets/test_data`.
     repo_path = tmpdir / "test_data"
+    os.environ["NEWSLETTER_WORKING_DIR"] = str(repo_path)
     shutil.copytree("tests/assets/test_data", repo_path)
 
     return Repo.init(repo_path)
@@ -31,7 +35,6 @@ def full_repo_(repo: Repo) -> Repo:
     Args:
         repo: an initialized Repo
     """
-    __import__("pdb").set_trace()  # XXX BREAKPOINT
     index = repo.index
     author = Actor("An author", "author@example.com")
     committer = Actor("A committer", "committer@example.com")
@@ -101,7 +104,7 @@ def full_repo_(repo: Repo) -> Repo:
     )
 
     # Single change commit that corrects the style of a file.
-    with open(repo.working_dir / "test_data/docs/emojis.md", "a") as file_object:
+    with open(os.path.join(repo.working_dir, "docs/emojis.md"), "a") as file_object:
         # Simulate the change by appending a string at the end of the file.
         file_object.write("correct link")
     commit_date = datetime.datetime(2021, 2, 6, tzinfo=tz.tzlocal())
@@ -153,3 +156,13 @@ def full_repo_(repo: Repo) -> Repo:
     )
 
     return repo
+
+
+@pytest.fixture(name="config")
+def config_(full_repo: Repo) -> Config:
+    """Load the mkdocs configuration."""
+    mkdocs_config = config.load_config(
+        os.path.join(full_repo.working_dir, "mkdocs.yml")
+    )
+    mkdocs_config["site_dir"] = os.path.join(full_repo.working_dir, "site")
+    return mkdocs_config

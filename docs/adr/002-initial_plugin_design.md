@@ -7,7 +7,7 @@ Accepted
 
 Based on: [001](001-initial_approach.md)
 Extended by: [003](003-select_the_changes_to_record.md),
-[004](004-store_the_last_published_changes.md)
+[005](005-create_the_newsletter_articles.md)
 
 # Context
 <!-- What is the issue that we're seeing that is motivating this decision or change? -->
@@ -19,7 +19,8 @@ processes that the mkdocs plugin need to have to fulfill the desired requirement
 The plugin will consist on the following phases:
 
 * [Select the changes that need to be recorded](003-select_the_changes_to_record.md).
-* Create the newsletter articles from those changes.
+* [Create the newsletter articles from those changes](005-create_the_newsletter_articles.md).
+* [Build the MkDocs nav with the newsletter articles](004-article_newsletter_structure.md)
 * Decide which changes need to be notified.
 * Send the notifications:
     * Update the RSS

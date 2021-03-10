@@ -43,5 +43,18 @@ setup(
         "Topic :: Utilities",
         "Natural Language :: English",
     ],
-    install_requires=["pydantic", "gitpython", "python-semantic-release"],
+    install_requires=[
+        "mkdocs",
+        "mkdocs-section-index",
+        "mkdocs-autolinks-plugin",
+        "pydantic",
+        "gitpython",
+        "python-semantic-release",
+        "deepdiff",
+    ],
+    entry_points={
+        "mkdocs.plugins": [
+            "mkdocs-newsletter = mkdocs_newsletter:Newsletter",
+        ]
+    },
 )

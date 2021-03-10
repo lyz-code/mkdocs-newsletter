@@ -3,7 +3,7 @@ Date: 2021-02-12
 # Status
 <!-- What is the status? Draft, Proposed, Accepted, Rejected, Deprecated or Superseded?
 -->
-Draft
+Proposed.
 
 Based on: [002](002-initial_plugin_design.md),
 [004](004-article_newsletter_structure.md)
@@ -16,16 +16,19 @@ We need to create some logic that reads from the git log to:
     update the articles and feeds, we need to know which changes have been
     already published, so subsequent mkdocs build processes don't repeat work
     already done.
-* [Get the commits that need to be added to the newsletter
-    articles](#get-the-commits-that-need-to-be-added-to-the-newsletter-articles).
-    We've defined different levels of aggregation for the user to choose how
-    often they want to be notified: real time, daily, weekly, monthly or yearly.
+
 * [Parse the commit messages](#parse-the-commit-messages) to extract the
     semantic versioning information from them.
 
     The message must follow the [angular commit
     guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits)
     with the exception that we'll allow many changes in the same commit message.
+
+* [Extract file context from the MkDocs nav](#extract-the-file-context-from-the-mkdocs-nav)
+* [Get the changes that need to be added to the newsletter
+    articles](#get-the-commits-that-need-to-be-added-to-the-newsletter-articles).
+    We've defined different levels of aggregation for the user to choose how
+    often they want to be notified: daily, weekly, monthly or yearly.
 
 # Proposals
 <!-- What are the possible solutions to the problem described in the context -->
@@ -86,24 +89,11 @@ Using the existent articles has these advantages:
 The disadvantage is that we need to code the extraction of that dates from the
 files collection, but it should not be difficult.
 
-<!-------------------8<------------------->
-
-* How to extract the last published date
-
-<!-------------------8<------------------->
-
-## Get the commits that need to be added to the newsletter articles
-
-We need to decide which changes go in each aggregation feed.
-
-
-<!-------------------8<------------------->
-
-* How the user decides if they want realtime or daily or monthly or what
-
-<!-------------------8<------------------->
-
-
+Assuming that we have the existent articles organized following
+[004](004-article_newsletter_structure.md#how-to-organize-the-articles-in-the-mkdocs-nav-and-in-the-repository),
+we can create a function that reads the `files` attribute from the `on_files`
+event and deduces the date of the last change of the last newsletter article for
+each feed.
 
 ## Parse the commit messages
 
@@ -123,6 +113,31 @@ one, we need to create a new one from the old.
 Using an existent library, if it's well maintained, is always better than
 writing your own.
 
+## Extract file context from the MkDocs nav
+
+For each file that contains changes, we need to deduce the relative position in
+the nav against the rest of articles. This is necessary so we're able to group
+changes together by category, subcategory and file later in the [newsletter
+creation](005-create_the_newsletter_articles.md).
+
+We can use the
+[Deepdiff](https://lyz-code.github.io/blue-book/coding/python/deepdiff/) to
+locate the file in the nav tree, and then extract the context information from
+the path.
+
+## Get the changes that need to be added to the newsletter articles
+
+For a change to be added to each feed it needs to:
+
+* year: Be made before the first day of the year and after the last published
+    change in the year feed.
+* month: Be made before the first day of the month and after the last published
+    change in the month feed.
+* week: Be made before the last Monday and after the last published change in
+    the week feed.
+* day: Be made before today and after the last published change in the day
+    feed.
+
 # Decision
 <!-- What is the change that we're proposing and/or doing? -->
 We will:
@@ -136,7 +151,9 @@ We will:
 * Extract the last published dates *before* we parse the commit messages.
 * Process only the commits that are posterior to those dates.
 * Use python-semantic-release library to parse the commit messages.
-
+* Extract file context from the MkDocs nav
+* Get the changes that need to be added to the newsletter articles with the
+    different feeds.
 
 # Consequences
 <!-- What becomes easier or more difficult to do because of this change? -->

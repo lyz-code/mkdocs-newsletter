@@ -55,12 +55,12 @@ To be able to do that in a typical company product you'll need to know (between
 another thousand more things):
 
 * How to operate the cloud infrastructure where the project lives, which can be
-    [AWS](aws.md), Google Cloud, Azure or/and baremetal servers.
+    AWS, Google Cloud, Azure or/and baremetal servers.
 * Deploy new resources in that infrastructure, which probably would mean knowing
-    Terraform, Ansible, Docker or/and [Kubernetes](kubernetes.md).
+    Terraform, Ansible, Docker or/and Kubernetes.
 * How to integrate the new resources with the operations processes, for example:
     * The monitoring system, so you'll need to know how to use
-        [Prometheus](prometheus.md), Nagios, Zabbix or the existent solution.
+        Prometheus, Nagios, Zabbix or the existent solution.
     * The continuous integration or delivery system, that you'll need to know
         how to maintain, so you have to know how it works and how is it built.
     * The backup system.
@@ -151,7 +151,7 @@ To get the basic knowledge of the Ops side I would:
 
 * Learn how to use Ansible, from now on try to deploy every machine with it.
 
-* Build a small project inside [AWS](aws.md) so you can get used to the most
+* Build a small project inside AWS so you can get used to the most
   common services (VPC, EC2, S3, Route53, RDS), most of them have free-tier
   resources so you don't need to pay anything. You can try also with Google
   Cloud or Azure, but I recommend against it.
@@ -160,7 +160,7 @@ To get the basic knowledge of the Ops side I would:
   example deploy the previous project. From now on only use Terraform to
   provision AWS resources.
 
-* Get into the [CI/CD](ci.md) world hosting your own Drone, if not, use [Gitlab
+* Get into the CI/CD world hosting your own Drone, if not, use [Gitlab
   runners](https://docs.gitlab.com/runner/) or [Github
   Actions](https://github.com/features/actions).
 
@@ -183,11 +183,11 @@ To get the basic knowledge of the Dev side I would:
     to the open source world and it will probably force yourself to make your
     code better.
 
-* Step into the [TDD](tdd.md) world, learn why, how and when to test your code.
+* Step into the TDD world, learn why, how and when to test your code.
 
-* For those projects that you want to maintain, create [CI/CD pipelines](ci.md)
+* For those projects that you want to maintain, create CI/CD pipelines
     that enhance the quality of your code, by for example running your tests or
-    some [linters](ci.md#linters).
+    some linters.
 
 * Once you're comfortable, try to collaborate with existent projects (right now
     you may not now where to look for projects to collaborate, but when you reach

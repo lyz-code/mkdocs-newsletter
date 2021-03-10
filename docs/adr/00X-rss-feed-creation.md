@@ -6,8 +6,8 @@ has already solved the problem, changing the content of the RSS with the HTML of
 each of the selected newsletter articles.
 
 Creating an RSS entry for each change, as
-[mkdocs-rss-plugin](https://github.com/Guts/mkdocs-rss-plugin) is not a valid
-solution because:
+[mkdocs-rss-plugin](https://github.com/Guts/mkdocs-rss-plugin) for me it's not
+the ideal solution because:
 
 * *The user will receive too many updates*: In a normal day, you can edit up to
     10 files, which will create 10 RSS entries. That can annoy the user so it
@@ -18,6 +18,9 @@ solution because:
 * *The user receives no context of the change*: The user is shown the same rss
     entry on creation and on update, so if you change a file often, they will
     see no point on the entry and skip it and in the end drop the RSS.
+
+Keep in mind though that the plugin supports two types of feeds, one for new
+content and another for updates, which can reduce the number of notifications.
 
 With this information in the git log we could create RSS feed entries whose:
 

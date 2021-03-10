@@ -24,12 +24,12 @@ are easy to create, version, share, and publish.
 Helm alone lacks some features, that are satisfied through some external
 programs:
 
-* [Helmfile](helmfile.md) is used to declaratively configure your charts, so
+* Helmfile is used to declaratively configure your charts, so
   they can be versioned through git.
-* [Helm-secrets](helm_secrets.md) is used to remove hardcoded credentials from `values.yaml`
+* Helm-secrets is used to remove hardcoded credentials from `values.yaml`
   files. Helm has an [open issue](https://github.com/helm/helm/issues/2196) to
   integrate it into it's codebase.
-* [Helm-git](helm_git.md) is used to install helm charts directly from Git
+* Helm-git is used to install helm charts directly from Git
     repositories.
 
 # Links
