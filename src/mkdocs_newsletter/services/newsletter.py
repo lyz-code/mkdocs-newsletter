@@ -12,7 +12,6 @@ from deepdiff import grep
 from git import Repo
 from jinja2 import Environment, PackageLoader, select_autoescape
 from mkdocs.config.base import Config
-from mkdocs.structure.files import File, Files
 
 from ..model import Change, DigitalGardenChanges, LastNewsletter, NewsletterSection
 
@@ -24,26 +23,27 @@ CHANGE_TYPE_TEXT = {
 }
 
 
-def last_newsletter_changes(files: Files) -> LastNewsletter:
+def last_newsletter_changes(newsletter_dir: str) -> LastNewsletter:
     """Extract the date of the last change of the last newsletter for each feed.
 
     Args:
-        files: List of File objects to analyze.
+        newsletter_dir: Directory containing the newsletter articles.
 
     Returns:
         last_newsletter: LastNewsletter object.
     """
     last = LastNewsletter()
-    for file_ in files.documentation_pages():
-        if re.match(r"newsletter/\d{4}.md", file_.src_path):
+    for file_ in os.scandir(newsletter_dir):
+        basename = os.path.splitext(file_.name)[0]
+        if re.match(r"\d{4}.md", file_.name):
             # Year feed: Saves the first day of the next year.
-            date = datetime.datetime(int(file_.name) + 1, 1, 1, tzinfo=tz.tzlocal())
+            date = datetime.datetime(int(basename) + 1, 1, 1, tzinfo=tz.tzlocal())
             if last.year is None or date > last.year:
                 last.year = date
-        elif re.match(r"newsletter/\d{4}_\d{2}.md", file_.src_path):
+        elif re.match(r"\d{4}_\d{2}.md", file_.name):
             # Month feed: Saves the first day of the next month.
-            year = int(file_.name.split("_")[0])
-            month = int(file_.name.split("_")[1])
+            year = int(basename.split("_")[0])
+            month = int(basename.split("_")[1])
             last_file_date = datetime.datetime(year, month, 1, tzinfo=tz.tzlocal())
             if last.month is None or last_file_date > last.month:
                 last.month = datetime.datetime(
@@ -52,17 +52,17 @@ def last_newsletter_changes(files: Files) -> LastNewsletter:
                     1,
                     tzinfo=tz.tzlocal(),
                 )
-        elif re.match(r"newsletter/\d{4}_w\d{2}.md", file_.src_path):
+        elif re.match(r"\d{4}_w\d{2}.md", file_.name):
             # Week feed: Saves the next Monday from the week of the week number.
-            year = int(file_.name.split("_")[0])
-            week = int(file_.name.split("w")[1])
+            year = int(basename.split("_")[0])
+            week = int(basename.split("w")[1])
             first_day = datetime.datetime(year, 1, 1, tzinfo=tz.tzlocal())
             date = first_day + datetime.timedelta(days=7 * week - first_day.weekday())
             if last.week is None or date > last.week:
                 last.week = date
-        elif re.match(r"newsletter/\d{4}_\d{2}_\d{2}.md", file_.src_path):
+        elif re.match(r"\d{4}_\d{2}_\d{2}.md", file_.name):
             # Daily feed: Saves the next day.
-            date = datetime.datetime.strptime(file_.name, "%Y_%m_%d").replace(
+            date = datetime.datetime.strptime(basename, "%Y_%m_%d").replace(
                 tzinfo=tz.tzlocal()
             ) + datetime.timedelta(days=1)
             if last.day is None or date > last.day:
@@ -197,7 +197,7 @@ def digital_garden_changes(
     )
 
 
-def create_newsletters(changes: DigitalGardenChanges, repo: Repo) -> List[File]:
+def create_newsletters(changes: DigitalGardenChanges, repo: Repo) -> List[str]:
     """Create the newsletter articles from the semantic changes for all feeds.
 
     Fills the newsletter article jinja2 template and creates the related File objects.
@@ -207,7 +207,7 @@ def create_newsletters(changes: DigitalGardenChanges, repo: Repo) -> List[File]:
         repo: Git Repo object with the MkDocs repository.
 
     Returns:
-        List of MkDocs File objects with the newsletter articles.
+        List of file paths with the newsletter articles.
     """
     base_dir = repo.working_dir
 
@@ -223,7 +223,7 @@ def create_newsletters(changes: DigitalGardenChanges, repo: Repo) -> List[File]:
 
 def _create_feed_articles(
     changes: List[Change], group_function: Callable[..., str], base_dir: str
-) -> List[File]:
+) -> List[str]:
     """Create the newsletter articles from the semantic changes for a feed.
 
     Fills the newsletter article jinja2 template and creates the related File objects.
@@ -234,7 +234,7 @@ def _create_feed_articles(
         base_dir: Directory of the MkDocs repository.
 
     Returns:
-        List of MkDocs File objects with the newsletter articles.
+        List of file paths with the newsletter articles.
     """
     files = []
     changes_groups = {}
@@ -247,17 +247,11 @@ def _create_feed_articles(
         changes_groups[file_name] = list(feed_changes)
 
     for file_name, changes_group in changes_groups.items():
-        with open(os.path.join(newsletter_dir, file_name), "w+") as newsletter_file:
+        newsletter_path = os.path.join(newsletter_dir, file_name)
+        with open(newsletter_path, "w+") as newsletter_file:
             newsletter_file.write(create_newsletter(changes_group))
+        files.append(newsletter_path)
 
-        files.append(
-            File(
-                path=f"newsletter/{file_name}",
-                src_dir=f"{base_dir}/docs",
-                dest_dir=f"{base_dir}/site/newsletter",
-                use_directory_urls=True,
-            )
-        )
     return files
 
 
@@ -322,9 +316,7 @@ def _build_newsletter_sections(
                     file_changes, "file_section", None
                 )
                 subcategory_section.subsections.append(file_section)
-            subcategory_section.subsections = sorted(subcategory_section.subsections)
             category_section.subsections.append(subcategory_section)
-        category_section.subsections = sorted(category_section.subsections)
         sections.append(category_section)
     return sections
 

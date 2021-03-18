@@ -34,13 +34,13 @@ future==0.18.2
     # via lunr
 gitdb==4.0.5
     # via gitpython
-gitpython==3.1.13
+gitpython==3.1.14
     # via
     #   mkdocs-newsletter (setup.py)
     #   python-semantic-release
 idna==2.10
     # via requests
-importlib-metadata==3.7.0
+importlib-metadata==3.7.2
     # via
     #   keyring
     #   markdown
@@ -55,7 +55,7 @@ jinja2==2.11.3
     # via mkdocs
 joblib==1.0.1
     # via nltk
-keyring==22.0.1
+keyring==23.0.0
     # via twine
 livereload==2.6.3
     # via mkdocs
@@ -65,8 +65,15 @@ markdown==3.3.4
     # via mkdocs
 markupsafe==1.1.1
     # via jinja2
-mkdocs==1.1.2
+mkdocs-autolinks-plugin==0.4.0
     # via mkdocs-newsletter (setup.py)
+mkdocs-section-index==0.2.3
+    # via mkdocs-newsletter (setup.py)
+mkdocs==1.1.2
+    # via
+    #   mkdocs-autolinks-plugin
+    #   mkdocs-newsletter (setup.py)
+    #   mkdocs-section-index
 nltk==3.5
     # via lunr
 ordered-set==4.0.2
@@ -77,9 +84,9 @@ pkginfo==1.7.0
     # via twine
 pycparser==2.20
     # via cffi
-pydantic==1.7.3
+pydantic==1.8.1
     # via mkdocs-newsletter (setup.py)
-pygments==2.8.0
+pygments==2.8.1
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
@@ -107,7 +114,7 @@ secretstorage==3.3.1
     # via keyring
 semver==2.13.0
     # via python-semantic-release
-setuptools-scm==5.0.1
+setuptools-scm==5.0.2
     # via dotty-dict
 six==1.15.0
     # via
@@ -124,25 +131,27 @@ tornado==6.1
     # via
     #   livereload
     #   mkdocs
-tqdm==4.58.0
+tqdm==4.59.0
     # via
     #   nltk
     #   twine
 twine==3.3.0
     # via python-semantic-release
 typing-extensions==3.7.4.3
-    # via importlib-metadata
+    # via
+    #   importlib-metadata
+    #   pydantic
 urllib3==1.26.3
     # via requests
 webencodings==0.5.1
     # via bleach
 wheel==0.36.2
     # via python-semantic-release
-zipp==3.4.0
+zipp==3.4.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==53.1.0
+setuptools==54.1.1
     # via
     #   setuptools-scm
     #   twine

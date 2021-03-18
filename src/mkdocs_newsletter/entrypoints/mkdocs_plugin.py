@@ -1,13 +1,10 @@
 """Define the mkdocs plugin."""
 
 import os
-from typing import List
 
 from git import Repo
 from mkdocs.config.base import Config
 from mkdocs.plugins import BasePlugin
-from mkdocs.structure.files import File, Files
-from mkdocs.structure.nav import Navigation
 
 from ..services.git import semantic_changes
 from ..services.nav import build_nav
@@ -27,30 +24,34 @@ class Newsletter(BasePlugin):  # type: ignore
     def __init__(self) -> None:
         """Initialize the basic attributes.
 
-        Args:
+        Attributes:
             repo: Git repository to analyze.
         """
-        working_dir = os.getenv("NEWSLETTER_WORKING_DIR", default=os.getcwd())
-        self.repo = Repo(working_dir)
-        self.new_newsletters: List[File] = []
+        self.working_dir = os.getenv("NEWSLETTER_WORKING_DIR", default=os.getcwd())
+        self.repo = Repo(self.working_dir)
 
-    def on_files(self, files: Files, config: Config) -> Files:
-        """Load the new newsletters.
+    def on_config(self, config: Config) -> Config:
+        """Create the new newsletters and load them in the navigation.
 
         Through the following steps:
 
         * Detect which were the last changes for each of the feeds.
-        * Parse the changes from the git history that were done before the last changes.
+        * Parse the changes from the git history that were done before the last
+            changes.
         * Create the newsletter articles.
+        * Update the navigation.
 
         Args:
-            files: MkDocs global files collection.
             config: MkDocs global configuration object.
 
         Returns:
-            files: MkDocs global files collection with the new newsletters.
+            config: MkDocs config object with the new newsletters in the Newsletter
+                section.
         """
-        last_published_changes = last_newsletter_changes(files)
+        newsletter_dir = f"{self.working_dir}/docs/newsletter"
+        if not os.path.exists(newsletter_dir):
+            os.makedirs(newsletter_dir)
+        last_published_changes = last_newsletter_changes(newsletter_dir)
         changes_to_publish = add_change_categories(
             semantic_changes(self.repo, last_published_changes.min()), config
         )
@@ -59,23 +60,8 @@ class Newsletter(BasePlugin):  # type: ignore
             last_published_changes,
         )
 
-        self.new_newsletters = create_newsletters(changes_per_feed, self.repo)
-        for newsletter in self.new_newsletters:
-            files.append(newsletter)
+        create_newsletters(changes_per_feed, self.repo)
 
-        return files
+        config = build_nav(config, newsletter_dir)
 
-    def on_nav(self, nav: Navigation, config: Config, files: Files) -> Navigation:
-        """Load the newsletters in the navigation menu.
-
-        Args:
-            nav: MkDocs global navigation object.
-            files: MkDocs global files collection.
-            config: MkDocs global configuration object.
-
-        Returns:
-            nav: MkDocs global navigation object with the newsletters.
-        """
-        nav = build_nav(nav, config, files)
-        __import__("pdb").set_trace()  # XXX BREAKPOINT
-        return nav
+        return config

@@ -2,6 +2,7 @@
 
 import os
 from datetime import datetime
+from pathlib import Path
 from textwrap import dedent
 from typing import List
 
@@ -9,7 +10,6 @@ import pytest
 from dateutil import tz
 from git import Repo
 from mkdocs.config.base import Config
-from mkdocs.structure.files import File, Files
 
 from mkdocs_newsletter import Change, digital_garden_changes, last_newsletter_changes
 from mkdocs_newsletter.model import DigitalGardenChanges, LastNewsletter
@@ -19,28 +19,27 @@ from mkdocs_newsletter.services.newsletter import (
 )
 
 
-def create_files(file_paths: List[str]) -> Files:
+def create_files(file_paths: List[str], repo: Repo) -> str:
     """Create the Files object with the desired files.
 
     Args:
         file_paths: List of paths.
+
+    Returns:
+        The newsletter directory.
     """
-    files = Files([])
+    newsletter_dir = f"{repo.working_dir}/docs/newsletter"
+
+    if not os.path.exists(newsletter_dir):
+        os.makedirs(newsletter_dir)
 
     for file_path in file_paths:
-        files.append(
-            File(
-                file_path,
-                "fake_src_dir",
-                "fake_dest_dir",
-                False,
-            )
-        )
+        Path(f"{newsletter_dir}/{file_path}").touch()
 
-    return files
+    return newsletter_dir
 
 
-def test_last_newsletters_extracts_last_year() -> None:
+def test_last_newsletters_extracts_last_year(repo: Repo) -> None:
     """
     Given: A Files object with two File objects newsletter/2020.md and
         newsletter/2019.md.
@@ -48,14 +47,14 @@ def test_last_newsletters_extracts_last_year() -> None:
     Then: A LastNewsletter object is returned that returns a datetime object with
         2021-01-01 as last date for the year periodicity.
     """
-    files = create_files(["newsletter/2019.md", "newsletter/2020.md"])
+    newsletter_dir = create_files(["2019.md", "2020.md"], repo)
 
-    result = last_newsletter_changes(files)
+    result = last_newsletter_changes(newsletter_dir)
 
     assert result.year == datetime(2021, 1, 1, tzinfo=tz.tzlocal())
 
 
-def test_last_newsletters_extracts_last_month() -> None:
+def test_last_newsletters_extracts_last_month(repo: Repo) -> None:
     """
     Given: A Files object with two File objects newsletter/2020_01.md and
         newsletter/2020_02.md.
@@ -63,14 +62,14 @@ def test_last_newsletters_extracts_last_month() -> None:
     Then: A LastNewsletter object is returned that returns a datetime object with
         2020-03-01 as last date for the month periodicity.
     """
-    files = create_files(["newsletter/2020_01.md", "newsletter/2020_02.md"])
+    newsletter_dir = create_files(["2020_01.md", "2020_02.md"], repo)
 
-    result = last_newsletter_changes(files)
+    result = last_newsletter_changes(newsletter_dir)
 
     assert result.month == datetime(2020, 3, 1, tzinfo=tz.tzlocal())
 
 
-def test_last_newsletters_extracts_last_month_of_the_year() -> None:
+def test_last_newsletters_extracts_last_month_of_the_year(repo: Repo) -> None:
     """
     Given: A Files object with a File object newsletter/2020_11.md and
         newsletter/2020_12.md.
@@ -78,14 +77,14 @@ def test_last_newsletters_extracts_last_month_of_the_year() -> None:
     Then: A LastNewsletter object is returned that returns a datetime object with
         2021-01-01 as last date for the month periodicity.
     """
-    files = create_files(["newsletter/2020_11.md", "newsletter/2020_12.md"])
+    newsletter_dir = create_files(["2020_11.md", "2020_12.md"], repo)
 
-    result = last_newsletter_changes(files)
+    result = last_newsletter_changes(newsletter_dir)
 
     assert result.month == datetime(2021, 1, 1, tzinfo=tz.tzlocal())
 
 
-def test_last_newsletters_extracts_last_week() -> None:
+def test_last_newsletters_extracts_last_week(repo: Repo) -> None:
     """
     Given: A Files object with two File objects newsletter/2020_w01.md and
         newsletter/2020_w02.md.
@@ -93,14 +92,14 @@ def test_last_newsletters_extracts_last_week() -> None:
     Then: A LastNewsletter object is returned that returns a datetime object with
         the monday of the third week of the year for the week periodicity.
     """
-    files = create_files(["newsletter/2020_w01.md", "newsletter/2020_w02.md"])
+    newsletter_dir = create_files(["2020_w01.md", "2020_w02.md"], repo)
 
-    result = last_newsletter_changes(files)
+    result = last_newsletter_changes(newsletter_dir)
 
     assert result.week == datetime(2020, 1, 13, tzinfo=tz.tzlocal())
 
 
-def test_last_newsletters_extracts_last_day() -> None:
+def test_last_newsletters_extracts_last_day(repo: Repo) -> None:
     """
     Given: A Files object with two File objects newsletter/2020_01_01.md and
         newsletter/2020_02_02.md.
@@ -108,9 +107,9 @@ def test_last_newsletters_extracts_last_day() -> None:
     Then: A LastNewsletter object is returned that returns a datetime object with
         2020-02-03 as last day for the daily periodicity.
     """
-    files = create_files(["newsletter/2020_01_01.md", "newsletter/2020_01_02.md"])
+    newsletter_dir = create_files(["2020_01_01.md", "2020_01_02.md"], repo)
 
-    result = last_newsletter_changes(files)
+    result = last_newsletter_changes(newsletter_dir)
 
     assert result.day == datetime(2020, 1, 3, tzinfo=tz.tzlocal())
 
@@ -287,7 +286,6 @@ def test_digital_garden_ignores_other_change_types(change_type: str) -> None:
     When: create_newsletter is called.
     Then: The changes are not part of the output.
     """
-
     change = Change(
         date=datetime(2021, 2, 8, tzinfo=tz.tzlocal()),
         summary="A change that should not be in the newsletter",
@@ -510,12 +508,7 @@ def test_create_newsletter_creates_daily_article(repo: Repo) -> None:
     When: create_newsletters is called
     Then: The file is created and a File object is returned.
     """
-    desired_file = File(
-        path="newsletter/2021_02_08.md",
-        src_dir=f"{repo.working_dir}/docs",
-        dest_dir=f"{repo.working_dir}/site/newsletter",
-        use_directory_urls=True,
-    )
+    desired_file = f"{repo.working_dir}/docs/newsletter/2021_02_08.md"
     change = Change(
         date=datetime(2021, 2, 8, tzinfo=tz.tzlocal()),
         summary="Create the introduction page",
@@ -548,12 +541,7 @@ def test_create_newsletter_creates_weekly_articles(repo: Repo) -> None:
     When: create_newsletters is called
     Then: The file is created and a File object is returned.
     """
-    desired_file = File(
-        path="newsletter/2021_w06.md",
-        src_dir=f"{repo.working_dir}/docs",
-        dest_dir=f"{repo.working_dir}/site/newsletter",
-        use_directory_urls=True,
-    )
+    desired_file = f"{repo.working_dir}/docs/newsletter/2021_w06.md"
     change = Change(
         date=datetime(2021, 2, 8, tzinfo=tz.tzlocal()),
         summary="Create the introduction page",
@@ -586,12 +574,7 @@ def test_create_newsletter_creates_monthly_articles(repo: Repo) -> None:
     When: create_newsletters is called
     Then: The file is created and a File object is returned.
     """
-    desired_file = File(
-        path="newsletter/2021_02.md",
-        src_dir=f"{repo.working_dir}/docs",
-        dest_dir=f"{repo.working_dir}/site/newsletter",
-        use_directory_urls=True,
-    )
+    desired_file = f"{repo.working_dir}/docs/newsletter/2021_02.md"
     change = Change(
         date=datetime(2021, 2, 8, tzinfo=tz.tzlocal()),
         summary="Create the introduction page",
@@ -624,12 +607,7 @@ def test_create_newsletter_creates_yearly_articles(repo: Repo) -> None:
     When: create_newsletters is called
     Then: The file is created and a File object is returned.
     """
-    desired_file = File(
-        path="newsletter/2021.md",
-        src_dir=f"{repo.working_dir}/docs",
-        dest_dir=f"{repo.working_dir}/site/newsletter",
-        use_directory_urls=True,
-    )
+    desired_file = f"{repo.working_dir}/docs/newsletter/2021.md"
     change = Change(
         date=datetime(2021, 2, 8, tzinfo=tz.tzlocal()),
         summary="Create the introduction page",

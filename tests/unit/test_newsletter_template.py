@@ -174,7 +174,8 @@ def test_template_prints_changes_with_message() -> None:
     """
     Given: a changes that affects a level 1 article with the message information.
     When: create_newsletter is called.
-    Then: The category of the article is added as title 1 with the description.
+    Then: The category of the article is added as title 1 with the description and
+        the commit message are separated by a new line.
     """
     changes = [
         Change(
@@ -186,6 +187,15 @@ def test_template_prints_changes_with_message() -> None:
             category_order=0,
             message="Short change description.",
         ),
+        Change(
+            date=datetime(2021, 2, 9, tzinfo=tz.tzlocal()),
+            summary="Add more content",
+            type_="performance",
+            file_="index.md",
+            category="Introduction",
+            category_order=0,
+            message="Another short change description.",
+        ),
     ]
 
     result = create_newsletter(changes)
@@ -196,7 +206,11 @@ def test_template_prints_changes_with_message() -> None:
 
         * Improvement: Add new content
 
-            Short change description."""
+            Short change description.
+
+        * Improvement: Add more content
+
+            Another short change description."""
     )
 
 

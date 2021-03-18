@@ -1,13 +1,11 @@
-# 003: Changelog support
-
 Date: 2021-02-10
 
-## Status
+# Status
 <!-- What is the status, such as draft, proposed, accepted, rejected,
 deprecated, superseded, etc.? -->
 Draft
 
-## Context
+# Context
 <!-- What is the issue that we're seeing that is motivating this decision or change? -->
 Software documentation could benefit from the local newsletter, rss and email
 newsletter system.
@@ -16,7 +14,7 @@ There are some changes that need to be done though. Instead of creating items
 per week, month or year, they should be created each time a release is made.
 Also, the template of the newsletter should be different.
 
-## Proposals
+# Proposals
 <!-- What are the possible solutions to the problem described in the context -->
 * Change the template to ...
 * Select which changes are added to the changelog
@@ -24,8 +22,8 @@ Also, the template of the newsletter should be different.
 * The CI reacts to the tag event to rebuild the documentation and create the
     newsletter.
 
-## Decision
+# Decision
 <!-- What is the change that we're proposing and/or doing? -->
 
-## Consequences
+# Consequences
 <!-- What becomes easier or more difficult to do because of this change? -->

@@ -13,15 +13,19 @@ with open("src/mkdocs_newsletter/version.py") as fp:
         raise ValueError("The version is not specified in the version.py file.")
     version = version_match["version"]
 
+with open("README.md", "r") as readme_file:
+    readme = readme_file.read()
 
 setup(
     name="mkdocs-newsletter",
     version=version,
-    description="Automatically create newsletters from the changes in a mkdocs repository",
+    description=(
+        "Automatically create newsletters from the changes in a mkdocs repository"
+    ),
     author="Lyz",
     author_email="lyz-code-security-advisories@riseup.net",
     license="GNU General Public License v3",
-    long_description=open("README.md").read(),
+    long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/lyz-code/mkdocs-newsletter",
     packages=find_packages("src"),
@@ -53,8 +57,6 @@ setup(
         "deepdiff",
     ],
     entry_points={
-        "mkdocs.plugins": [
-            "mkdocs-newsletter = mkdocs_newsletter:Newsletter",
-        ]
+        "mkdocs.plugins": ["mkdocs-newsletter = mkdocs_newsletter:Newsletter"]
     },
 )

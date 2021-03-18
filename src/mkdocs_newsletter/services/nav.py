@@ -2,30 +2,25 @@
 
 import calendar
 import datetime
+import os
 import re
-from contextlib import suppress
 from typing import Any, Dict, List, Tuple, Union
 
 from mkdocs.config.base import Config
-from mkdocs.structure.files import File
-from mkdocs.structure.nav import Navigation, Section
-from mkdocs.structure.pages import Page
-from mkdocs_section_index import SectionPage
 
 NavData = Dict[Union[int, str], Any]
-Sections = Union[SectionPage, Section]
+Sections = List[Union[str, Dict[str, Any]]]
 
 
-def build_nav(nav: Navigation, config: Config, files: List[File]) -> Navigation:
+def build_nav(config: Config, newsletter_dir: str) -> Config:
     """Build the navigation section of the newsletters.
 
     Args:
-        nav: MkDocs navigation object
         config: MkDocs configuration object.
-        files: all mkdocs files.
+        newsletter_dir: Directory containing the newsletter articles.
 
     Returns:
-        The nav object with the newsletters.
+        The config object with the newsletters.
     """
     nav_data: Dict[Union[int, str], Any] = {}
 
@@ -33,123 +28,112 @@ def build_nav(nav: Navigation, config: Config, files: List[File]) -> Navigation:
         r"(?P<year>\d{4})"
         r"(_w(?P<week_number>\d{2}))?"
         r"(_(?P<month>\d{2}))?"
-        r"(_(?P<day>\d{2}))?"
+        r"(_(?P<day>\d{2}))?.md"
     )
-    for file_ in files:
+    for file_ in os.scandir(newsletter_dir):
+        file_path = f"newsletter/{file_.name}"
         match = re.match(newsletter_regex, file_.name)
         if match is None:
-            if file_.name == "0_index":
-                nav_data["index"] = file_
+            if file_.name == "0_index.md":
+                nav_data["index"] = file_path
             continue
 
-        year = match.group("year")
-        week = match.group("week_number")
-        month = match.group("month")
-        day = match.group("day")
+        year_match = match.group("year")
+        week_match = match.group("week_number")
+        month_match = match.group("month")
+        day_match = match.group("day")
 
-        if year is not None:
-            year = int(year)
+        if year_match is not None:
+            year = int(year_match)
             nav_data.setdefault(year, {})
-            if month is not None:
-                month = int(month)
+            if month_match is not None:
+                month = int(month_match)
                 nav_data[year].setdefault(month, {})
-                if day is not None:
-                    day = int(day)
+                if day_match is not None:
+                    day = int(day_match)
                     week = datetime.datetime(year, month, day).isocalendar()[1]
                     nav_data[year][month].setdefault(week, {})
-                    nav_data[year][month][week][day] = file_
+                    nav_data[year][month][week][day] = file_path
                 else:
-                    nav_data[year][month]["index"] = file_
-            elif week is not None:
-                week = int(week)
+                    nav_data[year][month]["index"] = file_path
+            elif week_match is not None:
+                week = int(week_match)
                 month = datetime.datetime.strptime(f"{year}{week}-1", "%Y%W-%w").month
                 nav_data[year].setdefault(month, {})
                 nav_data[year][month].setdefault(week, {})
-                nav_data[year][month][week]["index"] = file_
+                nav_data[year][month][week]["index"] = file_path
             else:
-                nav_data[year]["index"] = file_
+                nav_data[year]["index"] = file_path
 
-    return _nav_data_to_nav(nav_data, config, nav)
+    return _nav_data_to_nav(nav_data, config)
 
 
-def _nav_data_to_nav(nav_data: NavData, config: Config, nav: Navigation) -> List[Any]:
+def _nav_data_to_nav(nav_data: NavData, config: Config) -> Config:
     """Convert the nav_data dictionary to the Mkdocs nav section.
 
     Args:
         nav_data: dictionary with the newsletter file data with the following structure.
             {
-                'index': File(0_index.md)
+                'index': 0_index.md
                 year: {
-                    'index': File(year.md),
+                    'index': year.md
                     month_number: {
-                        'index': File(year_month.md),
+                        'index': year_month.md
                         week_number: {
-                            'index': File(year_wweek_number.md),
-                            day: File(year_month_day.md),
+                            'index': year_wweek_number.md
+                            day: year_month_day.md
                         }
                     }
                 }
             }
         config: MkDocs configuration object.
-        nav: MkDocs navigation object
 
     Returns:
-        MkDocs nav object with the list of newsletters.
+        MkDocs config object with the list of newsletters under the Newsletters section.
     """
-    newsletter_nav, nav_data = _initialize_section("Newsletters", nav_data, config)
+    newsletter_nav, nav_data = _initialize_section(nav_data)
 
     for year, year_data in sorted(nav_data.items(), reverse=True):
-        year_nav, year_data = _initialize_section(str(year), year_data, config)
+        year_nav, year_data = _initialize_section(year_data)
 
         for month, month_data in sorted(year_data.items(), reverse=True):
-            month_nav, month_data = _initialize_section(
-                f"{calendar.month_name[month]} of {year}", month_data, config
-            )
+            month_nav, month_data = _initialize_section(month_data)
 
             for week, week_data in sorted(month_data.items(), reverse=True):
-                week_nav, week_data = _initialize_section(
-                    f"{_int_to_ordinal(week)} Week of {year}", week_data, config
-                )
+                week_nav, week_data = _initialize_section(week_data)
 
                 for day, day_data in sorted(week_data.items(), reverse=True):
-                    week_nav.children.append(
-                        Page(
-                            f"{_int_to_ordinal(day)} {calendar.month_name[month]}"
-                            f" {year}",
-                            day_data,
-                            config,
-                        )
+                    day_title = (
+                        f"{_int_to_ordinal(day)} {calendar.month_name[month]} {year}"
                     )
-                month_nav.children.append(week_nav)
-            year_nav.children.append(month_nav)
-        newsletter_nav.children.append(year_nav)
-    nav.items.append(newsletter_nav)
+                    week_nav.append({day_title: day_data})
+                month_nav.append({f"{_int_to_ordinal(week)} Week of {year}": week_nav})
+            year_nav.append({f"{calendar.month_name[month]} of {year}": month_nav})
+        newsletter_nav.append({str(year): year_nav})
+    config["nav"].append({"Newsletters": newsletter_nav})
 
-    return _build_nav_pages(nav)
+    return config
 
 
-def _initialize_section(
-    title: str, section_data: NavData, config: Config
-) -> Tuple[Sections, NavData]:
+def _initialize_section(section_data: NavData) -> Tuple[Sections, NavData]:
     """Create the section object with the section data.
 
-    If the section_data contains an 'index' key it will create a SectionPage, otherwise
-    it will create a Section object.
+    If the section_data contains an 'index' key it will index the section page,
+    otherwise it will create an empty list.
 
     Args:
-        title: Section title
         section_data: Dictionary with the section data
         config: MkDocs config object.
 
     Returns:
-        SectionPage or Section object.
+        List of sections.
         Updated section_data without the 'index' key.
     """
     try:
-        section_nav = SectionPage(title, section_data["index"], config, [])
+        section_nav = [section_data["index"]]
         section_data.pop("index")
     except KeyError:
-        section_nav = Section(title, [])
+        section_nav = []
 
     return section_nav, section_data
 
@@ -167,47 +151,3 @@ def _int_to_ordinal(number: int) -> str:
     if 11 <= (number % 100) <= 13:
         suffix = "th"
     return f"{number}{suffix}"
-
-
-def _build_nav_pages(nav: Navigation) -> Navigation:
-    """Build the newsletter `pages` section of the nav.
-
-    Extract the pages from the items of the nav and populate the next and previous pages
-    attributes.
-
-    Args:
-        nav: MkDocs navigation object
-
-    Returns:
-        MkDocs nav object with the newsletter entries in the pages attribute.
-    """
-    newsletter_section = nav.items[-1]
-    nav.pages += _build_section_pages(newsletter_section)
-
-    for index in range(len(nav.pages)):
-        with suppress(IndexError):
-            nav.pages[index].previous_page = nav.pages[index - 1]
-        with suppress(IndexError):
-            nav.pages[index].next_page = nav.pages[index + 1]
-    return nav
-
-
-def _build_section_pages(section: Sections) -> List[Union[SectionPage, Page]]:
-    """Get the list of pages from a section.
-
-    Args:
-        section: MkDocs section object.
-
-    Returns:
-        List of pages in the section.
-    """
-    pages = []
-
-    if isinstance(section, Page):
-        pages.append(section)
-
-    if isinstance(section, Section):
-        for subsection in section.children:
-            pages += _build_section_pages(subsection)
-
-    return pages

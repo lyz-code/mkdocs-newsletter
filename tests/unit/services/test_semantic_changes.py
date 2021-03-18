@@ -7,6 +7,7 @@ fixture definition at conftest.py.
 
 import datetime
 import textwrap
+from textwrap import dedent
 
 import pytest
 from dateutil import tz
@@ -76,7 +77,8 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
     Given: A mkdocs git repo with a change whose message follows the correct syntax,
         contains two semantic changes with scope and description.
     When: changes is called.
-    Then: The two expected Changes are returned.
+    Then: The two expected Changes are returned, where the message respects the
+        line breaks.
     """
     commit_date = datetime.datetime(2021, 2, 5, tzinfo=tz.tzlocal())
     repo.index.add(["docs/devops/helm/helm.md", "docs/devops/devops.md"])
@@ -85,20 +87,20 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
             """\
             feat(helm): introduce Helm the Kubernetes package manager
 
-            [Helm](https://helm.sh/) is the package manager for Kubernetes. Through
-            charts it helps you define, install and upgrade even the most complex
-            Kubernetes applications.
+            [Helm](https://helm.sh/) is the package manager for Kubernetes.
+            Through charts it helps you define, install and upgrade even the most
+            complex Kubernetes applications.
 
             feat(devops): define DevOps
 
-            [DevOps](https://en.wikipedia.org/wiki/DevOps) is a set of practices that
-            combines software development (Dev) and information-technology operations
-            (Ops) which aims to shorten the systems development life cycle and provide
-            continuous delivery with high software quality.
+            [DevOps](https://en.wikipedia.org/wiki/DevOps) is a set of practices
+            that combines software development (Dev) and information-technology
+            operations (Ops) which aims to shorten the systems development life
+            cycle and provide continuous delivery with high software quality.
 
-            One of the most important goals of the DevOps initiative is to break the
-            silos between the developers and the sysadmins, that lead to ill feelings
-            and unproductivity."""
+            One of the most important goals of the DevOps initiative is to break
+            the silos between the developers and the sysadmins, that lead to ill
+            feelings and unproductivity."""
         ),
         author=author,
         committer=committer,
@@ -109,10 +111,11 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
         Change(
             date=commit_date,
             summary="Introduce Helm the Kubernetes package manager.",
-            description=(
-                "[Helm](https://helm.sh/) is the package manager for Kubernetes. "
-                "Through charts it helps you define, install and upgrade even the most "
-                "complex Kubernetes applications."
+            message=dedent(
+                """\
+                [Helm](https://helm.sh/) is the package manager for Kubernetes.
+                Through charts it helps you define, install and upgrade even the most
+                complex Kubernetes applications."""
             ),
             type_="feature",
             scope="helm",
@@ -120,15 +123,16 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
         Change(
             date=commit_date,
             summary="Define DevOps.",
-            description=(
-                "[DevOps](https://en.wikipedia.org/wiki/DevOps) is a set of practices "
-                "that combines software development (Dev) and information-technology "
-                "operations (Ops) which aims to shorten the systems development life "
-                "cycle and provide continuous delivery with high software quality."
-                ""
-                "One of the most important goals of the DevOps initiative is to break "
-                "the silos between the developers and the sysadmins, that lead to ill "
-                "feelings and unproductivity."
+            message=dedent(
+                """\
+                [DevOps](https://en.wikipedia.org/wiki/DevOps) is a set of practices
+                that combines software development (Dev) and information-technology
+                operations (Ops) which aims to shorten the systems development life
+                cycle and provide continuous delivery with high software quality.
+
+                One of the most important goals of the DevOps initiative is to break
+                the silos between the developers and the sysadmins, that lead to ill
+                feelings and unproductivity."""
             ),
             type_="feature",
             scope="devops",
@@ -169,3 +173,32 @@ def test_changes_dont_extract_commits_older_than_min_date(repo: Repo) -> None:
 
     assert len(result) == 1
     assert result[0].summary == "New commit."
+
+
+@pytest.mark.freeze_time("2021-02-02T12:00:00")
+def test_changes_extracts_commits_with_scope_with_spaced_subsection(repo: Repo) -> None:
+    """
+    Given: A mkdocs git repo with a change whose message follows the correct syntax
+        and specifies the scope of the change with subsection with spaces in it.
+    When: changes is called
+    Then: The expected Change is returned
+    """
+    commit_date = datetime.datetime(2021, 2, 2, tzinfo=tz.tzlocal())
+    repo.index.add(["docs/emojis.md"])
+    repo.index.commit(
+        "feat(emojis#Spaced subsection): add funny emojis",
+        author=author,
+        committer=committer,
+        author_date=commit_date,
+        commit_date=commit_date,
+    )
+    expected_change = Change(
+        date=commit_date,
+        summary="Add funny emojis.",
+        type_="feature",
+        scope="emojis#Spaced subsection",
+    )
+
+    result = semantic_changes(repo)
+
+    assert result == [expected_change]

@@ -10,7 +10,7 @@ from pydantic.main import BaseModel
 class Change(BaseModel):
     """Represent a single semantic change in a git repository.
 
-    Attrs:
+    Attributes:
         date: When the change was done.
         summary: short description of the change.
         type_: semantic type of change, such as feature or fix.
@@ -72,7 +72,7 @@ class LastNewsletter(BaseModel):
 class NewsletterSection(BaseModel):
     """Represent the section of a newsletter article.
 
-    Attrs:
+    Attributes:
         title: Category title
         order: The order in comparison with the other categories
         changes: Changes to be printed in the section
@@ -94,7 +94,7 @@ class NewsletterSection(BaseModel):
         Raises:
             TypeError: If the id type of the objects is not compatible.
         """
-        return self.order < other.order
+        return self.order > other.order
 
     def __gt__(self, other: "NewsletterSection") -> bool:
         """Assert if an object is greater than us.
@@ -105,7 +105,7 @@ class NewsletterSection(BaseModel):
         Raises:
             TypeError: If the id type of the objects is not compatible.
         """
-        return self.order > other.order
+        return self.order < other.order
 
 
 NewsletterSection.update_forward_refs()

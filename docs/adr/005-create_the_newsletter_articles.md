@@ -3,7 +3,7 @@ Date: 2021-02-18
 # Status
 <!-- What is the status? Draft, Proposed, Accepted, Rejected, Deprecated or Superseded?
 -->
-Proposed
+Accepted
 
 Based on: [004](004-article_newsletter_structure.md)
 

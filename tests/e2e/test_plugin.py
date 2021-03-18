@@ -17,6 +17,23 @@ def test_plugin_builds_newsletters(full_repo: Repo, config: Config) -> None:
     Then:
         * The newsletter files are created.
         * The newsletter navigation section is created.
+        * The next and previos page sections are created.
     """
-    __import__("pdb").set_trace()  # XXX BREAKPOINT
-    build.build(config)
+    build.build(config)  # act
+
+    newsletter_path = f"{full_repo.working_dir}/site/newsletter/2021_02/index.html"
+    with open(newsletter_path, "r") as newsletter_file:
+        newsletter = newsletter_file.read()
+    assert "<title>February of 2021 - The Blue Book</title>" in newsletter
+    assert (
+        '<nav class="md-nav" aria-label="February of 2021" data-md-level="3">'
+        in newsletter
+    )
+    assert (
+        '<a href="../2021_03_01/" class="md-footer__link '
+        'md-footer__link--prev" rel="prev">' in newsletter
+    )
+    assert (
+        '<a href="../2021_w05/" class="md-footer__link '
+        'md-footer__link--next" rel="next">' in newsletter
+    )

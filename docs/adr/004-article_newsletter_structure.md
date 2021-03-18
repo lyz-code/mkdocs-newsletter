@@ -3,7 +3,7 @@ Date: 2021-02-12
 # Status
 <!-- What is the status? Draft, Proposed, Accepted, Rejected, Deprecated or Superseded?
 -->
-Proposed
+Accepted
 
 # Context
 <!-- What is the issue that we're seeing that is motivating this decision or change? -->
@@ -53,13 +53,36 @@ Where:
     end of the week joining the changes of the week days.
 * `2020_01_01.md`: Is an automatic day summary for the daily rss.
 
-Even though it seems more easy to create the proposed nav structure in the
-`on_files` event, by editing the `nav` dictionary of the `config` object, there
-is no way of returning the `config` object in that event, so we're forced to use
-the [`on_nav`](https://www.mkdocs.org/user-guide/plugins/#on_nav)
-event. The downside of this event is that instead of editing a dictionary, we
-need to create the Section, Pages, SectionPages or Link objects and append them
-to the `nav.items`, which is more complicated.
+My first idea as a MkDocs user, and newborn plugin developer was to add the
+navigation items to the `nav` key in the `config` object, as it's more easy to
+add items to a dictionary I'm used to work with than to dive into the code and
+understand how MkDocs creates the navigation. As I understood from the
+docs, the files should be created in the `on_files` event. the problem with this
+approach is that the only event that allows you to change the `config` is the
+`on_config` event, which is before the `on_files` one, so you can't build the
+navigation this way after you've created the files.
+
+Next idea was to add the items in the `on_nav` event, that means creating
+yourself the [`Section`](#section), [`Pages`](#page),
+[`SectionPages`](#sectionpage) or `Link` objects and append them to the
+`nav.items`.  [The problem](https://github.com/mkdocs/mkdocs/issues/2324) is
+that MkDocs initializes and processes the `Navigation` object in the
+[`get_navigation`](https://github.com/mkdocs/mkdocs/blob/master/mkdocs/structure/nav.py#L99)
+function. If you want to add items with a plugin in the `on_nav` event, you need
+to manually run all the post processing functions such as building the `pages`
+attribute, by running the `_get_by_type`, ` _add_previous_and_next_links` or
+` _add_parent_links` yourself. Additionally, when building the site you'll get
+the `The following pages exist in the docs directory, but are not included in
+the "nav" configuration` error, because that check is done *before* all plugins
+change the navigation in the `on_nav` object.
+
+The last approach is to build the files and tweak the navigation in the
+`on_config` event. This approach has the next advantages:
+
+* You need less knowledge of how MkDocs works.
+* You don't need to create the `File` or `Files` objects.
+* You don't need to create the `Page`, `Section`, `SectionPage` objects.
+* More robust as you rely on existent MkDocs functionality.
 
 We need to define:
 
@@ -71,7 +94,7 @@ We need to define:
 The complex part here is how to get the ordering of the elements in the nav
 right. We could:
 
-* Create a `nav_data` dictionary with the following structure:
+Create a `nav_data` dictionary with the following structure:
     ```yaml
     {
         year: {
@@ -87,7 +110,7 @@ right. We could:
     }
     ```
 
-    And then translate the `nav_data` to the actual `nav` contents.
+And then translate the `nav_data` to the actual `nav` contents.
 
 ## Build the nav from scratch or reuse previous run's nav
 
@@ -98,15 +121,14 @@ file as the newsletter nav can grow fast, making the file dirty. Another
 possibility is to save the nav in `docs/newsletter/.newsletter_nav.yaml`.
 
 If we store the newsletter nav dictionary, it would be difficult to deduce where
-does the new entries fit in so that the nav is still ordered. It makes more
+does the new entries fit in so that the nav is still ordered. It would make more
 sense to store the `nav_data` object, but building that object is relatively
-cheap, so it may not be worth storing it.
+cheap, so it may not be worth even storing it.
 
 # Decision
 <!-- What is the change that we're proposing and/or doing? -->
 Follow the only proposal regarding the structure, and we'll build the nav
-incrementally and we'll store it in a hidden file in
-`docs/newsletter/.newsletter_nav.yaml`.
+from scratch each time we build the site.
 
 # Consequences
 <!-- What becomes easier or more difficult to do because of this change? -->

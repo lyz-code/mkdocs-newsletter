@@ -5,15 +5,27 @@ and handlers to achieve the program's purpose.
 """
 
 import datetime
+import re
+from contextlib import suppress
 from typing import List, Optional, Tuple
 
 from dateutil import tz
 from git import Commit, Repo
-from semantic_release.errors import UnknownCommitMessageStyleError
-from semantic_release.history.parser_angular import parse_commit_message
-from semantic_release.history.parser_helpers import ParsedCommit
 
 from ..model import Change
+
+TYPES = {
+    "feat": "feature",
+    "fix": "fix",
+    "test": "test",
+    "docs": "documentation",
+    "style": "style",
+    "refactor": "refactor",
+    "build": "build",
+    "ci": "ci",
+    "perf": "performance",
+    "chore": "chore",
+}
 
 
 def semantic_changes(
@@ -52,7 +64,8 @@ def commits_to_changes(commits: List[Commit]) -> List[Change]:
     changes = []
 
     for commit in commits:
-        changes += commit_to_changes(commit)
+        with suppress(ValueError):
+            changes += commit_to_changes(commit)
 
     return changes
 
@@ -61,87 +74,72 @@ def commit_to_changes(commit: Commit) -> List[Change]:
     """Extract the semantic changes from a commit.
 
     Args:
-        commit: Commits to parse.
+        commit: Commit to parse.
 
     Returns:
         changes: List of semantic changes.
     """
     changes: List[Change] = []
+    remaining = commit.message
 
-    try:
-        parsed_commit = parse_commit_message(commit.message)
-    except UnknownCommitMessageStyleError:
-        return changes
-
-    while True:
+    while remaining is not None:
         try:
-            parsed_commit, new_parsed_commit = _extract_changes_from_description(
-                parsed_commit
-            )
-            changes.append(
-                Change(
-                    date=commit.authored_datetime,
-                    summary=_clean_summary(parsed_commit),
-                    type_=parsed_commit.type,
-                    scope=parsed_commit.scope,
-                )
-            )
-            parsed_commit = new_parsed_commit
-        except StopIteration:
-            break
-    changes.append(
-        Change(
-            date=commit.authored_datetime,
-            summary=_clean_summary(parsed_commit),
-            type_=parsed_commit.type,
-            scope=parsed_commit.scope,
-        )
-    )
-
+            change, remaining = _parse_change(remaining, commit.authored_date)
+        except ValueError:
+            return changes
+        changes.append(change)
     return changes
 
 
-def _extract_changes_from_description(
-    parsed_commit: ParsedCommit,
-) -> Tuple[ParsedCommit, ParsedCommit]:
-    """Extract changes from the parsed_commit description.
-
-    parse_commit_message only extracts one change per commit message. If there
-    are more than one, they get added as part of the description.
+def _parse_change(
+    message: str, date: datetime.datetime
+) -> Tuple[Change, Optional[str]]:
+    """Extract a semantic change from a commit message.
 
     Args:
-        parsed_commit: ParsedCommit object to clean
+        message: Commit message to parse.
 
     Returns:
-        parsed_commit: Original parsed_commit with the clean description.
-        new_parsed_commit: New ParsedCommit extracted from the original's description.
+        changes: List of semantic changes.
+        remaining: The rest of the commit message.
 
     Raises:
-        StopIteration: If there is no other semantic change in the description.
+        ValueError: when the commit message doesn't follow the commit guidelines.
     """
-    start = 1
-    while True:
-        try:
-            remaining = parsed_commit.descriptions[start:]
-            if len(remaining) == 0:
-                raise StopIteration
+    commit_regexp = re.compile(
+        fr"(?P<type>{'|'.join(TYPES.keys())})"
+        r"(?:\((?P<scope>[^\)]+)\))?"
+        r": (?P<summary>[^\n\n]+)"
+        r"(:?\n\n(?P<text>.+))?",
+        re.DOTALL,
+    )
 
-            new_parsed_commit = parse_commit_message("\n\n".join(remaining))
-            # Replace the description attribute, as it's a NamedTuple, we need to create
-            # a new one -.-
-            parsed_commit = ParsedCommit(
-                descriptions=parsed_commit.descriptions[:start],
-                bump=parsed_commit.bump,
-                type=parsed_commit.type,
-                scope=parsed_commit.scope,
-                breaking_descriptions=parsed_commit.breaking_descriptions,
-            )
-            return parsed_commit, new_parsed_commit
-        except UnknownCommitMessageStyleError:
-            start += 1
+    commit_match = commit_regexp.match(message)
+    if not commit_match:
+        raise ValueError(f"Unable to parse the given commit message: {message}")
+
+    change = Change(
+        date=date,
+        summary=_clean_summary(commit_match.group("summary")),
+        type_=TYPES[commit_match.group("type")],
+        scope=commit_match.group("scope"),
+    )
+
+    remaining = commit_match.group("text")
+
+    description_lines: List[str] = []
+    while remaining not in [None, ""] and not commit_regexp.match(remaining):
+        remaining_lines = remaining.split("\n\n")
+        description_lines.append(remaining_lines.pop(0))
+        remaining = "\n\n".join(remaining_lines)
+
+    if len(description_lines) > 0:
+        change.message = "\n\n".join(description_lines)
+
+    return change, remaining
 
 
-def _clean_summary(parsed_commit: ParsedCommit) -> str:
+def _clean_summary(summary: str) -> str:
     """Clean the commit summary line.
 
     Ensure that:
@@ -149,7 +147,6 @@ def _clean_summary(parsed_commit: ParsedCommit) -> str:
     * The first character of the first word is in upper caps.
     * The line ends with a dot.
     """
-    summary = parsed_commit.descriptions[0]
     summary = summary[0].upper() + summary[1:]
     if summary[-1] != ".":
         summary += "."

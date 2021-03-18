@@ -3,7 +3,7 @@ Date: 2021-02-08
 # Status
 <!-- What is the status, such as proposed, accepted, rejected, deprecated, superseded,
 etc.? -->
-Proposed
+Accepted
 
 Extended by: [002](002-initial_plugin_design.md)
 
@@ -38,12 +38,12 @@ We must be careful though, we don't want to worsen the bombardment of
 information we are suffering. We need to notify the user in a respectful way by
 sending them only relevant content at the pace they choose to.
 
-For the idea to work we'd first need that the authors want to use the solution.
+For the idea to work, we'd first need that the authors want to use the solution.
 So we need to build a system that doesn't increase the mental load or effort to
 a point that makes it unappealing. That can be done by:
 
 * Automating all the processes that we can.
-* Reducing to the minimum the author entrypoints
+* Reducing to the minimum the author entrypoints.
 * Making it easy for them to introduce the manual data that we need.
 * Reduce the deviation from their current workflow.
 
@@ -87,7 +87,9 @@ the following personal commit convention:
 ```
 
 Where:
+
 * `type_of_change` is one of:
+
   * `feat`: Add new content to the repository, it can be a new file or new content on an
     existent file.
   * `fix`: Correct existing content.
@@ -95,7 +97,10 @@ Where:
   * `ci`: Change the continuous integration pipelines.
   * `chore`: Update the python dependencies required to build the site.
 
-* `file_changed`: name of the file changed (without the `.md` extension)
+* `file_changed`: name of the file changed (without the `.md` extension).
+* `short_description`: A succinct description of the change. It doesn't need to
+    start with a capitalize letter nor end with a dot.
+* `full_description`: A summary of the added changes.
 
 For example: [a single feat
 commit](https://github.com/lyz-code/blue-book/commit/5eb3f57da4de99e58bf25ab4b5e24fbb007f7319) or
