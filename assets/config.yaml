@@ -1,3 +1,0 @@
----
-# Level of logging verbosity. One of ['info', 'debug', 'warning'].
-verbose: info

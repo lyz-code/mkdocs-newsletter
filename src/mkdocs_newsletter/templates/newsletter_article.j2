@@ -1,0 +1,36 @@
+{%- macro title(section, level) -%}
+{% set header = level * '#' %}
+{%- if section.url is not none -%}
+{{ header }} [{{ section.title }}]({{section.url}})
+{%- else -%}
+{{ header }} {{ section.title }}
+{%- endif %}
+{%- endmacro %}
+
+{%- macro changes(changes) -%}
+{%- for change in changes %}
+{% if change.file_subsection is not none -%}
+* {{ change_type_text[change.type_] }}: [{{ change.summary }}]({{ change.file_}}{{ change.file_subsection}})
+{%- else -%}
+* {{ change_type_text[change.type_] }}: {{ change.summary }}
+{%- endif %}
+{%- if change.message is not none %}
+
+{{ ('    ' ~ change.message) | wordwrap(76) | replace('\n', '\n    ') }}
+{% endif -%}
+{% endfor -%}
+{% endmacro -%}
+
+{%- macro print_section(section, level=1) -%}
+{{ title(section, level) }}
+{{ changes(section.changes) }}
+
+{% set level = level + 1 -%}
+{%- for subsection in section.subsections -%}
+{{ print_section(subsection, level) }}
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- for section in sections -%}
+{{ print_section(section) }}
+{%- endfor -%}

@@ -1,0 +1,24 @@
+{
+  "template": "https://github.com/lyz-code/cookiecutter-python-project",
+  "commit": "e2cd9ee6bdcb0bff4b4187fcf54508b8ac5bb00c",
+  "context": {
+    "cookiecutter": {
+      "project_name": "MkDocs Newsletter",
+      "project_slug": "mkdocs-newsletter",
+      "project_description": "Automatically create newsletters from the changes in a mkdocs repository",
+      "requirements": "",
+      "configure_command_line": "False",
+      "read_configuration_from_yaml": "False",
+      "github_user": "lyz-code",
+      "github_token_pass_path": "internet/github.lyz-code.api_token",
+      "pypi_token_pass_path": "internet/pypi.token",
+      "test_pypi_token_pass_path": "internet/test.pypi.token",
+      "author": "Lyz",
+      "author_email": "lyz-code-security-advisories@riseup.net",
+      "security_advisories_email": "lyz-code-security-advisories@riseup.net",
+      "project_underscore_slug": "mkdocs_newsletter",
+      "_template": "https://github.com/lyz-code/cookiecutter-python-project"
+    }
+  },
+  "directory": null
+}

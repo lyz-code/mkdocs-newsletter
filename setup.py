@@ -6,7 +6,6 @@ from os.path import basename, splitext
 
 from setuptools import find_packages, setup
 
-
 # Avoid loading the package to extract the version
 with open("src/mkdocs_newsletter/version.py") as fp:
     version_match = re.search(r'__version__ = "(?P<version>.*)"', fp.read())
@@ -14,20 +13,24 @@ with open("src/mkdocs_newsletter/version.py") as fp:
         raise ValueError("The version is not specified in the version.py file.")
     version = version_match["version"]
 
+with open("README.md", "r") as readme_file:
+    readme = readme_file.read()
 
 setup(
     name="mkdocs-newsletter",
     version=version,
-    description="Automatically create newsletters from the changes in a mkdocs repository",
+    description=(
+        "Automatically create newsletters from the changes in a mkdocs repository"
+    ),
     author="Lyz",
     author_email="lyz-code-security-advisories@riseup.net",
     license="GNU General Public License v3",
-    long_description=open("README.md").read(),
+    long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/lyz-code/mkdocs-newsletter",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    package_data={"mkdocs_newsletter": ["py.typed"]},
+    package_data={"mkdocs_newsletter": ["py.typed", "templates/*"]},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
     python_requires=">=3.6",
     classifiers=[
@@ -44,5 +47,17 @@ setup(
         "Topic :: Utilities",
         "Natural Language :: English",
     ],
-    install_requires=[],
+    install_requires=[
+        "python-dateutil",
+        "mkdocs",
+        "mkdocs-section-index",
+        "mkdocs-autolinks-plugin",
+        "pydantic",
+        "gitpython",
+        "python-semantic-release",
+        "deepdiff",
+    ],
+    entry_points={
+        "mkdocs.plugins": ["mkdocs-newsletter = mkdocs_newsletter:Newsletter"]
+    },
 )

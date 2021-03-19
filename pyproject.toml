@@ -157,6 +157,9 @@ pycodestyle = [
 [tool.pylint.'TYPECHECK']
 generated-members = "sh"
 
+[tool.pylint.'MESSAGES CONTROL']
+extension-pkg-whitelist = "pydantic"
+
 # --------- Build-system -------------
 
 [build-system]
