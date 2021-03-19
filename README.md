@@ -20,7 +20,7 @@ newsletter. You can use
 [mkdocs-rss-plugin](https://github.com/Guts/mkdocs-rss-plugin) instead if this
 workflow doesn't feel good.
 
-![ ](screencast.gif)
+![ ](docs/img/screencast.gif)
 
 Check [the live
 version](https://lyz-code.github.io/blue-book/newsletter/2021_02).
