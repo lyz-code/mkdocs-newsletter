@@ -93,6 +93,8 @@ def add_change_categories(changes: List[Change], config: Config) -> List[Change]
         except KeyError:
             change.category = "Other"
             change.category_order = 999
+            change.file_ = None
+            change.file_subsection = None
             continue
 
         more_than_three_levels_regex = (

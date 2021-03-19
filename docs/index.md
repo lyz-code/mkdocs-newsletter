@@ -18,6 +18,11 @@ newsletter. You can use
 [mkdocs-rss-plugin](https://github.com/Guts/mkdocs-rss-plugin) instead if this
 workflow doesn't feel good.
 
+![ ](screencast.gif)
+
+Check [the live
+version](https://lyz-code.github.io/blue-book/newsletter/2021_02).
+
 # Installing
 
 ```bash
@@ -49,7 +54,7 @@ The entrypoints for the authors are:
 
 * [Writing the commit messages](#commit-message-guidelines).
 * [Manually changing the created newsletter
-    articles](#manual-newsletter-changes): to fix errors..
+    articles](#manual-newsletter-changes): to fix errors.
 
 ## Commit message guidelines
 
@@ -69,14 +74,14 @@ Where:
 
 * `type_of_change` is one of:
 
-  * `feat`: Add new content to the repository, it can be a new file or new content on an
+    * `feat`: Add new content to the repository, it can be a new file or new content on an
     existent file.
-  * `fix`: Correct existing content.
-  * `perf`: Improve existing content.
-  * `refactor`: Reorder the articles content.
-  * `style`: Correct grammar, orthography or broken links.
-  * `ci`: Change the continuous integration pipelines.
-  * `chore`: Update the dependencies required to build the site.
+    * `fix`: Correct existing content.
+    * `perf`: Improve existing content.
+    * `refactor`: Reorder the articles content.
+    * `style`: Correct grammar, orthography or broken links.
+    * `ci`: Change the continuous integration pipelines.
+    * `chore`: Update the dependencies required to build the site.
 
 * `file_changed`: Name of the changed file (without the `.md` extension).
 * `short_description`: A succinct description of the change. It doesn't need to
@@ -149,6 +154,12 @@ perf(prometheus_installation): Add upgrading notes from 10.x -> 11.1.7
 
 To change the contents of the newsletters directly edit the files under
 `docs/newsletters`.
+
+## Exclude the newsletters from the search
+
+If you don't want to see the newsletters in the result of the search, use the
+[mkdocs-exclude-search](https://pypi.org/project/mkdocs-exclude-search/) plugin
+to exclude all articles under `docs/newsletter`.
 
 # Future plans
 

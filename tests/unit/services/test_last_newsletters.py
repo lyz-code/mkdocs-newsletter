@@ -495,7 +495,7 @@ def test_add_categories_groups_changes_with_scope_not_in_nav(config: Config) -> 
 
     result = add_change_categories([change], config)
 
-    assert result[0].file_ == "unexistent_scope.md"
+    assert result[0].file_ == None
     assert result[0].category == "Other"
     assert result[0].category_order == 999
     assert result[0].file_section is None
