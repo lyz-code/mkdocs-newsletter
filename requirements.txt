@@ -40,7 +40,7 @@ gitpython==3.1.14
     #   python-semantic-release
 idna==2.10
     # via requests
-importlib-metadata==3.7.2
+importlib-metadata==3.7.3
     # via
     #   keyring
     #   markdown
@@ -90,6 +90,8 @@ pygments==2.8.1
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
+python-dateutil==2.8.1
+    # via mkdocs-newsletter (setup.py)
 python-gitlab==1.15.0
     # via python-semantic-release
 python-semantic-release==7.15.0
@@ -98,7 +100,7 @@ pyyaml==5.4.1
     # via mkdocs
 readme-renderer==29.0
     # via twine
-regex==2020.11.13
+regex==2021.3.17
     # via nltk
 requests-toolbelt==0.9.1
     # via twine
@@ -114,13 +116,14 @@ secretstorage==3.3.1
     # via keyring
 semver==2.13.0
     # via python-semantic-release
-setuptools-scm==5.0.2
+setuptools-scm==6.0.1
     # via dotty-dict
 six==1.15.0
     # via
     #   bleach
     #   livereload
     #   lunr
+    #   python-dateutil
     #   python-gitlab
     #   readme-renderer
 smmap==3.0.5
@@ -135,13 +138,13 @@ tqdm==4.59.0
     # via
     #   nltk
     #   twine
-twine==3.3.0
+twine==3.4.1
     # via python-semantic-release
 typing-extensions==3.7.4.3
     # via
     #   importlib-metadata
     #   pydantic
-urllib3==1.26.3
+urllib3==1.26.4
     # via requests
 webencodings==0.5.1
     # via bleach
@@ -151,7 +154,5 @@ zipp==3.4.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==54.1.1
-    # via
-    #   setuptools-scm
-    #   twine
+setuptools==54.1.2
+    # via setuptools-scm
