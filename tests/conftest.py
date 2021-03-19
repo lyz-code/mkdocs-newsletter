@@ -51,7 +51,7 @@ def full_repo_(repo: Repo) -> Repo:
     # 22 23 24 25 26 27 28
 
     # Commit that doesn't follow the semantic versioning syntax (will be ignored).
-    commit_date = datetime.datetime(2021, 2, 1, tzinfo=tz.tzlocal())
+    commit_date = datetime.datetime(2021, 2, 1, 12, tzinfo=tz.tzlocal())
     index.add(["mkdocs.yml"])
     index.commit(
         "Initial skeleton",
@@ -63,7 +63,7 @@ def full_repo_(repo: Repo) -> Repo:
 
     # Single change commit that follows the correct syntax without specifying the file
     # it affects
-    commit_date = datetime.datetime(2021, 2, 2, tzinfo=tz.tzlocal())
+    commit_date = datetime.datetime(2021, 2, 2, 12, tzinfo=tz.tzlocal())
     index.add(["docs/emojis.md"])
     index.commit(
         "feat: add funny emojis",
@@ -75,7 +75,7 @@ def full_repo_(repo: Repo) -> Repo:
 
     # Multi change commit that follows the correct syntax specifying the files
     # it affects and a short description of each change.
-    commit_date = datetime.datetime(2021, 2, 5, tzinfo=tz.tzlocal())
+    commit_date = datetime.datetime(2021, 2, 5, 12, tzinfo=tz.tzlocal())
     index.add(["docs/devops/helm/helm.md", "docs/devops/devops.md"])
     index.commit(
         textwrap.dedent(
@@ -107,7 +107,7 @@ def full_repo_(repo: Repo) -> Repo:
     with open(os.path.join(repo.working_dir, "docs/emojis.md"), "a") as file_object:
         # Simulate the change by appending a string at the end of the file.
         file_object.write("correct link")
-    commit_date = datetime.datetime(2021, 2, 6, tzinfo=tz.tzlocal())
+    commit_date = datetime.datetime(2021, 2, 6, 12, tzinfo=tz.tzlocal())
     index.add(["docs/emojis.md"])
     index.commit(
         "style(devops): correct link",
@@ -118,7 +118,7 @@ def full_repo_(repo: Repo) -> Repo:
     )
 
     # Single chore change.
-    commit_date = datetime.datetime(2021, 2, 7, tzinfo=tz.tzlocal())
+    commit_date = datetime.datetime(2021, 2, 7, 12, tzinfo=tz.tzlocal())
     index.add(["requirements.txt"])
     index.commit(
         "chore: update requirements",
@@ -129,7 +129,7 @@ def full_repo_(repo: Repo) -> Repo:
     )
 
     # Another single change commit done the next week.
-    commit_date = datetime.datetime(2021, 2, 8, tzinfo=tz.tzlocal())
+    commit_date = datetime.datetime(2021, 2, 8, 12, tzinfo=tz.tzlocal())
     index.add(["docs/botany/trees.md"])
     index.commit(
         "feat(botany): add ash, birch and beech information",
@@ -140,7 +140,7 @@ def full_repo_(repo: Repo) -> Repo:
     )
 
     # Another multi change commit done the next month.
-    commit_date = datetime.datetime(2021, 3, 2, tzinfo=tz.tzlocal())
+    commit_date = datetime.datetime(2021, 3, 2, 12, tzinfo=tz.tzlocal())
     index.add(["docs/coding/tdd.md", "docs/coding/python/gitpython.md"])
     index.commit(
         textwrap.dedent(

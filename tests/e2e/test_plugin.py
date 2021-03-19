@@ -30,10 +30,10 @@ def test_plugin_builds_newsletters(full_repo: Repo, config: Config) -> None:
         in newsletter
     )
     assert (
-        '<a href="../2021_03_01/" class="md-footer__link '
+        '<a href="../2021_03_02/" class="md-footer__link '
         'md-footer__link--prev" rel="prev">' in newsletter
     )
     assert (
-        '<a href="../2021_w05/" class="md-footer__link '
+        '<a href="../2021_w06/" class="md-footer__link '
         'md-footer__link--next" rel="next">' in newsletter
     )

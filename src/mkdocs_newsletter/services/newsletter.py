@@ -45,7 +45,7 @@ def last_newsletter_changes(newsletter_dir: str) -> LastNewsletter:
             year = int(basename.split("_")[0])
             month = int(basename.split("_")[1])
             last_file_date = datetime.datetime(year, month, 1, tzinfo=tz.tzlocal())
-            if last.month is None or last_file_date > last.month:
+            if last.month is None or last_file_date >= last.month:
                 last.month = datetime.datetime(
                     last_file_date.year + int(last_file_date.month / 12),
                     ((last_file_date.month % 12) + 1),
