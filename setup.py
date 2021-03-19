@@ -48,6 +48,7 @@ setup(
         "Natural Language :: English",
     ],
     install_requires=[
+        "dateutil",
         "mkdocs",
         "mkdocs-section-index",
         "mkdocs-autolinks-plugin",
