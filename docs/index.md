@@ -91,7 +91,7 @@ Where:
 For example:
 
 ```
- feat(adr): introduce the Architecture Decision Records
+feat(adr): introduce the Architecture Decision Records
 
 [ADR](https://github.com/joelparkerhenderson/architecture_decision_record) are
 short text documents that captures an important architectural decision made
@@ -110,7 +110,7 @@ cumbersome and can break your writing flow. That's why the plugin is able to
 parse different changes from the same commit. For example:
 
 ```
- feat(pexpect): introduce the pexpect python library
+feat(pexpect): introduce the pexpect python library
 
 A pure Python module for spawning
 child applications; controlling them; and responding to expected patterns in
