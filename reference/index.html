@@ -1,0 +1,2031 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Lyz" name="author"/>
+<link href="https://lyz-code.github.io/mkdocs-newsletter/reference/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.0.6" name="generator"/>
+<title>Reference - MkDocs Newsletter</title>
+<link href="../assets/stylesheets/main.2c0c5eaf.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.7fa14f5b.min.css" rel="stylesheet"/>
+<meta content="#546d78" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="../css/timeago.css" rel="stylesheet"/>
+<link href="../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../stylesheets/links.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="light-blue" data-md-color-primary="blue-grey" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#mkdocs_newsletter">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MkDocs Newsletter" class="md-header__button md-logo" data-md-component="logo" href=".." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MkDocs Newsletter
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+</div>
+</div>
+</div>
+<div class="md-header__options">
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MkDocs Newsletter" class="md-nav__button md-logo" data-md-component="logo" href=".." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    MkDocs Newsletter
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link md-nav__link--active" href="./" style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Reference
+          </a>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Reference
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter">
+    mkdocs_newsletter
+  </a>
+<nav aria-label="mkdocs_newsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.adapters">
+    adapters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints">
+    entrypoints
+  </a>
+<nav aria-label="entrypoints" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin">
+    mkdocs_plugin
+  </a>
+<nav aria-label="mkdocs_plugin" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter">
+    Newsletter
+  </a>
+<nav aria-label="Newsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.__init__">
+    __init__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.on_config">
+    on_config()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model">
+    model
+  </a>
+<nav aria-label="model" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.Change">
+    Change
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.DigitalGardenChanges">
+    DigitalGardenChanges
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.LastNewsletter">
+    LastNewsletter
+  </a>
+<nav aria-label="LastNewsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.LastNewsletter.min">
+    min()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.NewsletterSection">
+    NewsletterSection
+  </a>
+<nav aria-label="NewsletterSection" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.NewsletterSection.__gt__">
+    __gt__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.NewsletterSection.__lt__">
+    __lt__()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services">
+    services
+  </a>
+<nav aria-label="services" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git">
+    git
+  </a>
+<nav aria-label="git" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git.commit_to_changes">
+    commit_to_changes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git.commits_to_changes">
+    commits_to_changes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git.semantic_changes">
+    semantic_changes()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.nav">
+    nav
+  </a>
+<nav aria-label="nav" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.nav.build_nav">
+    build_nav()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter">
+    newsletter
+  </a>
+<nav aria-label="newsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.add_change_categories">
+    add_change_categories()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.create_newsletter">
+    create_newsletter()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.create_newsletters">
+    create_newsletters()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.digital_garden_changes">
+    digital_garden_changes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.last_newsletter_changes">
+    last_newsletter_changes()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.version">
+    version
+  </a>
+<nav aria-label="version" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.version.version_info">
+    version_info()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="../adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Architecture Decision Records
+        </a>
+</label>
+<nav aria-label="Architecture Decision Records" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="../adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Architecture Decision Records
+          </a>
+</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/001-initial_approach/">
+        001: High level problem analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/002-initial_plugin_design/">
+        002: Initial mkdocs plugin design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/003-select_the_changes_to_record/">
+        003: Select the changes to record
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/004-article_newsletter_structure/">
+        004: Article newsletter structure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/005-create_the_newsletter_articles/">
+        005: Article newsletter creation
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter">
+    mkdocs_newsletter
+  </a>
+<nav aria-label="mkdocs_newsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.adapters">
+    adapters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints">
+    entrypoints
+  </a>
+<nav aria-label="entrypoints" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin">
+    mkdocs_plugin
+  </a>
+<nav aria-label="mkdocs_plugin" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter">
+    Newsletter
+  </a>
+<nav aria-label="Newsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.__init__">
+    __init__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.on_config">
+    on_config()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model">
+    model
+  </a>
+<nav aria-label="model" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.Change">
+    Change
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.DigitalGardenChanges">
+    DigitalGardenChanges
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.LastNewsletter">
+    LastNewsletter
+  </a>
+<nav aria-label="LastNewsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.LastNewsletter.min">
+    min()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.NewsletterSection">
+    NewsletterSection
+  </a>
+<nav aria-label="NewsletterSection" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.NewsletterSection.__gt__">
+    __gt__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.model.NewsletterSection.__lt__">
+    __lt__()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services">
+    services
+  </a>
+<nav aria-label="services" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git">
+    git
+  </a>
+<nav aria-label="git" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git.commit_to_changes">
+    commit_to_changes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git.commits_to_changes">
+    commits_to_changes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.git.semantic_changes">
+    semantic_changes()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.nav">
+    nav
+  </a>
+<nav aria-label="nav" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.nav.build_nav">
+    build_nav()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter">
+    newsletter
+  </a>
+<nav aria-label="newsletter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.add_change_categories">
+    add_change_categories()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.create_newsletter">
+    create_newsletter()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.create_newsletters">
+    create_newsletters()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.digital_garden_changes">
+    digital_garden_changes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.services.newsletter.last_newsletter_changes">
+    last_newsletter_changes()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.version">
+    version
+  </a>
+<nav aria-label="version" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs_newsletter.version.version_info">
+    version_info()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/lyz-code/mkdocs-newsletter/edit/master/docs/reference.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<div class="doc doc-object doc-module">
+<h1 class="doc doc-heading" id="mkdocs_newsletter">
+<code>mkdocs_newsletter</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter" title="Permanent link">¶</a></h1>
+<div class="doc doc-contents first">
+<p>Automatically create newsletters from the changes in a mkdocs repository.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-module">
+<h2 class="doc doc-heading" id="mkdocs_newsletter.adapters">
+<code>adapters</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.adapters" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Module to store the functions shared by the different adapters.</p>
+</div>
+</div>
+<div class="doc doc-object doc-module">
+<h2 class="doc doc-heading" id="mkdocs_newsletter.entrypoints">
+<code>entrypoints</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.entrypoints" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Define the different ways to expose the program functionality.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-module">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.entrypoints.mkdocs_plugin">
+<code>mkdocs_plugin</code>
+<a class="headerlink" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Define the mkdocs plugin.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-class">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter">
+<code>Newsletter</code>
+<a class="headerlink" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Define the MkDocs plugin to create newsletters.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h5 class="doc doc-heading" id="mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.__init__">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.__init__" title="Permanent link">¶</a></h5>
+<div class="doc doc-contents">
+<p>Initialize the basic attributes.</p>
+<p><strong>Attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>repo</code></td>
+<td><code></code></td>
+<td><p>Git repository to analyze.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/entrypoints/mkdocs_plugin.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Initialize the basic attributes.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        repo: Git repository to analyze.</span>
+<span class="sd">    """</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"NEWSLETTER_WORKING_DIR"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_dir</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h5 class="doc doc-heading" id="mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.on_config">
+<code class="highlight language-python"><span class="n">on_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.entrypoints.mkdocs_plugin.Newsletter.on_config" title="Permanent link">¶</a></h5>
+<div class="doc doc-contents">
+<p>Create the new newsletters and load them in the navigation.</p>
+<p>Through the following steps:</p>
+<ul>
+<li>Detect which were the last changes for each of the feeds.</li>
+<li>Parse the changes from the git history that were done before the last
+    changes.</li>
+<li>Create the newsletter articles.</li>
+<li>Update the navigation.</li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config</code></td>
+<td><code>Config</code></td>
+<td><p>MkDocs global configuration object.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Config</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/entrypoints/mkdocs_plugin.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">on_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Config</span><span class="p">:</span>
+    <span class="sd">"""Create the new newsletters and load them in the navigation.</span>
+
+<span class="sd">    Through the following steps:</span>
+
+<span class="sd">    * Detect which were the last changes for each of the feeds.</span>
+<span class="sd">    * Parse the changes from the git history that were done before the last</span>
+<span class="sd">        changes.</span>
+<span class="sd">    * Create the newsletter articles.</span>
+<span class="sd">    * Update the navigation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        config: MkDocs global configuration object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        config: MkDocs config object with the new newsletters in the Newsletter</span>
+<span class="sd">            section.</span>
+<span class="sd">    """</span>
+    <span class="n">newsletter_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">working_dir</span><span class="si">}</span><span class="s2">/docs/newsletter"</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">)</span>
+    <span class="n">last_published_changes</span> <span class="o">=</span> <span class="n">last_newsletter_changes</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">)</span>
+    <span class="n">changes_to_publish</span> <span class="o">=</span> <span class="n">add_change_categories</span><span class="p">(</span>
+        <span class="n">semantic_changes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">repo</span><span class="p">,</span> <span class="n">last_published_changes</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span> <span class="n">config</span>
+    <span class="p">)</span>
+    <span class="n">changes_per_feed</span> <span class="o">=</span> <span class="n">digital_garden_changes</span><span class="p">(</span>
+        <span class="n">changes_to_publish</span><span class="p">,</span>
+        <span class="n">last_published_changes</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">create_newsletters</span><span class="p">(</span><span class="n">changes_per_feed</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">repo</span><span class="p">)</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">build_nav</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">newsletter_dir</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">config</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-module">
+<h2 class="doc doc-heading" id="mkdocs_newsletter.model">
+<code>model</code>
+<a class="headerlink" href="#mkdocs_newsletter.model" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Module to store the common business model of all entities.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-class">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.model.Change">
+<code>Change</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.model.Change" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Represent a single semantic change in a git repository.</p>
+<p><strong>Attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>datetime</code></td>
+<td><p>When the change was done.</p></td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>str</code></td>
+<td><p>short description of the change.</p></td>
+</tr>
+<tr>
+<td><code>type_</code></td>
+<td><code>Optional[str]</code></td>
+<td><p>semantic type of change, such as feature or fix.</p></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>Optional[str]</code></td>
+<td><p>long description of the change.</p></td>
+</tr>
+<tr>
+<td><code>breaking</code></td>
+<td><code>bool</code></td>
+<td><p>if the change breaks previous functionality.</p></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>Optional[str]</code></td>
+<td><p>name of the group of files that share meaning.</p></td>
+</tr>
+<tr>
+<td><code>category_order</code></td>
+<td><code>Optional[int]</code></td>
+<td><p>order of the category against all categories.</p></td>
+</tr>
+<tr>
+<td><code>subcategory</code></td>
+<td><code>Optional[str]</code></td>
+<td><p>name of the subgroup of files that share meaning.</p></td>
+</tr>
+<tr>
+<td><code>category_order</code></td>
+<td><code>Optional[int]</code></td>
+<td><p>order of the subcategory against all subcategories.</p></td>
+</tr>
+<tr>
+<td><code>file_</code></td>
+<td><code>Optional[str]</code></td>
+<td><p>markdown file name.</p></td>
+</tr>
+<tr>
+<td><code>file_section</code></td>
+<td><code>Optional[str]</code></td>
+<td><p>title of the file containing the change.</p></td>
+</tr>
+<tr>
+<td><code>file_section_order</code></td>
+<td><code>Optional[int]</code></td>
+<td><p>order of the file in the subcategory or category that holds
+the file.</p></td>
+</tr>
+<tr>
+<td><code>file_subsection</code></td>
+<td><code>Optional[str]</code></td>
+<td><p>title of the section of the file the change belongs to.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="doc doc-children">
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-class">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.model.DigitalGardenChanges">
+<code>DigitalGardenChanges</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.model.DigitalGardenChanges" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Represents all changes that need to be published for each feed type.</p>
+<div class="doc doc-children">
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-class">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.model.LastNewsletter">
+<code>LastNewsletter</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.model.LastNewsletter" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Represents the last newsletter for each feed type.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.model.LastNewsletter.min">
+<code class="highlight language-python"><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.model.LastNewsletter.min" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Return the smallest date of all the feeds.</p>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/model.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]:</span>
+    <span class="sd">"""Return the smallest date of all the feeds."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-class">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.model.NewsletterSection">
+<code>NewsletterSection</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.model.NewsletterSection" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Represent the section of a newsletter article.</p>
+<p><strong>Attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><code>str</code></td>
+<td><p>Category title</p></td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td><code>int</code></td>
+<td><p>The order in comparison with the other categories</p></td>
+</tr>
+<tr>
+<td><code>changes</code></td>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td><p>Changes to be printed in the section</p></td>
+</tr>
+<tr>
+<td><code>subsections</code></td>
+<td><code>List[mkdocs_newsletter.model.NewsletterSection]</code></td>
+<td><p>A list of subsections.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.model.NewsletterSection.__gt__">
+<code class="highlight language-python"><span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.model.NewsletterSection.__gt__" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Assert if an object is greater than us.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other</code></td>
+<td><code>NewsletterSection</code></td>
+<td><p>NewsletterSection to compare.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TypeError</code></td>
+<td><p>If the id type of the objects is not compatible.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/model.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">"NewsletterSection"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">"""Assert if an object is greater than us.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other: NewsletterSection to compare.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If the id type of the objects is not compatible.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">order</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.model.NewsletterSection.__lt__">
+<code class="highlight language-python"><span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.model.NewsletterSection.__lt__" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Assert if an object is smaller than us.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other</code></td>
+<td><code>NewsletterSection</code></td>
+<td><p>NewsletterSection to compare.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TypeError</code></td>
+<td><p>If the id type of the objects is not compatible.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/model.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">"NewsletterSection"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">"""Assert if an object is smaller than us.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other: NewsletterSection to compare.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If the id type of the objects is not compatible.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">order</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-module">
+<h2 class="doc doc-heading" id="mkdocs_newsletter.services">
+<code>services</code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#mkdocs_newsletter.services" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<div class="doc doc-children">
+<div class="doc doc-object doc-module">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.services.git">
+<code>git</code>
+<a class="headerlink" href="#mkdocs_newsletter.services.git" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gather all the orchestration functionality required by the program to work.</p>
+<p>Classes and functions that connect the different domain model objects with the adapters
+and handlers to achieve the program's purpose.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.git.commit_to_changes">
+<code class="highlight language-python"><span class="n">commit_to_changes</span><span class="p">(</span><span class="n">commit</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.git.commit_to_changes" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Extract the semantic changes from a commit.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>commit</code></td>
+<td><code>Commit</code></td>
+<td><p>Commit to parse.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/git.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">commit_to_changes</span><span class="p">(</span><span class="n">commit</span><span class="p">:</span> <span class="n">Commit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">]:</span>
+    <span class="sd">"""Extract the semantic changes from a commit.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        commit: Commit to parse.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        changes: List of semantic changes.</span>
+<span class="sd">    """</span>
+    <span class="n">changes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">remaining</span> <span class="o">=</span> <span class="n">commit</span><span class="o">.</span><span class="n">message</span>
+
+    <span class="k">while</span> <span class="n">remaining</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">change</span><span class="p">,</span> <span class="n">remaining</span> <span class="o">=</span> <span class="n">_parse_change</span><span class="p">(</span><span class="n">remaining</span><span class="p">,</span> <span class="n">commit</span><span class="o">.</span><span class="n">authored_date</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">changes</span>
+        <span class="n">changes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">changes</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.git.commits_to_changes">
+<code class="highlight language-python"><span class="n">commits_to_changes</span><span class="p">(</span><span class="n">commits</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.git.commits_to_changes" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Extract the semantic changes from a list of commits.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>commits</code></td>
+<td><code>List[git.objects.commit.Commit]</code></td>
+<td><p>List of commits to parse.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/git.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">commits_to_changes</span><span class="p">(</span><span class="n">commits</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Commit</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">]:</span>
+    <span class="sd">"""Extract the semantic changes from a list of commits.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        commits: List of commits to parse.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        changes: List of semantic changes.</span>
+<span class="sd">    """</span>
+    <span class="n">changes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">commits</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">changes</span> <span class="o">+=</span> <span class="n">commit_to_changes</span><span class="p">(</span><span class="n">commit</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">changes</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.git.semantic_changes">
+<code class="highlight language-python"><span class="n">semantic_changes</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">min_date</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.git.semantic_changes" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Extract meaningful changes from a git repository.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>repo</code></td>
+<td><code>Repo</code></td>
+<td><p>Git repository to analyze.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/git.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">semantic_changes</span><span class="p">(</span>
+    <span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">,</span> <span class="n">min_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">]:</span>
+    <span class="sd">"""Extract meaningful changes from a git repository.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        repo: Git repository to analyze.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        changes: List of Change objects.</span>
+<span class="sd">    """</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">min_date</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">min_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">())</span>
+
+    <span class="n">commits</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">commit</span>
+        <span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">repo</span><span class="o">.</span><span class="n">iter_commits</span><span class="p">(</span><span class="n">rev</span><span class="o">=</span><span class="n">repo</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">reference</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">commit</span><span class="o">.</span><span class="n">authored_datetime</span> <span class="o">&lt;</span> <span class="n">now</span> <span class="ow">and</span> <span class="n">commit</span><span class="o">.</span><span class="n">authored_datetime</span> <span class="o">&gt;</span> <span class="n">min_date</span>
+    <span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">commits_to_changes</span><span class="p">(</span><span class="n">commits</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-module">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.services.nav">
+<code>nav</code>
+<a class="headerlink" href="#mkdocs_newsletter.services.nav" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gather services to create the newsletters MkDocs nav section.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.nav.build_nav">
+<code class="highlight language-python"><span class="n">build_nav</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">newsletter_dir</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.nav.build_nav" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Build the navigation section of the newsletters.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config</code></td>
+<td><code>Config</code></td>
+<td><p>MkDocs configuration object.</p></td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>newsletter_dir</code></td>
+<td><code>str</code></td>
+<td><p>Directory containing the newsletter articles.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Config</code></td>
+<td><p>The config object with the newsletters.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/nav.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">build_nav</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">,</span> <span class="n">newsletter_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Config</span><span class="p">:</span>
+    <span class="sd">"""Build the navigation section of the newsletters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        config: MkDocs configuration object.</span>
+<span class="sd">        newsletter_dir: Directory containing the newsletter articles.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The config object with the newsletters.</span>
+<span class="sd">    """</span>
+    <span class="n">nav_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">newsletter_regex</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">r</span><span class="s2">"(?P&lt;year&gt;\d</span><span class="si">{4}</span><span class="s2">)"</span>
+        <span class="sa">r</span><span class="s2">"(_w(?P&lt;week_number&gt;\d</span><span class="si">{2}</span><span class="s2">))?"</span>
+        <span class="sa">r</span><span class="s2">"(_(?P&lt;month&gt;\d</span><span class="si">{2}</span><span class="s2">))?"</span>
+        <span class="sa">r</span><span class="s2">"(_(?P&lt;day&gt;\d</span><span class="si">{2}</span><span class="s2">))?.md"</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">file_</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">):</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"newsletter/</span><span class="si">{</span><span class="n">file_</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">newsletter_regex</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file_</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"0_index.md"</span><span class="p">:</span>
+                <span class="n">nav_data</span><span class="p">[</span><span class="s2">"index"</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_path</span>
+            <span class="k">continue</span>
+
+        <span class="n">year_match</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"year"</span><span class="p">)</span>
+        <span class="n">week_match</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"week_number"</span><span class="p">)</span>
+        <span class="n">month_match</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"month"</span><span class="p">)</span>
+        <span class="n">day_match</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"day"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">year_match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">year_match</span><span class="p">)</span>
+            <span class="n">nav_data</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="k">if</span> <span class="n">month_match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">month_match</span><span class="p">)</span>
+                <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">month</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="k">if</span> <span class="n">day_match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">day_match</span><span class="p">)</span>
+                    <span class="n">week</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">month</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="p">{})</span>
+                    <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">month</span><span class="p">][</span><span class="n">week</span><span class="p">][</span><span class="n">day</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_path</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">month</span><span class="p">][</span><span class="s2">"index"</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_path</span>
+            <span class="k">elif</span> <span class="n">week_match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">week</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">week_match</span><span class="p">)</span>
+                <span class="n">month</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">year</span><span class="si">}{</span><span class="n">week</span><span class="si">}</span><span class="s2">-1"</span><span class="p">,</span> <span class="s2">"%Y%W-%w"</span><span class="p">)</span><span class="o">.</span><span class="n">month</span>
+                <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">month</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">month</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">month</span><span class="p">][</span><span class="n">week</span><span class="p">][</span><span class="s2">"index"</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_path</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">nav_data</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s2">"index"</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_path</span>
+
+    <span class="k">return</span> <span class="n">_nav_data_to_nav</span><span class="p">(</span><span class="n">nav_data</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-module">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.services.newsletter">
+<code>newsletter</code>
+<a class="headerlink" href="#mkdocs_newsletter.services.newsletter" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gather services related to the management of the newsletters.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.newsletter.add_change_categories">
+<code class="highlight language-python"><span class="n">add_change_categories</span><span class="p">(</span><span class="n">changes</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.newsletter.add_change_categories" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Add category and subcategory to each change based on their file nav position.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>changes</code></td>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td><p>The list of Change objects to process.</p></td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>Config</code></td>
+<td><p>MkDocs Config object.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td><p>Updated list of changes.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/newsletter.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_change_categories</span><span class="p">(</span><span class="n">changes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">],</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">]:</span>
+    <span class="sd">"""Add category and subcategory to each change based on their file nav position.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        changes: The list of Change objects to process.</span>
+<span class="sd">        config: MkDocs Config object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Updated list of changes.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">changes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">scope</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scope_parts</span> <span class="o">=</span> <span class="n">change</span><span class="o">.</span><span class="n">scope</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">file_</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scope_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">.md"</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">scope_parts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">change</span><span class="o">.</span><span class="n">file_subsection</span> <span class="o">=</span> <span class="s2">"#"</span> <span class="o">+</span> <span class="n">scope_parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">)</span>
+        <span class="n">nav_search</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">"nav"</span><span class="p">]</span> <span class="o">|</span> <span class="n">grep</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">file_</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">nav_path</span> <span class="o">=</span> <span class="n">nav_search</span><span class="p">[</span><span class="s2">"matched_values"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="s2">"Other"</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">category_order</span> <span class="o">=</span> <span class="mi">999</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">file_</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">file_subsection</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">continue</span>
+
+        <span class="n">more_than_three_levels_regex</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">r</span><span class="s2">"root"</span>
+            <span class="sa">r</span><span class="s2">"\[(?P&lt;category_order&gt;\d+)\]"</span>
+            <span class="sa">r</span><span class="s2">"\['(?P&lt;category&gt;[\w\s]+)'\]"</span>
+            <span class="sa">r</span><span class="s2">"\[(?P&lt;subcategory_order&gt;\d+)\]"</span>
+            <span class="sa">r</span><span class="s2">"\['(?P&lt;subcategory&gt;[\w\s]+)'\]"</span>
+            <span class="sa">r</span><span class="s2">"(\[(?P&lt;other_level_order&gt;\d+)\]"</span>
+            <span class="sa">r</span><span class="s2">"\['(?P&lt;other_level_category&gt;[\w\s]+)'\])+"</span>
+            <span class="sa">r</span><span class="s2">"\[(?P&lt;file_section_order&gt;\d+)\]"</span>
+            <span class="sa">r</span><span class="s2">"\['(?P&lt;file_section&gt;[\w\s]+)'\]"</span>
+            <span class="sa">r</span><span class="s2">"(\[(?P&lt;is_section&gt;\d+)\])?"</span>
+        <span class="p">)</span>
+        <span class="n">less_than_four_levels_regex</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">r</span><span class="s2">"root"</span>
+            <span class="sa">r</span><span class="s2">"\[(?P&lt;category_order&gt;\d+)\]"</span>
+            <span class="sa">r</span><span class="s2">"\['(?P&lt;category&gt;[\w\s]+)'\]"</span>
+            <span class="sa">r</span><span class="s2">"(\[(?P&lt;subcategory_order&gt;\d+)\])?"</span>
+            <span class="sa">r</span><span class="s2">"(\['(?P&lt;subcategory&gt;[\w\s]+)'\])?"</span>
+            <span class="sa">r</span><span class="s2">"(\[(?P&lt;file_section_order&gt;\d+)\])?"</span>
+            <span class="sa">r</span><span class="s2">"(\['(?P&lt;file_section&gt;[\w\s]+)'\])?"</span>
+            <span class="sa">r</span><span class="s2">"(\[(?P&lt;is_section&gt;\d+)\])?"</span>
+        <span class="p">)</span>
+
+        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">more_than_three_levels_regex</span><span class="p">,</span> <span class="n">nav_path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">less_than_four_levels_regex</span><span class="p">,</span> <span class="n">nav_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">category_order</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"category_order"</span><span class="p">))</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">subcategory</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"subcategory"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">subcategory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">change</span><span class="o">.</span><span class="n">subcategory_order</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"subcategory_order"</span><span class="p">))</span>
+            <span class="n">change</span><span class="o">.</span><span class="n">file_section</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"file_section"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">file_section</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">change</span><span class="o">.</span><span class="n">file_section_order</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"file_section_order"</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">changes</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.newsletter.create_newsletter">
+<code class="highlight language-python"><span class="n">create_newsletter</span><span class="p">(</span><span class="n">changes</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.newsletter.create_newsletter" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Build the newsletter article test from the changes.</p>
+<p>Group first by category, then by subcategory and then by file.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>changes</code></td>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td><p>List of changes to publish in the article</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td><p>Article markdown text.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/newsletter.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_newsletter</span><span class="p">(</span><span class="n">changes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""Build the newsletter article test from the changes.</span>
+
+<span class="sd">    Group first by category, then by subcategory and then by file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        changes: List of changes to publish in the article</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Article markdown text.</span>
+<span class="sd">    """</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span>
+        <span class="n">loader</span><span class="o">=</span><span class="n">PackageLoader</span><span class="p">(</span><span class="s2">"mkdocs_newsletter"</span><span class="p">,</span> <span class="s2">"templates"</span><span class="p">),</span>
+        <span class="n">autoescape</span><span class="o">=</span><span class="n">select_autoescape</span><span class="p">([</span><span class="s2">"html"</span><span class="p">,</span> <span class="s2">"xml"</span><span class="p">]),</span>
+    <span class="p">)</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">"newsletter_article.j2"</span><span class="p">)</span>
+
+    <span class="n">sections</span> <span class="o">=</span> <span class="n">_build_newsletter_sections</span><span class="p">(</span><span class="n">changes</span><span class="p">)</span>
+
+    <span class="n">article</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">sections</span><span class="o">=</span><span class="n">sections</span><span class="p">,</span> <span class="n">change_type_text</span><span class="o">=</span><span class="n">CHANGE_TYPE_TEXT</span><span class="p">)</span>
+    <span class="n">article</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\n\n+"</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"\n\n"</span><span class="p">,</span> <span class="n">article</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">article</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.newsletter.create_newsletters">
+<code class="highlight language-python"><span class="n">create_newsletters</span><span class="p">(</span><span class="n">changes</span><span class="p">,</span> <span class="n">repo</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.newsletter.create_newsletters" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Create the newsletter articles from the semantic changes for all feeds.</p>
+<p>Fills the newsletter article jinja2 template and creates the related File objects.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>changes</code></td>
+<td><code>DigitalGardenChanges</code></td>
+<td><p>The list of Change objects to publish per feed.</p></td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>repo</code></td>
+<td><code>Repo</code></td>
+<td><p>Git Repo object with the MkDocs repository.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[str]</code></td>
+<td><p>List of file paths with the newsletter articles.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/newsletter.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_newsletters</span><span class="p">(</span><span class="n">changes</span><span class="p">:</span> <span class="n">DigitalGardenChanges</span><span class="p">,</span> <span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="sd">"""Create the newsletter articles from the semantic changes for all feeds.</span>
+
+<span class="sd">    Fills the newsletter article jinja2 template and creates the related File objects.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        changes: The list of Change objects to publish per feed.</span>
+<span class="sd">        repo: Git Repo object with the MkDocs repository.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of file paths with the newsletter articles.</span>
+<span class="sd">    """</span>
+    <span class="n">base_dir</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">working_dir</span>
+
+    <span class="n">files</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">_create_feed_articles</span><span class="p">(</span><span class="n">changes</span><span class="o">.</span><span class="n">daily</span><span class="p">,</span> <span class="n">_get_daily_newsletter_file</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">_create_feed_articles</span><span class="p">(</span><span class="n">changes</span><span class="o">.</span><span class="n">weekly</span><span class="p">,</span> <span class="n">_get_weekly_newsletter_file</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">_create_feed_articles</span><span class="p">(</span><span class="n">changes</span><span class="o">.</span><span class="n">monthly</span><span class="p">,</span> <span class="n">_get_monthly_newsletter_file</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">_create_feed_articles</span><span class="p">(</span><span class="n">changes</span><span class="o">.</span><span class="n">yearly</span><span class="p">,</span> <span class="n">_get_yearly_newsletter_file</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">files</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.newsletter.digital_garden_changes">
+<code class="highlight language-python"><span class="n">digital_garden_changes</span><span class="p">(</span><span class="n">changes</span><span class="p">,</span> <span class="n">last_published</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.newsletter.digital_garden_changes" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Extract the changes that need to be published for digital_garden repositories.</p>
+<p>For a change to be published it needs to:</p>
+<div class="admonition year">
+<p class="admonition-title">Be made before the first day of the year and after the last published change</p>
+<p>in the year feed.</p>
+</div>
+<div class="admonition month">
+<p class="admonition-title">Be made before the first day of the month and after the last published change</p>
+<p>in the month feed.</p>
+</div>
+<div class="admonition week">
+<p class="admonition-title">Be made before the last Monday and after the last published change in the</p>
+<p>week feed.</p>
+</div>
+<p>day: Be made before today and after the last published change in the day feed.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>changes</code></td>
+<td><code>List[mkdocs_newsletter.model.Change]</code></td>
+<td><p>The list of Change objects to publish.</p></td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>last_published</code></td>
+<td><code>Optional[mkdocs_newsletter.model.LastNewsletter]</code></td>
+<td><p>last published date per feed type</p></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DigitalGardenChanges</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/newsletter.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">digital_garden_changes</span><span class="p">(</span>
+    <span class="n">changes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">],</span> <span class="n">last_published</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LastNewsletter</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DigitalGardenChanges</span><span class="p">:</span>
+    <span class="sd">"""Extract the changes that need to be published for digital_garden repositories.</span>
+
+<span class="sd">    For a change to be published it needs to:</span>
+
+<span class="sd">    year: Be made before the first day of the year and after the last published change</span>
+<span class="sd">        in the year feed.</span>
+<span class="sd">    month: Be made before the first day of the month and after the last published change</span>
+<span class="sd">        in the month feed.</span>
+<span class="sd">    week: Be made before the last Monday and after the last published change in the</span>
+<span class="sd">        week feed.</span>
+<span class="sd">    day: Be made before today and after the last published change in the day feed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        changes: The list of Change objects to publish.</span>
+<span class="sd">        last_published: last published date per feed type</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        changes: Ordered changes to publish per feed.</span>
+<span class="sd">    """</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">())</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">last_first_weekday</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">now</span><span class="o">.</span><span class="n">weekday</span><span class="p">())</span>
+    <span class="n">last_first_monthday</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">last_first_yearday</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">last_published</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">last_published</span> <span class="o">=</span> <span class="n">LastNewsletter</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">DigitalGardenChanges</span><span class="p">(</span>
+        <span class="n">daily</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">change</span>
+            <span class="k">for</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">changes</span>
+            <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">today</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="n">last_published</span><span class="o">.</span><span class="n">day</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">last_published</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">change</span><span class="o">.</span><span class="n">type_</span> <span class="ow">in</span> <span class="n">CHANGE_TYPE_TEXT</span>
+        <span class="p">],</span>
+        <span class="n">weekly</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">change</span>
+            <span class="k">for</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">changes</span>
+            <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">last_first_weekday</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="n">last_published</span><span class="o">.</span><span class="n">week</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">last_published</span><span class="o">.</span><span class="n">week</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">change</span><span class="o">.</span><span class="n">type_</span> <span class="ow">in</span> <span class="n">CHANGE_TYPE_TEXT</span>
+        <span class="p">],</span>
+        <span class="n">monthly</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">change</span>
+            <span class="k">for</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">changes</span>
+            <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">last_first_monthday</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="n">last_published</span><span class="o">.</span><span class="n">month</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">last_published</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">change</span><span class="o">.</span><span class="n">type_</span> <span class="ow">in</span> <span class="n">CHANGE_TYPE_TEXT</span>
+        <span class="p">],</span>
+        <span class="n">yearly</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">change</span>
+            <span class="k">for</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">changes</span>
+            <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">last_first_yearday</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="n">last_published</span><span class="o">.</span><span class="n">year</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">change</span><span class="o">.</span><span class="n">date</span> <span class="o">&gt;</span> <span class="n">last_published</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">change</span><span class="o">.</span><span class="n">type_</span> <span class="ow">in</span> <span class="n">CHANGE_TYPE_TEXT</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h4 class="doc doc-heading" id="mkdocs_newsletter.services.newsletter.last_newsletter_changes">
+<code class="highlight language-python"><span class="n">last_newsletter_changes</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">)</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.services.newsletter.last_newsletter_changes" title="Permanent link">¶</a></h4>
+<div class="doc doc-contents">
+<p>Extract the date of the last change of the last newsletter for each feed.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>newsletter_dir</code></td>
+<td><code>str</code></td>
+<td><p>Directory containing the newsletter articles.</p></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LastNewsletter</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/services/newsletter.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">last_newsletter_changes</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LastNewsletter</span><span class="p">:</span>
+    <span class="sd">"""Extract the date of the last change of the last newsletter for each feed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        newsletter_dir: Directory containing the newsletter articles.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        last_newsletter: LastNewsletter object.</span>
+<span class="sd">    """</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="n">LastNewsletter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">file_</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">):</span>
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d</span><span class="si">{4}</span><span class="s2">.md"</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="c1"># Year feed: Saves the first day of the next year.</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">basename</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">last</span><span class="o">.</span><span class="n">year</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">date</span> <span class="o">&gt;</span> <span class="n">last</span><span class="o">.</span><span class="n">year</span><span class="p">:</span>
+                <span class="n">last</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">date</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d</span><span class="si">{4}</span><span class="s2">_\d</span><span class="si">{2}</span><span class="s2">.md"</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="c1"># Month feed: Saves the first day of the next month.</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">basename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">basename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">last_file_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">last</span><span class="o">.</span><span class="n">month</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">last_file_date</span> <span class="o">&gt;=</span> <span class="n">last</span><span class="o">.</span><span class="n">month</span><span class="p">:</span>
+                <span class="n">last</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span>
+                    <span class="n">last_file_date</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">last_file_date</span><span class="o">.</span><span class="n">month</span> <span class="o">/</span> <span class="mi">12</span><span class="p">),</span>
+                    <span class="p">((</span><span class="n">last_file_date</span><span class="o">.</span><span class="n">month</span> <span class="o">%</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="mi">1</span><span class="p">,</span>
+                    <span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">(),</span>
+                <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d</span><span class="si">{4}</span><span class="s2">_w\d</span><span class="si">{2}</span><span class="s2">.md"</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="c1"># Week feed: Saves the next Monday from the week of the week number.</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">basename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">week</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">basename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"w"</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">first_day</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">())</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">first_day</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span> <span class="o">*</span> <span class="n">week</span> <span class="o">-</span> <span class="n">first_day</span><span class="o">.</span><span class="n">weekday</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">last</span><span class="o">.</span><span class="n">week</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">date</span> <span class="o">&gt;</span> <span class="n">last</span><span class="o">.</span><span class="n">week</span><span class="p">:</span>
+                <span class="n">last</span><span class="o">.</span><span class="n">week</span> <span class="o">=</span> <span class="n">date</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d</span><span class="si">{4}</span><span class="s2">_\d</span><span class="si">{2}</span><span class="s2">_\d</span><span class="si">{2}</span><span class="s2">.md"</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="c1"># Daily feed: Saves the next day.</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="s2">"%Y_%m_</span><span class="si">%d</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                <span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="o">.</span><span class="n">tzlocal</span><span class="p">()</span>
+            <span class="p">)</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">last</span><span class="o">.</span><span class="n">day</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">date</span> <span class="o">&gt;</span> <span class="n">last</span><span class="o">.</span><span class="n">day</span><span class="p">:</span>
+                <span class="n">last</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">date</span>
+
+    <span class="k">return</span> <span class="n">last</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-module">
+<h2 class="doc doc-heading" id="mkdocs_newsletter.version">
+<code>version</code>
+<a class="headerlink" href="#mkdocs_newsletter.version" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Utilities to retrieve the information of the program version.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="mkdocs_newsletter.version.version_info">
+<code class="highlight language-python"><span class="n">version_info</span><span class="p">()</span></code>
+<a class="headerlink" href="#mkdocs_newsletter.version.version_info" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Display the version of the program, python and the platform.</p>
+<details class="quote">
+<summary>Source code in <code>mkdocs_newsletter/version.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">version_info</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""Display the version of the program, python and the platform."""</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"mkdocs_newsletter version"</span><span class="p">:</span> <span class="n">__version__</span><span class="p">,</span>
+        <span class="s2">"python version"</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">),</span>
+        <span class="s2">"platform"</span><span class="p">:</span> <span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">(),</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">k</span> <span class="o">+</span> <span class="s1">':'</span> <span class="si">:</span><span class="s2">&gt;30</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr/>
+<div class="md-source-date">
+<small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-10T16:14:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-10</span>
+</small>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href=".." rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../contributing/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Contributing
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+<script src="../js/timeago.min.js"></script>
+<script src="../js/timeago_mkdocs_material.js"></script>
+</body>
+</html>

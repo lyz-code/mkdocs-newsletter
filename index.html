@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Lyz" name="author"/>
+<link href="https://lyz-code.github.io/mkdocs-newsletter/" rel="canonical"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.0.6" name="generator"/>
+<title>MkDocs Newsletter</title>
+<link href="assets/stylesheets/main.2c0c5eaf.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.7fa14f5b.min.css" rel="stylesheet"/>
+<meta content="#546d78" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="css/timeago.css" rel="stylesheet"/>
+<link href="assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="stylesheets/extra.css" rel="stylesheet"/>
+<link href="stylesheets/links.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="light-blue" data-md-color-primary="blue-grey" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#installing">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MkDocs Newsletter" class="md-header__button md-logo" data-md-component="logo" href="." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MkDocs Newsletter
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+</div>
+</div>
+</div>
+<div class="md-header__options">
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MkDocs Newsletter" class="md-nav__button md-logo" data-md-component="logo" href="." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    MkDocs Newsletter
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+          
+            Overview
+          
+        </label>
+<a class="md-nav__link md-nav__link--active" href=".">
+        Overview
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing">
+    Installing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usage">
+    Usage
+  </a>
+<nav aria-label="Usage" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#commit-message-guidelines">
+    Commit message guidelines
+  </a>
+<nav aria-label="Commit message guidelines" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multiple-changes-in-the-same-commit">
+    Multiple changes in the same commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#link-specific-parts-of-the-articles">
+    Link specific parts of the articles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rich-full-description-content">
+    Rich full description content
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manual-newsletter-changes">
+    Manual newsletter changes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exclude-the-newsletters-from-the-search">
+    Exclude the newsletters from the search
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#future-plans">
+    Future plans
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+    References
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contributing">
+    Contributing
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="reference/">
+        Reference
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Architecture Decision Records
+        </a>
+</label>
+<nav aria-label="Architecture Decision Records" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Architecture Decision Records
+          </a>
+</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="adr/001-initial_approach/">
+        001: High level problem analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="adr/002-initial_plugin_design/">
+        002: Initial mkdocs plugin design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="adr/003-select_the_changes_to_record/">
+        003: Select the changes to record
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="adr/004-article_newsletter_structure/">
+        004: Article newsletter structure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="adr/005-create_the_newsletter_articles/">
+        005: Article newsletter creation
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing">
+    Installing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usage">
+    Usage
+  </a>
+<nav aria-label="Usage" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#commit-message-guidelines">
+    Commit message guidelines
+  </a>
+<nav aria-label="Commit message guidelines" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multiple-changes-in-the-same-commit">
+    Multiple changes in the same commit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#link-specific-parts-of-the-articles">
+    Link specific parts of the articles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rich-full-description-content">
+    Rich full description content
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manual-newsletter-changes">
+    Manual newsletter changes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exclude-the-newsletters-from-the-search">
+    Exclude the newsletters from the search
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#future-plans">
+    Future plans
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+    References
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contributing">
+    Contributing
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/lyz-code/mkdocs-newsletter/edit/master/docs/index.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1>Overview</h1>
+<p><a href="https://github.com/lyz-code/mkdocs-newsletter/actions"><img alt="Actions Status" src="https://github.com/lyz-code/mkdocs-newsletter/workflows/Tests/badge.svg"/></a>
+<a href="https://github.com/lyz-code/mkdocs-newsletter/actions"><img alt="Actions Status" src="https://github.com/lyz-code/mkdocs-newsletter/workflows/Build/badge.svg"/></a>
+<a href="https://coveralls.io/github/lyz-code/mkdocs-newsletter?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/lyz-code/mkdocs-newsletter/badge.svg?branch=master"/></a></p>
+<p>MkDocs plugin to show the changes of documentation repositories in a user
+friendly format, at the same time that it's easy for the authors to maintain.</p>
+<p>It creates daily, weekly, monthly and yearly newsletter articles with the
+changes of each period. Those pages, stored under the <code>Newsletters</code> section, are
+filled with the changes extracted from the git history and the commit messages.
+The changes are grouped by categories, subcategories and then by file using the
+order of the site's navigation structure.</p>
+<p>It assumes that you're using <a href="https://semver.org/">semantic versioning</a> or our
+<a href="#commit-message-guidelines">enhanced version</a> to create your commits. Only
+those changes that are interesting to the reader will be added to the
+newsletter. You can use
+<a href="https://github.com/Guts/mkdocs-rss-plugin">mkdocs-rss-plugin</a> instead if this
+workflow doesn't feel good.</p>
+<p><img alt=" " src="img/screencast.gif"/></p>
+<p>Check <a href="https://lyz-code.github.io/blue-book/newsletter/2021_02">the live
+version</a>.</p>
+<h2 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>pip install mkdocs-newsletter
+</code></pre></div>
+<p>To enable this plugin, you need to declare it in your config file <code>mkdocs.yml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">autolinks</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">section-index</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdocs-newsletter</span>
+</code></pre></div>
+<p>We rely on
+<a href="https://github.com/midnightprioriem/mkdocs-autolinks-plugin">mkdocs-autolink-plugin</a>
+to create the links between the articles and on
+<a href="https://github.com/oprypin/mkdocs-section-index/">mkdocs-section-index</a> to make
+the sections clickable.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
+<p>Every time you build the site, the plugin will inspect the git history and
+create the new newsletter articles under the <code>docs/newsletter</code> directory and
+configure the <code>Newsletter</code> section.</p>
+<p>The entrypoints for the authors are:</p>
+<ul>
+<li><a href="#commit-message-guidelines">Writing the commit messages</a>.</li>
+<li><a href="#manual-newsletter-changes">Manually changing the created newsletter
+    articles</a>: to fix errors.</li>
+</ul>
+<h3 id="commit-message-guidelines">Commit message guidelines<a class="headerlink" href="#commit-message-guidelines" title="Permanent link">¶</a></h3>
+<p>The plugin assumes that you're using the <a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines">Angular semantic versioning
+format</a>
+to create the commits. Adapted to a documentation repository such as the <a href="https://lyz-code.github.io/blue-book/digital_garden/">digital
+gardens</a>, the structure
+would be:</p>
+<div class="highlight"><pre><span></span><code>{type_of_change}({file_changed}): {short_description}
+
+{full_description}
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li>
+<p><code>type_of_change</code> is one of:</p>
+<ul>
+<li><code>feat</code>: Add new content to the repository, it can be a new file or new content on an
+existent file.</li>
+<li><code>fix</code>: Correct existing content.</li>
+<li><code>perf</code>: Improve existing content.</li>
+<li><code>refactor</code>: Reorder the articles content.</li>
+<li><code>style</code>: Correct grammar, orthography or broken links.</li>
+<li><code>ci</code>: Change the continuous integration pipelines.</li>
+<li><code>chore</code>: Update the dependencies required to build the site.</li>
+</ul>
+</li>
+<li>
+<p><code>file_changed</code>: Name of the changed file (without the <code>.md</code> extension).</p>
+</li>
+<li><code>short_description</code>: A succinct description of the change. It doesn't need to
+    start with a capitalize letter nor end with a dot.</li>
+<li><code>full_description</code>: A summary of the added changes.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>feat(adr): introduce the Architecture Decision Records
+
+[ADR](https://github.com/joelparkerhenderson/architecture_decision_record) are
+short text documents that captures an important architectural decision made
+along with its context and consequences.
+</code></pre></div>
+<p>Only changes of type <code>feat</code>, <code>fix</code>, <code>perf</code> or <code>refactor</code> will be added to the
+newsletter. The reader is not interested in the others.</p>
+<h4 id="multiple-changes-in-the-same-commit">Multiple changes in the same commit<a class="headerlink" href="#multiple-changes-in-the-same-commit" title="Permanent link">¶</a></h4>
+<p>When growing <a href="https://lyz-code.github.io/blue-book/digital_garden/">digital
+gardens</a>, it's normal to
+do many small changes on different files. Making a commit for each of them is
+cumbersome and can break your writing flow. That's why the plugin is able to
+parse different changes from the same commit. For example:</p>
+<div class="highlight"><pre><span></span><code>feat(pexpect): introduce the pexpect python library
+
+A pure Python module for spawning
+child applications; controlling them; and responding to expected patterns in
+their output. Pexpect works like Don Libes’ Expect. Pexpect allows your script
+to spawn a child application and control it as if a human were typing commands.
+
+style(prompt_toolkit): correct links and indentations
+
+fix(python_snippets): explain how to show the message in custom exceptions
+
+feat(python_snippets): explain how to import a module or object from within a python program
+</code></pre></div>
+<h4 id="link-specific-parts-of-the-articles">Link specific parts of the articles<a class="headerlink" href="#link-specific-parts-of-the-articles" title="Permanent link">¶</a></h4>
+<p>You can specify the section of the article where the change has been made by
+appending the anchor to the file changed. For example:</p>
+<div class="highlight"><pre><span></span><code>perf(prometheus_installation#upgrading-notes): Add upgrading notes from 10.x -&gt; 11.1.7
+</code></pre></div>
+<p>The format of the anchor can be Markdown's default or you can use the user
+friendly one with caps and spaces <code>perf(prometheus_installation#Upgrading
+notes)</code>.</p>
+<h4 id="rich-full-description-content">Rich full description content<a class="headerlink" href="#rich-full-description-content" title="Permanent link">¶</a></h4>
+<p>The <code>full_description</code> content will be processed by MkDocs, that means that all
+it's features applies, such as autolinking or admonitions.</p>
+<div class="highlight"><pre><span></span><code>perf(prometheus_installation): Add upgrading notes from 10.x -&gt; 11.1.7
+
+!!! warning "Don't upgrade to 12.x if you're still using Helm 2."
+
+    [<span class="nt">Helm</span>](<span class="na">helm.md#version-2</span>) is deprecated and you should migrate to v3.
+</code></pre></div>
+<h3 id="manual-newsletter-changes">Manual newsletter changes<a class="headerlink" href="#manual-newsletter-changes" title="Permanent link">¶</a></h3>
+<p>To change the contents of the newsletters directly edit the files under
+<code>docs/newsletters</code>.</p>
+<h3 id="exclude-the-newsletters-from-the-search">Exclude the newsletters from the search<a class="headerlink" href="#exclude-the-newsletters-from-the-search" title="Permanent link">¶</a></h3>
+<p>If you don't want to see the newsletters in the result of the search, use the
+<a href="https://pypi.org/project/mkdocs-exclude-search/">mkdocs-exclude-search</a> plugin
+to exclude all articles under <code>docs/newsletter</code>.</p>
+<h2 id="future-plans">Future plans<a class="headerlink" href="#future-plans" title="Permanent link">¶</a></h2>
+<p>The plugin will reach the first stable version once we:</p>
+<ul>
+<li>Support more notification channels such as RSS feeds and email newsletters.</li>
+</ul>
+<p>We're also thinking of adding support for software repositories, to give updates
+on the releases.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<p>As most open sourced programs, <code>mkdocs-newsletter</code> is standing on the shoulders of
+giants, namely:</p>
+<dl>
+<dt><a href="https://docs.pytest.org/en/latest">Pytest</a></dt>
+<dd>Testing framework, enhanced by the awesome
+<a href="https://smarie.github.io/python-pytest-cases/">pytest-cases</a> library that made
+the parametrization of the tests a lovely experience.</dd>
+<dt><a href="https://mypy.readthedocs.io/en/stable/">Mypy</a></dt>
+<dd>Python static type checker.</dd>
+<dt><a href="https://github.com/life4/flakehell">Flakehell</a></dt>
+<dd>Python linter with <a href="https://lyz-code.github.io/blue-book/devops/flakehell/#plugins">lots of
+checks</a>.</dd>
+<dt><a href="https://black.readthedocs.io/en/stable/">Black</a></dt>
+<dd>Python formatter to keep a nice style without effort.</dd>
+<dt><a href="https://github.com/lyz-code/autoimport">Autoimport</a></dt>
+<dd>Python formatter to automatically fix wrong import statements.</dd>
+<dt><a href="https://github.com/timothycrosley/isort">isort</a></dt>
+<dd>Python formatter to order the import statements.</dd>
+<dt><a href="https://github.com/jazzband/pip-tools">Pip-tools</a></dt>
+<dd>Command line tool to manage the dependencies.</dd>
+<dt><a href="https://www.mkdocs.org/">Mkdocs</a></dt>
+<dd>To build this documentation site, with the
+<a href="https://squidfunk.github.io/mkdocs-material">Material theme</a>.</dd>
+<dt><a href="https://github.com/pyupio/safety">Safety</a></dt>
+<dd>To check the installed dependencies for known security vulnerabilities.</dd>
+<dt><a href="https://bandit.readthedocs.io/en/latest/">Bandit</a></dt>
+<dd>To finds common security issues in Python code.</dd>
+<dt><a href="https://github.com/lyz-code/yamlfix">Yamlfix</a></dt>
+<dd>YAML fixer.</dd>
+</dl>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">¶</a></h2>
+<p>For guidance on setting up a development environment, and how to make
+a contribution to <em>mkdocs-newsletter</em>, see <a href="https://lyz-code.github.io/mkdocs-newsletter/contributing">Contributing to
+mkdocs-newsletter</a>.</p>
+<hr/>
+<div class="md-source-date">
+<small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-19T10:34:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-19</span>
+</small>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--next" href="reference/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Reference
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+<script src="assets/javascripts/bundle.a1c7c35e.min.js"></script>
+<script src="js/timeago.min.js"></script>
+<script src="js/timeago_mkdocs_material.js"></script>
+</body>
+</html>

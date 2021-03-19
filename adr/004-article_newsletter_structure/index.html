@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Lyz" name="author"/>
+<link href="https://lyz-code.github.io/mkdocs-newsletter/adr/004-article_newsletter_structure/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.0.6" name="generator"/>
+<title>004: Article newsletter structure - MkDocs Newsletter</title>
+<link href="../../assets/stylesheets/main.2c0c5eaf.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.7fa14f5b.min.css" rel="stylesheet"/>
+<meta content="#546d78" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="../../css/timeago.css" rel="stylesheet"/>
+<link href="../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../stylesheets/links.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="light-blue" data-md-color-primary="blue-grey" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#status">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MkDocs Newsletter" class="md-header__button md-logo" data-md-component="logo" href="../.." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MkDocs Newsletter
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              004: Article newsletter structure
+            
+          </span>
+</div>
+</div>
+</div>
+<div class="md-header__options">
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MkDocs Newsletter" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    MkDocs Newsletter
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/">
+        Reference
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="../adr/" style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Architecture Decision Records
+        </a>
+</label>
+<nav aria-label="Architecture Decision Records" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="../adr/" style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Architecture Decision Records
+          </a>
+</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../001-initial_approach/">
+        001: High level problem analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../002-initial_plugin_design/">
+        002: Initial mkdocs plugin design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../003-select_the_changes_to_record/">
+        003: Select the changes to record
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link md-nav__link--active" href="./" style="margin: initial; padding: initial; pointer-events: initial">
+          
+            004: Article newsletter structure
+          </a>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        004: Article newsletter structure
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status">
+    Status
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+    Context
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proposals">
+    Proposals
+  </a>
+<nav aria-label="Proposals" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-translate-from-a-list-of-newsletter-file-names-to-the-nav-structure">
+    How to translate from a list of newsletter file names to the nav structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-the-nav-from-scratch-or-reuse-previous-runs-nav">
+    Build the nav from scratch or reuse previous run's nav
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decision">
+    Decision
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consequences">
+    Consequences
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../005-create_the_newsletter_articles/">
+        005: Article newsletter creation
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status">
+    Status
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+    Context
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proposals">
+    Proposals
+  </a>
+<nav aria-label="Proposals" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-translate-from-a-list-of-newsletter-file-names-to-the-nav-structure">
+    How to translate from a list of newsletter file names to the nav structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-the-nav-from-scratch-or-reuse-previous-runs-nav">
+    Build the nav from scratch or reuse previous run's nav
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decision">
+    Decision
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consequences">
+    Consequences
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/lyz-code/mkdocs-newsletter/edit/master/docs/adr/004-article_newsletter_structure.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1>004: Article newsletter structure</h1>
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">¶</a></h2>
+<!-- What is the status? Draft, Proposed, Accepted, Rejected, Deprecated or Superseded?
+-->
+<p>Accepted</p>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">¶</a></h2>
+<!-- What is the issue that we're seeing that is motivating this decision or change? -->
+<p>We want to define how to organize the articles that contain the updates as
+a section of the MkDocs site in a way that:</p>
+<ul>
+<li>It's easy and pleasant for the user to navigate.</li>
+<li>It's easy for us to parse programmatically.</li>
+</ul>
+<h2 id="proposals">Proposals<a class="headerlink" href="#proposals" title="Permanent link">¶</a></h2>
+<!-- What are the possible solutions to the problem described in the context -->
+<p>The frequency of updates can be weekly or monthly, structured in a mkdocs nav
+similar to:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Newsletters</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/0_index.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">2020</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020.md</span>
+        <span class="p p-Indicator">-</span> <span class="nt">February of 2020</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_01.md</span>
+            <span class="p p-Indicator">-</span> <span class="nt">6th Week of 2020</span><span class="p">:</span>
+                <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_w06.md</span>
+                <span class="p p-Indicator">-</span> <span class="nt">11st February 2020</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_01_01.md</span>
+            <span class="p p-Indicator">-</span> <span class="nt">5th Week of 2020</span><span class="p">:</span>
+                <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_w05.md</span>
+                <span class="p p-Indicator">-</span> <span class="nt">1st February 2020</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_01_01.md</span>
+        <span class="p p-Indicator">-</span> <span class="nt">January of 2020</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_01.md</span>
+            <span class="p p-Indicator">-</span> <span class="nt">1st Week of 2020</span><span class="p">:</span>
+                <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_w01.md</span>
+                <span class="p p-Indicator">-</span> <span class="nt">3rd January 2020</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_01_03.md</span>
+                <span class="p p-Indicator">-</span> <span class="nt">1st January 2020</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020_01_01.md</span>
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><code>0_index.md</code>: Is the landing page of the newsletters. It's prepended with <code>0_</code>
+    so it shows the first item when you do <code>ls</code> in the directory. It will be
+    created from a template the first time you run it, then you can change the
+    file to fit your liking.</li>
+<li><code>2020.md</code>: Is an automatic year summary done at the end of the year.</li>
+<li><code>2020_01.md</code>: Is an automatic month summary for the monthly rss done at the end
+    of the month joining the changes of the month weeks.</li>
+<li><code>2020_w01.md</code>: Is an automatic week summary for the weekly rss done at the
+    end of the week joining the changes of the week days.</li>
+<li><code>2020_01_01.md</code>: Is an automatic day summary for the daily rss.</li>
+</ul>
+<p>My first idea as a MkDocs user, and newborn plugin developer was to add the
+navigation items to the <code>nav</code> key in the <code>config</code> object, as it's more easy to
+add items to a dictionary I'm used to work with than to dive into the code and
+understand how MkDocs creates the navigation. As I understood from the
+docs, the files should be created in the <code>on_files</code> event. the problem with this
+approach is that the only event that allows you to change the <code>config</code> is the
+<code>on_config</code> event, which is before the <code>on_files</code> one, so you can't build the
+navigation this way after you've created the files.</p>
+<p>Next idea was to add the items in the <code>on_nav</code> event, that means creating
+yourself the <a href="#section"><code>Section</code></a>, <a href="#page"><code>Pages</code></a>,
+<a href="#sectionpage"><code>SectionPages</code></a> or <code>Link</code> objects and append them to the
+<code>nav.items</code>.  <a href="https://github.com/mkdocs/mkdocs/issues/2324">The problem</a> is
+that MkDocs initializes and processes the <code>Navigation</code> object in the
+<a href="https://github.com/mkdocs/mkdocs/blob/master/mkdocs/structure/nav.py#L99"><code>get_navigation</code></a>
+function. If you want to add items with a plugin in the <code>on_nav</code> event, you need
+to manually run all the post processing functions such as building the <code>pages</code>
+attribute, by running the <code>_get_by_type</code>, <code>_add_previous_and_next_links</code> or
+<code>_add_parent_links</code> yourself. Additionally, when building the site you'll get
+the <code>The following pages exist in the docs directory, but are not included in
+the "nav" configuration</code> error, because that check is done <em>before</em> all plugins
+change the navigation in the <code>on_nav</code> object.</p>
+<p>The last approach is to build the files and tweak the navigation in the
+<code>on_config</code> event. This approach has the next advantages:</p>
+<ul>
+<li>You need less knowledge of how MkDocs works.</li>
+<li>You don't need to create the <code>File</code> or <code>Files</code> objects.</li>
+<li>You don't need to create the <code>Page</code>, <code>Section</code>, <code>SectionPage</code> objects.</li>
+<li>More robust as you rely on existent MkDocs functionality.</li>
+</ul>
+<p>We need to define:</p>
+<ul>
+<li>How to translate from a list of newsletter file names to the nav structure.</li>
+<li>Whether to build the nav from scratch on each build or reuse the done job.</li>
+</ul>
+<h3 id="how-to-translate-from-a-list-of-newsletter-file-names-to-the-nav-structure">How to translate from a list of newsletter file names to the nav structure<a class="headerlink" href="#how-to-translate-from-a-list-of-newsletter-file-names-to-the-nav-structure" title="Permanent link">¶</a></h3>
+<p>The complex part here is how to get the ordering of the elements in the nav
+right. We could:</p>
+<p>Create a <code>nav_data</code> dictionary with the following structure:
+    <div class="highlight"><pre><span></span><code><span class="p p-Indicator">{</span>
+<span class="nt">    year</span><span class="p">:</span> <span class="p p-Indicator">{</span>
+        <span class="s">'index'</span><span class="p p-Indicator">:</span> <span class="nv">year.md</span><span class="p p-Indicator">,</span>
+<span class="nt">        month_number</span><span class="p">:</span> <span class="p p-Indicator">{</span>
+            <span class="s">'index'</span><span class="p p-Indicator">:</span> <span class="nv">year_month.md</span><span class="p p-Indicator">,</span>
+<span class="nt">            week_number</span><span class="p">:</span> <span class="p p-Indicator">{</span>
+                <span class="s">'index'</span><span class="p p-Indicator">:</span> <span class="nv">year_wweek_number.md</span><span class="p p-Indicator">,</span>
+<span class="nt">                day</span><span class="p">:</span> <span class="nv">year_month_day.md</span>
+            <span class="p p-Indicator">}</span>
+        <span class="p p-Indicator">}</span>
+    <span class="p p-Indicator">}</span>
+<span class="p p-Indicator">}</span>
+</code></pre></div></p>
+<p>And then translate the <code>nav_data</code> to the actual <code>nav</code> contents.</p>
+<h3 id="build-the-nav-from-scratch-or-reuse-previous-runs-nav">Build the nav from scratch or reuse previous run's nav<a class="headerlink" href="#build-the-nav-from-scratch-or-reuse-previous-runs-nav" title="Permanent link">¶</a></h3>
+<p>We can either build the whole newsletter nav each time we build the site or we
+can store the nav somewhere and only append the new articles. The second option
+is more efficient in terms of energy, I don't want to store in the <code>mkdocs.yml</code>
+file as the newsletter nav can grow fast, making the file dirty. Another
+possibility is to save the nav in <code>docs/newsletter/.newsletter_nav.yaml</code>.</p>
+<p>If we store the newsletter nav dictionary, it would be difficult to deduce where
+does the new entries fit in so that the nav is still ordered. It would make more
+sense to store the <code>nav_data</code> object, but building that object is relatively
+cheap, so it may not be worth even storing it.</p>
+<h2 id="decision">Decision<a class="headerlink" href="#decision" title="Permanent link">¶</a></h2>
+<!-- What is the change that we're proposing and/or doing? -->
+<p>Follow the only proposal regarding the structure, and we'll build the nav
+from scratch each time we build the site.</p>
+<h2 id="consequences">Consequences<a class="headerlink" href="#consequences" title="Permanent link">¶</a></h2>
+<!-- What becomes easier or more difficult to do because of this change? -->
+<hr/>
+<div class="md-source-date">
+<small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-18T13:48:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-18</span>
+</small>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../003-select_the_changes_to_record/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              003: Select the changes to record
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../005-create_the_newsletter_articles/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              005: Article newsletter creation
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+<script src="../../js/timeago.min.js"></script>
+<script src="../../js/timeago_mkdocs_material.js"></script>
+</body>
+</html>
