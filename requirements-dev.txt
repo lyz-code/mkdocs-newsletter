@@ -229,7 +229,7 @@ invoke==1.5.0
     # via
     #   -r requirements.txt
     #   python-semantic-release
-isort==5.7.0
+isort==5.8.0
     # via
     #   -r requirements-dev.in
     #   pylint
