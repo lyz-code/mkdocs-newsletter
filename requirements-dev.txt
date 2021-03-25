@@ -199,7 +199,7 @@ gitpython==3.1.14
     #   bandit
     #   mkdocs-git-revision-date-localized-plugin
     #   python-semantic-release
-identify==2.2.0
+identify==2.2.1
     # via pre-commit
 idna==2.10
     # via
@@ -404,7 +404,7 @@ pydantic==1.8.1
     # via -r requirements.txt
 pydocstyle==6.0.0
     # via flake8-docstrings
-pyflakes==2.3.0
+pyflakes==2.3.1
     # via
     #   autoflake
     #   flake8
