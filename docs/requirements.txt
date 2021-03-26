@@ -26,7 +26,7 @@ editorconfig==0.12.3
     # via jsbeautifier
 future==0.18.2
     # via lunr
-gitdb==4.0.5
+gitdb==4.0.6
     # via gitpython
 gitpython==3.1.14
     # via mkdocs-git-revision-date-localized-plugin
