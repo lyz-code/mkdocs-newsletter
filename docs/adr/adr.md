@@ -9,11 +9,13 @@ graph TD
     003[003: Selected changes to record]
     004[004: Article newsletter structure]
     005[005: Article newsletter creation]
+    006[006: RSS feed creation]
 
     001 -- Extended --> 002
     002 -- Extended --> 003
     002 -- Extended --> 004
     002 -- Extended --> 005
+    002 -- Extended --> 006
     003 -- Extended --> 004
     004 -- Extended --> 005
 
@@ -22,12 +24,14 @@ graph TD
     click 003 "https://lyz-code.github.io/mkdocs-newsletter/adr/003-select_the_changes_to_record" _blank
     click 004 "https://lyz-code.github.io/mkdocs-newsletter/adr/004-article_newsletter_structure" _blank
     click 005 "https://lyz-code.github.io/mkdocs-newsletter/adr/005-create_the_newsletter_articles" _blank
+    click 006 "https://lyz-code.github.io/mkdocs-newsletter/adr/006-rss_feed_creation" _blank
 
     001:::accepted
     002:::accepted
     003:::accepted
     004:::accepted
     005:::accepted
+    006:::draft
 
     classDef draft fill:#CDBFEA;
     classDef proposed fill:#B1CCE8;

@@ -21,7 +21,7 @@ similar to:
 
 ```yaml
 Newsletters:
-    - newsletter/0_index.md
+    - newsletter/0_newsletter_index.md
     - 2020:
         - newsletter/2020.md
         - February of 2020:
@@ -42,10 +42,10 @@ Newsletters:
 
 Where:
 
-* `0_index.md`: Is the landing page of the newsletters. It's prepended with `0_`
-    so it shows the first item when you do `ls` in the directory. It will be
-    created from a template the first time you run it, then you can change the
-    file to fit your liking.
+* `0_newsletter_index.md`: Is the landing page of the newsletters. It's
+    prepended with `0_` so it shows the first item when you do `ls` in the
+    directory. It will be created from a template the first time you run it,
+    then you can change the file to fit your liking.
 * `2020.md`: Is an automatic year summary done at the end of the year.
 * `2020_01.md`: Is an automatic month summary for the monthly rss done at the end
     of the month joining the changes of the month weeks.

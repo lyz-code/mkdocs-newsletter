@@ -1,10 +1,16 @@
 """Test the models."""
 
 from datetime import datetime
+from pathlib import Path
 
 from dateutil import tz
 
-from mkdocs_newsletter.model import LastNewsletter, NewsletterSection
+from mkdocs_newsletter.model import (
+    FeedEntry,
+    LastNewsletter,
+    Newsletter,
+    NewsletterSection,
+)
 
 
 def test_last_newsletter_min_returns_the_smallest_date() -> None:
@@ -14,8 +20,8 @@ def test_last_newsletter_min_returns_the_smallest_date() -> None:
     Then: The smallest one is returned
     """
     last_changes = LastNewsletter(
-        year=datetime(2020, 1, 1, tzinfo=tz.tzlocal()),
-        week=datetime(2020, 2, 2, tzinfo=tz.tzlocal()),
+        yearly=datetime(2020, 1, 1, tzinfo=tz.tzlocal()),
+        weekly=datetime(2020, 2, 2, tzinfo=tz.tzlocal()),
     )
 
     result = last_changes.min()
@@ -50,3 +56,45 @@ def test_newslettersection_can_order_objects() -> None:  # noqa: AAA01
     # SIM204, C0113: We don't want to simplify to important > unimportant because we
     # want to test the __lt__ method
     assert not important < unimportant  # noqa: C0113, SIM204
+
+
+# AAA01: No act block
+def test_newsletter_can_order_objects() -> None:  # noqa: AAA01
+    """
+    Given: Two Newsletter objects with different orders.
+    When: They are compared
+    Then: The return the expected behavior
+    """
+    greater = Newsletter(file_=Path("2021_01.md"))
+    smaller = Newsletter(file_=Path("2020_01.md"))
+
+    assert greater > smaller
+    # SIM204, C0113: We don't want to simplify to important > unimportant because we
+    # want to test the __lt__ method
+    assert not greater < smaller  # noqa: C0113, SIM204
+
+
+# AAA01: No act block
+def test_feedentry_can_order_objects() -> None:  # noqa: AAA01
+    """
+    Given: Two FeedEntry objects with different orders.
+    When: They are compared
+    Then: The return the expected behavior
+    """
+    greater = FeedEntry(
+        published=datetime(2021, 1, 1),
+        title="Greater",
+        link="https://test.com",
+        description="",
+    )
+    smaller = FeedEntry(
+        published=datetime(2020, 1, 1),
+        title="Smaller",
+        link="https://test.com",
+        description="",
+    )
+
+    assert greater > smaller
+    # SIM204, C0113: We don't want to simplify to important > unimportant because we
+    # want to test the __lt__ method
+    assert not greater < smaller  # noqa: C0113, SIM204

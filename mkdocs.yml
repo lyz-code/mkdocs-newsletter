@@ -4,6 +4,8 @@ site_author: Lyz
 site_url: https://lyz-code.github.io/mkdocs-newsletter
 nav:
   - Overview: index.md
+  - Installation: installing.md
+  - Usage: usage.md
   - Reference: reference.md
   - Contributing:
       - contributing.md
@@ -14,6 +16,7 @@ nav:
       - '003: Select the changes to record': adr/003-select_the_changes_to_record.md
       - '004: Article newsletter structure': adr/004-article_newsletter_structure.md
       - '005: Article newsletter creation': adr/005-create_the_newsletter_articles.md
+      - '006: RSS feed creation': adr/006-rss_feed_creation.md
 
 plugins:
   - search

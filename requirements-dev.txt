@@ -38,6 +38,7 @@ bandit==1.7.0
 beautifulsoup4==4.9.3
     # via
     #   -r docs/requirements.txt
+    #   -r requirements.txt
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
 black==20.8b1
@@ -90,7 +91,7 @@ colorama==0.4.4
     #   twine
 coverage==5.5
     # via pytest-cov
-cryptography==3.4.6
+cryptography==3.4.7
     # via
     #   -r requirements.txt
     #   secretstorage
@@ -118,6 +119,8 @@ entrypoints==0.3
     # via flakehell
 eradicate==2.0.0
     # via flake8-eradicate
+feedparser==6.0.2
+    # via -r requirements-dev.in
 filelock==3.0.12
     # via virtualenv
 flake8-aaa==0.11.1
@@ -187,7 +190,7 @@ future==0.18.2
     #   -r docs/requirements.txt
     #   -r requirements.txt
     #   lunr
-gitdb==4.0.5
+gitdb==4.0.7
     # via
     #   -r docs/requirements.txt
     #   -r requirements.txt
@@ -206,7 +209,7 @@ idna==2.10
     #   -r docs/requirements.txt
     #   -r requirements.txt
     #   requests
-importlib-metadata==3.7.3
+importlib-metadata==3.8.0
     # via
     #   -r docs/requirements.txt
     #   -r requirements.txt
@@ -253,7 +256,7 @@ jsbeautifier==1.13.5
     # via
     #   -r docs/requirements.txt
     #   mkdocs-mermaid2-plugin
-keyring==23.0.0
+keyring==23.0.1
     # via
     #   -r requirements.txt
     #   twine
@@ -445,11 +448,11 @@ python-dateutil==2.8.1
     # via
     #   -r requirements.txt
     #   freezegun
-python-gitlab==1.15.0
+python-gitlab==2.6.0
     # via
     #   -r requirements.txt
     #   python-semantic-release
-python-semantic-release==7.15.0
+python-semantic-release==7.15.1
     # via -r requirements.txt
 pytkdocs==0.11.0
     # via
@@ -482,6 +485,7 @@ regex==2021.3.17
 requests-toolbelt==0.9.1
     # via
     #   -r requirements.txt
+    #   python-gitlab
     #   twine
 requests==2.25.1
     # via
@@ -500,7 +504,7 @@ rfc3986==1.4.0
     #   twine
 ruamel.yaml.clib==0.2.2
     # via ruamel.yaml
-ruamel.yaml==0.16.13
+ruamel.yaml==0.17.0
     # via yamlfix
 safety==1.10.3
     # via -r requirements-dev.in
@@ -516,6 +520,8 @@ setuptools-scm==6.0.1
     # via
     #   -r requirements.txt
     #   dotty-dict
+sgmllib3k==1.0.0
+    # via feedparser
 sh==1.14.1
     # via autoimport
 six==1.15.0
@@ -531,10 +537,9 @@ six==1.15.0
     #   livereload
     #   lunr
     #   python-dateutil
-    #   python-gitlab
     #   readme-renderer
     #   virtualenv
-smmap==3.0.5
+smmap==4.0.0
     # via
     #   -r docs/requirements.txt
     #   -r requirements.txt
@@ -544,6 +549,7 @@ snowballstemmer==2.1.0
 soupsieve==2.2.1
     # via
     #   -r docs/requirements.txt
+    #   -r requirements.txt
     #   beautifulsoup4
 stevedore==3.3.0
     # via bandit

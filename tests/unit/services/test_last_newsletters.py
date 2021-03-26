@@ -51,7 +51,7 @@ def test_last_newsletters_extracts_last_year(repo: Repo) -> None:
 
     result = last_newsletter_changes(newsletter_dir)
 
-    assert result.year == datetime(2021, 1, 1, tzinfo=tz.tzlocal())
+    assert result.yearly == datetime(2021, 1, 1, tzinfo=tz.tzlocal())
 
 
 def test_last_newsletters_extracts_last_month(repo: Repo) -> None:
@@ -66,7 +66,7 @@ def test_last_newsletters_extracts_last_month(repo: Repo) -> None:
 
     result = last_newsletter_changes(newsletter_dir)
 
-    assert result.month == datetime(2020, 3, 1, tzinfo=tz.tzlocal())
+    assert result.monthly == datetime(2020, 3, 1, tzinfo=tz.tzlocal())
 
 
 def test_last_newsletters_extracts_last_month_of_the_year(repo: Repo) -> None:
@@ -81,7 +81,7 @@ def test_last_newsletters_extracts_last_month_of_the_year(repo: Repo) -> None:
 
     result = last_newsletter_changes(newsletter_dir)
 
-    assert result.month == datetime(2021, 1, 1, tzinfo=tz.tzlocal())
+    assert result.monthly == datetime(2021, 1, 1, tzinfo=tz.tzlocal())
 
 
 def test_last_newsletters_extracts_last_week(repo: Repo) -> None:
@@ -96,7 +96,7 @@ def test_last_newsletters_extracts_last_week(repo: Repo) -> None:
 
     result = last_newsletter_changes(newsletter_dir)
 
-    assert result.week == datetime(2020, 1, 13, tzinfo=tz.tzlocal())
+    assert result.weekly == datetime(2020, 1, 13, tzinfo=tz.tzlocal())
 
 
 def test_last_newsletters_extracts_last_day(repo: Repo) -> None:
@@ -111,7 +111,7 @@ def test_last_newsletters_extracts_last_day(repo: Repo) -> None:
 
     result = last_newsletter_changes(newsletter_dir)
 
-    assert result.day == datetime(2020, 1, 3, tzinfo=tz.tzlocal())
+    assert result.daily == datetime(2020, 1, 3, tzinfo=tz.tzlocal())
 
 
 @pytest.mark.freeze_time("2021-02-10T12:00:00")
@@ -162,7 +162,7 @@ def test_digital_garden_changes_dont_select_last_week_published_changes() -> Non
         scope="botany",
     )
     changes = [last_week_change, this_week_change]
-    last_published = LastNewsletter(week=datetime(2021, 2, 8, tzinfo=tz.tzlocal()))
+    last_published = LastNewsletter(weekly=datetime(2021, 2, 8, tzinfo=tz.tzlocal()))
 
     result = digital_garden_changes(changes, last_published)
 
@@ -217,7 +217,7 @@ def test_digital_garden_changes_dont_select_last_month_published_changes() -> No
         scope="botany",
     )
     changes = [last_month_change, this_month_change]
-    last_published = LastNewsletter(month=datetime(2021, 2, 1, tzinfo=tz.tzlocal()))
+    last_published = LastNewsletter(monthly=datetime(2021, 2, 1, tzinfo=tz.tzlocal()))
 
     result = digital_garden_changes(changes, last_published)
 
@@ -272,7 +272,7 @@ def test_digital_garden_changes_dont_select_last_year_published_changes() -> Non
         scope="botany",
     )
     changes = [last_year_change, this_year_change]
-    last_published = LastNewsletter(year=datetime(2021, 1, 1, tzinfo=tz.tzlocal()))
+    last_published = LastNewsletter(yearly=datetime(2021, 1, 1, tzinfo=tz.tzlocal()))
 
     result = digital_garden_changes(changes, last_published)
 

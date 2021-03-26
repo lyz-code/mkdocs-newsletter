@@ -6,6 +6,7 @@ pytest
 pytest-cov
 pytest-pythonpath
 pytest-freezegun
+feedparser
 
 # Linting
 yamllint

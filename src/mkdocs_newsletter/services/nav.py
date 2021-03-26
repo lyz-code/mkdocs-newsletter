@@ -34,7 +34,7 @@ def build_nav(config: Config, newsletter_dir: str) -> Config:
         file_path = f"newsletter/{file_.name}"
         match = re.match(newsletter_regex, file_.name)
         if match is None:
-            if file_.name == "0_index.md":
+            if file_.name == "0_newsletter_index.md":
                 nav_data["index"] = file_path
             continue
 
@@ -74,7 +74,7 @@ def _nav_data_to_nav(nav_data: NavData, config: Config) -> Config:
     Args:
         nav_data: dictionary with the newsletter file data with the following structure.
             {
-                'index': 0_index.md
+                'index': 0_newsletter_index.md
                 year: {
                     'index': year.md
                     month_number: {
