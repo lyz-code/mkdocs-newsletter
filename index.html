@@ -26,7 +26,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#installing">
+<a class="md-skip" href="#alternatives">
           Skip to content
         </a>
 </div>
@@ -140,48 +140,14 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#installing">
-    Installing
+<a class="md-nav__link" href="#alternatives">
+    Alternatives
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#usage">
-    Usage
-  </a>
-<nav aria-label="Usage" class="md-nav">
+<nav aria-label="Alternatives" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#commit-message-guidelines">
-    Commit message guidelines
-  </a>
-<nav aria-label="Commit message guidelines" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#multiple-changes-in-the-same-commit">
-    Multiple changes in the same commit
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#link-specific-parts-of-the-articles">
-    Link specific parts of the articles
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rich-full-description-content">
-    Rich full description content
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#manual-newsletter-changes">
-    Manual newsletter changes
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#exclude-the-newsletters-from-the-search">
-    Exclude the newsletters from the search
+<a class="md-nav__link" href="#mkdocs-rss-plugin">
+    mkdocs-rss-plugin
   </a>
 </li>
 </ul>
@@ -206,6 +172,16 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="installing.md">
+        Installation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="usage/">
+        Usage
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="reference/">
         Reference
       </a>
@@ -216,8 +192,8 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 <a class="md-nav__link" href="adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
         
@@ -225,7 +201,7 @@
         </a>
 </label>
 <nav aria-label="Architecture Decision Records" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 <a class="md-nav__link" href="adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
           
@@ -258,6 +234,11 @@
         005: Article newsletter creation
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="adr/006-rss_feed_creation/">
+        006: RSS feed creation
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -276,48 +257,14 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#installing">
-    Installing
+<a class="md-nav__link" href="#alternatives">
+    Alternatives
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#usage">
-    Usage
-  </a>
-<nav aria-label="Usage" class="md-nav">
+<nav aria-label="Alternatives" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#commit-message-guidelines">
-    Commit message guidelines
-  </a>
-<nav aria-label="Commit message guidelines" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#multiple-changes-in-the-same-commit">
-    Multiple changes in the same commit
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#link-specific-parts-of-the-articles">
-    Link specific parts of the articles
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rich-full-description-content">
-    Rich full description content
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#manual-newsletter-changes">
-    Manual newsletter changes
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#exclude-the-newsletters-from-the-search">
-    Exclude the newsletters from the search
+<a class="md-nav__link" href="#mkdocs-rss-plugin">
+    mkdocs-rss-plugin
   </a>
 </li>
 </ul>
@@ -358,7 +305,9 @@ friendly format, at the same time that it's easy for the authors to maintain.</p
 changes of each period. Those pages, stored under the <code>Newsletters</code> section, are
 filled with the changes extracted from the git history and the commit messages.
 The changes are grouped by categories, subcategories and then by file using the
-order of the site's navigation structure.</p>
+order of the site's navigation structure. <a href="rss_feeds/">RSS feeds</a> are also
+created for each newsletter type, so it's easy for people to keep updated with
+the evolution of the site.</p>
 <p>It assumes that you're using <a href="https://semver.org/">semantic versioning</a> or our
 <a href="#commit-message-guidelines">enhanced version</a> to create your commits. Only
 those changes that are interesting to the reader will be added to the
@@ -366,116 +315,28 @@ newsletter. You can use
 <a href="https://github.com/Guts/mkdocs-rss-plugin">mkdocs-rss-plugin</a> instead if this
 workflow doesn't feel good.</p>
 <p><img alt=" " src="img/screencast.gif"/></p>
-<p>Check <a href="https://lyz-code.github.io/blue-book/newsletter/2021_02">the live
+<p>Check <a href="https://lyz-code.github.io/blue-book/newsletter">a live
 version</a>.</p>
-<h2 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>pip install mkdocs-newsletter
-</code></pre></div>
-<p>To enable this plugin, you need to declare it in your config file <code>mkdocs.yml</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">autolinks</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">section-index</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdocs-newsletter</span>
-</code></pre></div>
-<p>We rely on
-<a href="https://github.com/midnightprioriem/mkdocs-autolinks-plugin">mkdocs-autolink-plugin</a>
-to create the links between the articles and on
-<a href="https://github.com/oprypin/mkdocs-section-index/">mkdocs-section-index</a> to make
-the sections clickable.</p>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
-<p>Every time you build the site, the plugin will inspect the git history and
-create the new newsletter articles under the <code>docs/newsletter</code> directory and
-configure the <code>Newsletter</code> section.</p>
-<p>The entrypoints for the authors are:</p>
+<h2 id="alternatives">Alternatives<a class="headerlink" href="#alternatives" title="Permanent link">¶</a></h2>
+<h3 id="mkdocs-rss-plugin"><a href="https://github.com/Guts/mkdocs-rss-plugin">mkdocs-rss-plugin</a><a class="headerlink" href="#mkdocs-rss-plugin" title="Permanent link">¶</a></h3>
+<p>This cool plugin creates two RSS feeds for the changes of the git history, one
+for new files and another for updated ones.</p>
+<p>Creating an RSS entry for each change, it's not the ideal solution for digital
+gardens because:</p>
 <ul>
-<li><a href="#commit-message-guidelines">Writing the commit messages</a>.</li>
-<li><a href="#manual-newsletter-changes">Manually changing the created newsletter
-    articles</a>: to fix errors.</li>
+<li><em>The user will receive too many updates</em>: In a normal day, you can edit up to
+    10 files, which will create 10 RSS entries. That can annoy the user so it
+    will stop reading your feed.</li>
+<li><em>The user will receive updates on irrelevant content</em>: As an entry is created
+    for each change, styling and grammar corrections are sent as a new full
+    entry.</li>
+<li><em>The user receives no context of the change</em>: The RSS entry links to the
+    article but not it's sections, so if you frequently edit a big file, the,
+    the user will see no point on the entry and skip it and in the end drop the
+    RSS.</li>
 </ul>
-<h3 id="commit-message-guidelines">Commit message guidelines<a class="headerlink" href="#commit-message-guidelines" title="Permanent link">¶</a></h3>
-<p>The plugin assumes that you're using the <a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines">Angular semantic versioning
-format</a>
-to create the commits. Adapted to a documentation repository such as the <a href="https://lyz-code.github.io/blue-book/digital_garden/">digital
-gardens</a>, the structure
-would be:</p>
-<div class="highlight"><pre><span></span><code>{type_of_change}({file_changed}): {short_description}
-
-{full_description}
-</code></pre></div>
-<p>Where:</p>
-<ul>
-<li>
-<p><code>type_of_change</code> is one of:</p>
-<ul>
-<li><code>feat</code>: Add new content to the repository, it can be a new file or new content on an
-existent file.</li>
-<li><code>fix</code>: Correct existing content.</li>
-<li><code>perf</code>: Improve existing content.</li>
-<li><code>refactor</code>: Reorder the articles content.</li>
-<li><code>style</code>: Correct grammar, orthography or broken links.</li>
-<li><code>ci</code>: Change the continuous integration pipelines.</li>
-<li><code>chore</code>: Update the dependencies required to build the site.</li>
-</ul>
-</li>
-<li>
-<p><code>file_changed</code>: Name of the changed file (without the <code>.md</code> extension).</p>
-</li>
-<li><code>short_description</code>: A succinct description of the change. It doesn't need to
-    start with a capitalize letter nor end with a dot.</li>
-<li><code>full_description</code>: A summary of the added changes.</li>
-</ul>
-<p>For example:</p>
-<div class="highlight"><pre><span></span><code>feat(adr): introduce the Architecture Decision Records
-
-[ADR](https://github.com/joelparkerhenderson/architecture_decision_record) are
-short text documents that captures an important architectural decision made
-along with its context and consequences.
-</code></pre></div>
-<p>Only changes of type <code>feat</code>, <code>fix</code>, <code>perf</code> or <code>refactor</code> will be added to the
-newsletter. The reader is not interested in the others.</p>
-<h4 id="multiple-changes-in-the-same-commit">Multiple changes in the same commit<a class="headerlink" href="#multiple-changes-in-the-same-commit" title="Permanent link">¶</a></h4>
-<p>When growing <a href="https://lyz-code.github.io/blue-book/digital_garden/">digital
-gardens</a>, it's normal to
-do many small changes on different files. Making a commit for each of them is
-cumbersome and can break your writing flow. That's why the plugin is able to
-parse different changes from the same commit. For example:</p>
-<div class="highlight"><pre><span></span><code>feat(pexpect): introduce the pexpect python library
-
-A pure Python module for spawning
-child applications; controlling them; and responding to expected patterns in
-their output. Pexpect works like Don Libes’ Expect. Pexpect allows your script
-to spawn a child application and control it as if a human were typing commands.
-
-style(prompt_toolkit): correct links and indentations
-
-fix(python_snippets): explain how to show the message in custom exceptions
-
-feat(python_snippets): explain how to import a module or object from within a python program
-</code></pre></div>
-<h4 id="link-specific-parts-of-the-articles">Link specific parts of the articles<a class="headerlink" href="#link-specific-parts-of-the-articles" title="Permanent link">¶</a></h4>
-<p>You can specify the section of the article where the change has been made by
-appending the anchor to the file changed. For example:</p>
-<div class="highlight"><pre><span></span><code>perf(prometheus_installation#upgrading-notes): Add upgrading notes from 10.x -&gt; 11.1.7
-</code></pre></div>
-<p>The format of the anchor can be Markdown's default or you can use the user
-friendly one with caps and spaces <code>perf(prometheus_installation#Upgrading
-notes)</code>.</p>
-<h4 id="rich-full-description-content">Rich full description content<a class="headerlink" href="#rich-full-description-content" title="Permanent link">¶</a></h4>
-<p>The <code>full_description</code> content will be processed by MkDocs, that means that all
-it's features applies, such as autolinking or admonitions.</p>
-<div class="highlight"><pre><span></span><code>perf(prometheus_installation): Add upgrading notes from 10.x -&gt; 11.1.7
-
-!!! warning "Don't upgrade to 12.x if you're still using Helm 2."
-
-    [<span class="nt">Helm</span>](<span class="na">helm.md#version-2</span>) is deprecated and you should migrate to v3.
-</code></pre></div>
-<h3 id="manual-newsletter-changes">Manual newsletter changes<a class="headerlink" href="#manual-newsletter-changes" title="Permanent link">¶</a></h3>
-<p>To change the contents of the newsletters directly edit the files under
-<code>docs/newsletters</code>.</p>
-<h3 id="exclude-the-newsletters-from-the-search">Exclude the newsletters from the search<a class="headerlink" href="#exclude-the-newsletters-from-the-search" title="Permanent link">¶</a></h3>
-<p>If you don't want to see the newsletters in the result of the search, use the
-<a href="https://pypi.org/project/mkdocs-exclude-search/">mkdocs-exclude-search</a> plugin
-to exclude all articles under <code>docs/newsletter</code>.</p>
+<p>If you feel that your use case wont suffer from those conditions, I suggest you
+use their plugin instead, as it's much easier to use.</p>
 <h2 id="future-plans">Future plans<a class="headerlink" href="#future-plans" title="Permanent link">¶</a></h2>
 <p>The plugin will reach the first stable version once we:</p>
 <ul>
@@ -522,7 +383,7 @@ mkdocs-newsletter</a>.</p>
 <div class="md-source-date">
 <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-19T10:34:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-19</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-26T12:47:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-26</span>
 </small>
 </div>
 </article>
@@ -531,13 +392,13 @@ mkdocs-newsletter</a>.</p>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--next" href="reference/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="usage/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Reference
+              Usage
             </div>
 </div>
 <div class="md-footer__button md-icon">

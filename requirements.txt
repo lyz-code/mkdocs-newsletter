@@ -26,13 +26,13 @@ editorconfig==0.12.3
     # via jsbeautifier
 future==0.18.2
     # via lunr
-gitdb==4.0.5
+gitdb==4.0.7
     # via gitpython
 gitpython==3.1.14
     # via mkdocs-git-revision-date-localized-plugin
 idna==2.10
     # via requests
-importlib-metadata==3.7.3
+importlib-metadata==3.8.0
     # via markdown
 jinja2==2.11.3
     # via
@@ -121,7 +121,7 @@ six==1.15.0
     #   jsbeautifier
     #   livereload
     #   lunr
-smmap==3.0.5
+smmap==4.0.0
     # via gitdb
 soupsieve==2.2.1
     # via beautifulsoup4
@@ -143,5 +143,5 @@ zipp==3.4.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==54.1.2
+setuptools==54.2.0
     # via mkdocs-mermaid2-plugin

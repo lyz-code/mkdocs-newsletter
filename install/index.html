@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Lyz" name="author"/>
+<link href="https://lyz-code.github.io/mkdocs-newsletter/install/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.0.6" name="generator"/>
+<title>Install - MkDocs Newsletter</title>
+<link href="../assets/stylesheets/main.2c0c5eaf.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.7fa14f5b.min.css" rel="stylesheet"/>
+<meta content="#546d78" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="../css/timeago.css" rel="stylesheet"/>
+<link href="../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../stylesheets/links.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="light-blue" data-md-color-primary="blue-grey" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#mkdocs-configuration-enhancements">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MkDocs Newsletter" class="md-header__button md-logo" data-md-component="logo" href=".." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MkDocs Newsletter
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Install
+            
+          </span>
+</div>
+</div>
+</div>
+<div class="md-header__options">
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MkDocs Newsletter" class="md-nav__button md-logo" data-md-component="logo" href=".." title="MkDocs Newsletter">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    MkDocs Newsletter
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lyz-code/mkdocs-newsletter/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lyz-code/mkdocs-newsletter
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installing.md">
+        Installation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../usage/">
+        Usage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reference/">
+        Reference
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="../adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Architecture Decision Records
+        </a>
+</label>
+<nav aria-label="Architecture Decision Records" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<a class="md-nav__link" href="../adr/adr/" style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Architecture Decision Records
+          </a>
+</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/001-initial_approach/">
+        001: High level problem analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/002-initial_plugin_design/">
+        002: Initial mkdocs plugin design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/003-select_the_changes_to_record/">
+        003: Select the changes to record
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/004-article_newsletter_structure/">
+        004: Article newsletter structure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/005-create_the_newsletter_articles/">
+        005: Article newsletter creation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adr/006-rss_feed_creation/">
+        006: RSS feed creation
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs-configuration-enhancements">
+    MkDocs configuration enhancements
+  </a>
+<nav aria-label="MkDocs configuration enhancements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-newsletter-information-in-the-footer-and-the-header">
+    Add newsletter information in the footer and the header
+  </a>
+<nav aria-label="Add newsletter information in the footer and the header" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#footer">
+    Footer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#header">
+    Header
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update-the-site-automatically">
+    Update the site automatically
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exclude-the-newsletters-from-the-search">
+    Exclude the newsletters from the search
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/lyz-code/mkdocs-newsletter/edit/master/docs/install.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1>Install</h1>
+<p>We've envisioned the plugin with zero configuration as it's quicker to develop
+and easier to use. If you'd like to change the default behaviour, please open
+<a href="https://github.com/lyz-code/mkdocs-newsletter/issues/new">an issue</a>.</p>
+<div class="highlight"><pre><span></span><code>pip install mkdocs-newsletter
+</code></pre></div>
+<p>To enable this plugin, you need to declare it in your config file <code>mkdocs.yml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">git-revision-date-localized</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">timeago</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">autolinks</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">section-index</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdocs-newsletter</span>
+</code></pre></div>
+<p>We rely on:</p>
+<ul>
+<li><a href="https://github.com/timvink/mkdocs-git-revision-date-localized-plugin">git-revision-date-localized</a>
+    to extract the latest modification date for each newsletter for the RSS.</li>
+<li><a href="https://github.com/midnightprioriem/mkdocs-autolinks-plugin">mkdocs-autolink-plugin</a>
+    to create the links between the articles.</li>
+<li><a href="https://github.com/oprypin/mkdocs-section-index/">mkdocs-section-index</a> to
+    make the sections clickable.</li>
+</ul>
+<p>To create the RSS feeds well we also need the next configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://substitute.with.your.site.url</span>
+<span class="nt">markdown_extensions</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">toc</span><span class="p">:</span>
+      <span class="nt">baselevel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div>
+<h2 id="mkdocs-configuration-enhancements">MkDocs configuration enhancements<a class="headerlink" href="#mkdocs-configuration-enhancements" title="Permanent link">¶</a></h2>
+<p>There are some MkDocs tweaks that can make the plugin work better:</p>
+<ul>
+<li><a href="#add-newsletter-information-in-the-footer-and-the-header">Add newsletter information in the footer and the
+    header</a>.</li>
+<li><a href="#update-the-site-automatically">Update the site automatically</a>.</li>
+<li><a href="#exclude-the-newsletters-from-the-search">Exclude the newsletters from the
+    search</a>.</li>
+</ul>
+<h3 id="add-newsletter-information-in-the-footer-and-the-header">Add newsletter information in the footer and the header<a class="headerlink" href="#add-newsletter-information-in-the-footer-and-the-header" title="Permanent link">¶</a></h3>
+<p>It can be useful to let know the readers that you publish the changes through
+newsletters and RSS feeds, we can do that in the footer and the header.</p>
+<p>This section is assuming you're using the Material theme. It may work on others
+but I haven't tested it</p>
+<h4 id="footer">Footer<a class="headerlink" href="#footer" title="Permanent link">¶</a></h4>
+<p>You can add the RSS icon to the <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links">Social
+links</a>
+footer section that points to the newsletter landing page with the next snippet:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span>
+  <span class="nt">social</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">icon</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fontawesome/solid/rss</span>
+      <span class="nt">link</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://your.site/newsletter/0_newsletter_index/</span>
+</code></pre></div>
+<p>You can select from
+<a href="https://github.com/squidfunk/mkdocs-material/blob/master/material/.icons/fontawesome/solid/rss-square.svg"><code>fontawesome/solid/rss-square</code></a>
+or
+<a href="https://github.com/squidfunk/mkdocs-material/blob/master/material/.icons/fontawesome/solid/rss.svg"><code>fontawesome/solid/rss</code></a>.</p>
+<h4 id="header">Header<a class="headerlink" href="#header" title="Permanent link">¶</a></h4>
+<p>You can add an <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#announcement-bar">announce
+banner</a>
+at the top telling your readers to subscribe to the RSS feed by <a href="https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme">extending the
+theme</a>
+and <a href="https://squidfunk.github.io/mkdocs-material/customization/#overriding-blocks">overriding the <code>announce</code>
+block</a>
+with something like:</p>
+<p>Assuming that the override theme directory is <code>theme</code>:</p>
+<div class="admonition note">
+<p class="admonition-title">File: <code>mkdocs.yml</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">material</span>
+  <span class="nt">custom_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">theme</span>
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">File: <code>theme/main.html</code></p>
+<div class="highlight"><pre><span></span><code>{% extends "base.html" %}
+
+{% block announce %}
+&lt;a href="https://your.site/newsletter/0_newsletter_index"&gt;
+    For updates subscribe to the  &lt;strong&gt;RSS feed&lt;/strong&gt;
+    &lt;span class="rss icon"&gt;
+    {% include ".icons/fontawesome/solid/rss.svg" %}
+    &lt;/span&gt;
+&lt;/a&gt;
+{% endblock %}
+</code></pre></div>
+</div>
+<h3 id="update-the-site-automatically">Update the site automatically<a class="headerlink" href="#update-the-site-automatically" title="Permanent link">¶</a></h3>
+<p>It's useful to create a continuous integration pipeline to keep the site updated
+and automatically build the newsletters.</p>
+<p>If you're using github, you can use the next configuration:</p>
+<details class="note"><summary>File: <code>.github/workflows/update.yml</code></summary><div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github pages</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="nt">push</span><span class="p">:</span>
+    <span class="nt">branches</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="nt">schedule</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">cron</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">11 08 * * *</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="nt">deploy</span><span class="p">:</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+    <span class="nt">steps</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+        <span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+        <span class="nt">persist-credentials</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+        <span class="c1"># Number of commits to fetch. 0 indicates all history.</span>
+        <span class="c1"># Default: 1</span>
+        <span class="nt">fetch-depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
+        <span class="l l-Scalar l-Scalar-Plain"># https://github.com/actions/virtual-environments/issues/1202</span>
+        <span class="l l-Scalar l-Scalar-Plain"># uses</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
+        <span class="l l-Scalar l-Scalar-Plain"># with</span><span class="p p-Indicator">:</span>
+        <span class="c1">#   python-version: '3.7'</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span>
+        <span class="nt">with</span><span class="p">:</span>
+        <span class="nt">python-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.7.7</span>
+        <span class="nt">architecture</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">x64</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Cache dependencies</span>
+        <span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/cache@v1</span>
+        <span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">~/.cache/pip</span>
+        <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}</span>
+        <span class="nt">restore-keys</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+            <span class="no">${{ runner.os }}-pip-</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+        <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pip install pip-tools</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Update requirements</span>
+        <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">make update</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Make the site</span>
+        <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">make build-docs</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Commit files</span>
+        <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|</span>
+        <span class="no">git config --local user.email "action@github.com"</span>
+        <span class="no">git config --local user.name "GitHub Action"</span>
+        <span class="no">git add requirements.txt</span>
+        <span class="no">git add docs/newsletter</span>
+        <span class="no">git diff-index --quiet HEAD \</span>
+            <span class="no">|| git commit -m "chore: update dependency and publish newsletters"</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Push changes</span>
+        <span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ad-m/github-push-action@master</span>
+        <span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+        <span class="nt">github_token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+        <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deploy</span>
+        <span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3</span>
+        <span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+        <span class="nt">deploy_key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+        <span class="nt">publish_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./site</span>
+</code></pre></div>
+</details>
+<p>It assumes that you have the next <code>Makefile</code>:</p>
+<details class="note"><summary>File: <code>Makefile</code></summary><div class="highlight"><pre><span></span><code><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">update</span>
+<span class="nf">update</span><span class="o">:</span>
+    @echo <span class="s2">"-------------------------"</span>
+    @echo <span class="s2">"- Updating dependencies -"</span>
+    @echo <span class="s2">"-------------------------"</span>
+
+    rm requirements.txt
+    touch requirements.txt
+    pip-compile -Ur requirements.in --allow-unsafe
+
+    pip install -r requirements.txt
+
+    @echo <span class="s2">""</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">build</span>-<span class="n">docs</span>
+<span class="nf">build-docs</span><span class="o">:</span>
+    @echo <span class="s2">"--------------------------"</span>
+    @echo <span class="s2">"- Building documentation -"</span>
+    @echo <span class="s2">"--------------------------"</span>
+
+    mkdocs build
+
+    @echo <span class="s2">""</span>
+</code></pre></div>
+</details>
+<h3 id="exclude-the-newsletters-from-the-search">Exclude the newsletters from the search<a class="headerlink" href="#exclude-the-newsletters-from-the-search" title="Permanent link">¶</a></h3>
+<p>If you don't want to see the newsletters in the result of the search, use the
+<a href="https://pypi.org/project/mkdocs-exclude-search/">mkdocs-exclude-search</a> plugin
+to exclude all articles under <code>docs/newsletter</code>.</p>
+<hr/>
+<div class="md-source-date">
+<small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-26T12:47:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-26</span>
+</small>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+<script src="../js/timeago.min.js"></script>
+<script src="../js/timeago_mkdocs_material.js"></script>
+</body>
+</html>

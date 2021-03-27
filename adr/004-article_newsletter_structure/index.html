@@ -128,6 +128,16 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../installing.md">
+        Installation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../usage/">
+        Usage
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../reference/">
         Reference
       </a>
@@ -138,8 +148,8 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 <a class="md-nav__link" href="../adr/" style="margin: initial; padding: initial; pointer-events: initial">
         
@@ -147,7 +157,7 @@
         </a>
 </label>
 <nav aria-label="Architecture Decision Records" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 <a class="md-nav__link" href="../adr/" style="margin: initial; padding: initial; pointer-events: initial">
           
@@ -235,6 +245,11 @@
         005: Article newsletter creation
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../006-rss_feed_creation/">
+        006: RSS feed creation
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -319,7 +334,7 @@ a section of the MkDocs site in a way that:</p>
 <p>The frequency of updates can be weekly or monthly, structured in a mkdocs nav
 similar to:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">Newsletters</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/0_index.md</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/0_newsletter_index.md</span>
     <span class="p p-Indicator">-</span> <span class="nt">2020</span><span class="p">:</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/2020.md</span>
         <span class="p p-Indicator">-</span> <span class="nt">February of 2020</span><span class="p">:</span>
@@ -339,10 +354,10 @@ similar to:</p>
 </code></pre></div>
 <p>Where:</p>
 <ul>
-<li><code>0_index.md</code>: Is the landing page of the newsletters. It's prepended with <code>0_</code>
-    so it shows the first item when you do <code>ls</code> in the directory. It will be
-    created from a template the first time you run it, then you can change the
-    file to fit your liking.</li>
+<li><code>0_newsletter_index.md</code>: Is the landing page of the newsletters. It's
+    prepended with <code>0_</code> so it shows the first item when you do <code>ls</code> in the
+    directory. It will be created from a template the first time you run it,
+    then you can change the file to fit your liking.</li>
 <li><code>2020.md</code>: Is an automatic year summary done at the end of the year.</li>
 <li><code>2020_01.md</code>: Is an automatic month summary for the monthly rss done at the end
     of the month joining the changes of the month weeks.</li>
@@ -422,7 +437,7 @@ from scratch each time we build the site.</p>
 <div class="md-source-date">
 <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-18T13:48:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-18</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-26T12:47:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-26</span>
 </small>
 </div>
 </article>
