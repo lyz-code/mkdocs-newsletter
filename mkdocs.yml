@@ -4,7 +4,7 @@ site_author: Lyz
 site_url: https://lyz-code.github.io/mkdocs-newsletter
 nav:
   - Overview: index.md
-  - Installation: installing.md
+  - Installation: install.md
   - Usage: usage.md
   - Reference: reference.md
   - Contributing:
