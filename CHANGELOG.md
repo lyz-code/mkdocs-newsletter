@@ -1,3 +1,13 @@
+## 0.2.0 (2021-03-28)
+
+### Feat
+
+- add rss support
+
+### feat
+
+- create newsletter landing page
+
 ## 0.1.0 (2021-03-19)
 
 ### Fix
