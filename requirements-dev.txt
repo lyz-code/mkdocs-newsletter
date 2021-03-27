@@ -38,6 +38,7 @@ bandit==1.7.0
 beautifulsoup4==4.9.3
     # via
     #   -r docs/requirements.txt
+    #   -r requirements.txt
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
 black==20.8b1
@@ -118,6 +119,8 @@ entrypoints==0.3
     # via flakehell
 eradicate==2.0.0
     # via flake8-eradicate
+feedparser==6.0.2
+    # via -r requirements-dev.in
 filelock==3.0.12
     # via virtualenv
 flake8-aaa==0.11.1
@@ -517,6 +520,8 @@ setuptools-scm==6.0.1
     # via
     #   -r requirements.txt
     #   dotty-dict
+sgmllib3k==1.0.0
+    # via feedparser
 sh==1.14.1
     # via autoimport
 six==1.15.0
@@ -544,6 +549,7 @@ snowballstemmer==2.1.0
 soupsieve==2.2.1
     # via
     #   -r docs/requirements.txt
+    #   -r requirements.txt
     #   beautifulsoup4
 stevedore==3.3.0
     # via bandit

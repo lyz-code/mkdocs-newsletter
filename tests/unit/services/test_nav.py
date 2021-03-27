@@ -37,11 +37,11 @@ def test_build_nav_accepts_newsletter_landing_page(
     When: build_nav is called
     Then: The nav Newsletter section uses the page.
     """
-    newsletter_dir = create_files(["0_index.md"], repo)
+    newsletter_dir = create_files(["0_newsletter_index.md"], repo)
 
     result = build_nav(config, newsletter_dir)
 
-    assert result["nav"][-1] == {"Newsletters": ["newsletter/0_index.md"]}
+    assert result["nav"][-1] == {"Newsletters": ["newsletter/0_newsletter_index.md"]}
 
 
 def test_build_nav_creates_year_entry(

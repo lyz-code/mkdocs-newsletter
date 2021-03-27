@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    {# Mandatory elements #}
+    {% if feed.title is not none %}<title>{{ feed.title|e }}</title>{% endif %}
+    {% if feed.description is not none %}<description>{{ feed.description|e }}</description>{% endif %}
+    {% if feed.link is not none %}<link>{{ feed.link }}</link>{% endif %}
+    {% if feed.rss_link is not none %}<atom:link href="{{ feed.rss_link }}" rel="self" type="application/rss+xml"/>{% endif %}
+
+    {# Optional elements #}
+    {% if feed.author is not none %}<managingEditor>{{ feed.author }}</managingEditor>{% endif %}
+
+    {# Timestamps and frequency #}
+    <pubDate>{{ feed.published }}</pubDate>
+    <ttl>{{ feed.ttl }}</ttl>
+
+    {# Credits #}
+    <generator>{{ feed.generator }}</generator>
+
+    {# Feed illustration #}
+    {% if feed.logo is defined %}
+    <image><url>{{ feed.logo }}</url><title>{{ feed.title }}</title>
+      {% if feed.link is not none %}<link>{{ feed.link }}</link>{% endif %}
+    </image>
+    {% endif %}
+
+    {# Entries #}
+    {% for item in feed.entries %}
+    <item><title>{{ item.title|e }}</title>
+      {% if item.author is not none %}<author>{{ item.author }}</author>{% endif %}
+      <description>{{ item.description|e }}</description>
+      {% if item.link is not none %}<link>{{ item.link }}</link>{% endif %}
+      <pubDate>{{ item.published }}</pubDate>
+      {% if item.link is not none %}<source url="{{ feed.rss_link }}">{{ feed.title }}</source>{% endif %}
+      {% if item.link is not none %}<guid isPermaLink="true">{{ item.link }}</guid>{% endif %}
+      {% if item.image is not none %}
+      <enclosure url="{{ item.image[0] }}" type="{{ item.image[1] }}" length="{{ item.image[2] }}"/>
+      {% endif %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

@@ -10,10 +10,12 @@ from ..services.git import semantic_changes
 from ..services.nav import build_nav
 from ..services.newsletter import (
     add_change_categories,
+    create_newsletter_landing_page,
     create_newsletters,
     digital_garden_changes,
     last_newsletter_changes,
 )
+from ..services.rss import create_rss
 
 
 # Class cannot subclass 'BasePlugin' (has type 'Any'). It's how the docs say you need
@@ -61,7 +63,12 @@ class Newsletter(BasePlugin):  # type: ignore
         )
 
         create_newsletters(changes_per_feed, self.repo)
+        create_newsletter_landing_page(config, self.repo)
 
         config = build_nav(config, newsletter_dir)
 
         return config
+
+    def on_post_build(self, config: Config) -> None:
+        """Create the RSS feeds."""
+        create_rss(config, self.working_dir)

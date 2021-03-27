@@ -5,15 +5,24 @@ import itertools
 import operator
 import os
 import re
+from contextlib import suppress
 from typing import Callable, List, Optional, Tuple
 
 from dateutil import tz
+from dateutil.relativedelta import relativedelta
 from deepdiff import grep
 from git import Repo
 from jinja2 import Environment, PackageLoader, select_autoescape
 from mkdocs.config.base import Config
 
-from ..model import Change, DigitalGardenChanges, LastNewsletter, NewsletterSection
+from ..model import (
+    Change,
+    DigitalGardenChanges,
+    LastNewsletter,
+    Newsletter,
+    Newsletters,
+    NewsletterSection,
+)
 
 CHANGE_TYPE_TEXT = {
     "feature": "New",
@@ -32,43 +41,59 @@ def last_newsletter_changes(newsletter_dir: str) -> LastNewsletter:
     Returns:
         last_newsletter: LastNewsletter object.
     """
+    newsletters = _list_newsletters(newsletter_dir)
     last = LastNewsletter()
-    for file_ in os.scandir(newsletter_dir):
-        basename = os.path.splitext(file_.name)[0]
-        if re.match(r"\d{4}.md", file_.name):
-            # Year feed: Saves the first day of the next year.
-            date = datetime.datetime(int(basename) + 1, 1, 1, tzinfo=tz.tzlocal())
-            if last.year is None or date > last.year:
-                last.year = date
-        elif re.match(r"\d{4}_\d{2}.md", file_.name):
-            # Month feed: Saves the first day of the next month.
-            year = int(basename.split("_")[0])
-            month = int(basename.split("_")[1])
-            last_file_date = datetime.datetime(year, month, 1, tzinfo=tz.tzlocal())
-            if last.month is None or last_file_date >= last.month:
-                last.month = datetime.datetime(
-                    last_file_date.year + int(last_file_date.month / 12),
-                    ((last_file_date.month % 12) + 1),
-                    1,
-                    tzinfo=tz.tzlocal(),
-                )
-        elif re.match(r"\d{4}_w\d{2}.md", file_.name):
-            # Week feed: Saves the next Monday from the week of the week number.
-            year = int(basename.split("_")[0])
-            week = int(basename.split("w")[1])
-            first_day = datetime.datetime(year, 1, 1, tzinfo=tz.tzlocal())
-            date = first_day + datetime.timedelta(days=7 * week - first_day.weekday())
-            if last.week is None or date > last.week:
-                last.week = date
-        elif re.match(r"\d{4}_\d{2}_\d{2}.md", file_.name):
-            # Daily feed: Saves the next day.
-            date = datetime.datetime.strptime(basename, "%Y_%m_%d").replace(
-                tzinfo=tz.tzlocal()
-            ) + datetime.timedelta(days=1)
-            if last.day is None or date > last.day:
-                last.day = date
+
+    # Year feed: Saves the first day of the next year.
+    with suppress(IndexError):
+        last.yearly = newsletters.yearly[0].date + relativedelta(years=1)
+
+    # Month feed: Saves the first day of the next month.
+    with suppress(IndexError):
+        last_file_date = newsletters.monthly[0].date
+        last.monthly = datetime.datetime(
+            last_file_date.year + int(last_file_date.month / 12),
+            ((last_file_date.month % 12) + 1),
+            1,
+            tzinfo=tz.tzlocal(),
+        )
+
+    # Week feed: Saves the next Monday from the week of the week number.
+    with suppress(IndexError):
+        last.weekly = newsletters.weekly[0].date + datetime.timedelta(days=7)
+
+    # Daily feed: Saves the next day.
+    with suppress(IndexError):
+        last.daily = newsletters.daily[0].date + datetime.timedelta(days=1)
 
     return last
+
+
+def _list_newsletters(newsletter_dir: str) -> Newsletters:
+    """Create a list of existing newsletters.
+
+    Args:
+        newsletter_dir: Directory containing the newsletter articles.
+
+    Returns:
+        Newsletters object.
+    """
+    newsletters = Newsletters()
+    for file_ in os.scandir(newsletter_dir):
+        if file_.name == "0_newsletter_index.md":
+            continue
+        newsletter = Newsletter(file_=file_)
+        if newsletter.type_ == "yearly":
+            newsletters.yearly.append(newsletter)
+        elif newsletter.type_ == "monthly":
+            newsletters.monthly.append(newsletter)
+        elif newsletter.type_ == "weekly":
+            newsletters.weekly.append(newsletter)
+        elif newsletter.type_ == "daily":
+            newsletters.daily.append(newsletter)
+    newsletters.sort()
+
+    return newsletters
 
 
 def add_change_categories(changes: List[Change], config: Config) -> List[Change]:
@@ -172,31 +197,48 @@ def digital_garden_changes(
             change
             for change in changes
             if change.date < today
-            and (last_published.day is None or change.date > last_published.day)
+            and (last_published.daily is None or change.date > last_published.daily)
             and change.type_ in CHANGE_TYPE_TEXT
         ],
         weekly=[
             change
             for change in changes
             if change.date < last_first_weekday
-            and (last_published.week is None or change.date > last_published.week)
+            and (last_published.weekly is None or change.date > last_published.weekly)
             and change.type_ in CHANGE_TYPE_TEXT
         ],
         monthly=[
             change
             for change in changes
             if change.date < last_first_monthday
-            and (last_published.month is None or change.date > last_published.month)
+            and (last_published.monthly is None or change.date > last_published.monthly)
             and change.type_ in CHANGE_TYPE_TEXT
         ],
         yearly=[
             change
             for change in changes
             if change.date < last_first_yearday
-            and (last_published.year is None or change.date > last_published.year)
+            and (last_published.yearly is None or change.date > last_published.yearly)
             and change.type_ in CHANGE_TYPE_TEXT
         ],
     )
+
+
+def create_newsletter_landing_page(config: Config, repo: Repo) -> None:
+    """Create the newsletter landing page."""
+    base_dir = repo.working_dir
+    landing_path = os.path.join(base_dir, "docs/newsletter/0_newsletter_index.md")
+
+    if not os.path.isfile(landing_path):
+        env = Environment(
+            loader=PackageLoader("mkdocs_newsletter", "templates"),
+            autoescape=select_autoescape(["html", "xml"]),
+        )
+        template = env.get_template("newsletter_landing_page.j2")
+        landing_page = template.render(site_url=config["site_url"])
+
+        with open(landing_path, "+w") as landing_file:
+            landing_file.write(landing_page)
 
 
 def create_newsletters(changes: DigitalGardenChanges, repo: Repo) -> List[str]:

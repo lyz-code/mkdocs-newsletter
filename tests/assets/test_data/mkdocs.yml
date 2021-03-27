@@ -21,9 +21,15 @@ nav:
   - Emojis: emojis.md
 
 plugins:
+  - git-revision-date-localized:
+      type: timeago
   - autolinks
   - section-index
   - mkdocs-newsletter
 
+markdown_extensions:
+  - toc:
+      baselevel: 2
 theme:
   name: material
+  logo: img/logo.bmp

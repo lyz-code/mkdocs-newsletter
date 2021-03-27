@@ -4,6 +4,8 @@
 #
 #    pip-compile --allow-unsafe
 #
+beautifulsoup4==4.9.3
+    # via mkdocs-newsletter (setup.py)
 bleach==3.3.0
     # via readme-renderer
 certifi==2020.12.5
@@ -129,6 +131,8 @@ six==1.15.0
     #   readme-renderer
 smmap==4.0.0
     # via gitdb
+soupsieve==2.2.1
+    # via beautifulsoup4
 tomlkit==0.7.0
     # via python-semantic-release
 tornado==6.1

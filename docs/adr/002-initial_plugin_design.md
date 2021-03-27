@@ -25,7 +25,7 @@ The plugin will consist on the following phases:
 * [Build the MkDocs nav with the newsletter articles](004-article_newsletter_structure.md)
 * Decide which changes need to be notified
 * Send the notifications:
-    * Update the RSS
+    * [Update the RSS](006-rss_feed_creation.md)
     * Send the email.
 
 # Decision

@@ -48,6 +48,7 @@ setup(
         "Natural Language :: English",
     ],
     install_requires=[
+        "beautifulsoup4",
         "python-dateutil",
         "mkdocs",
         "mkdocs-section-index",
