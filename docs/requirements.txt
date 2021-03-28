@@ -32,7 +32,7 @@ gitpython==3.1.14
     # via mkdocs-git-revision-date-localized-plugin
 idna==2.10
     # via requests
-importlib-metadata==3.8.0
+importlib-metadata==3.9.0
     # via markdown
 jinja2==2.11.3
     # via

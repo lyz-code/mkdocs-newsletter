@@ -42,7 +42,7 @@ gitpython==3.1.14
     #   python-semantic-release
 idna==2.10
     # via requests
-importlib-metadata==3.8.0
+importlib-metadata==3.9.0
     # via
     #   keyring
     #   markdown
