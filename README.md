@@ -11,7 +11,9 @@ It creates daily, weekly, monthly and yearly newsletter articles with the
 changes of each period. Those pages, stored under the `Newsletters` section, are
 filled with the changes extracted from the git history and the commit messages.
 The changes are grouped by categories, subcategories and then by file using the
-order of the site's navigation structure.
+order of the site's navigation structure. [RSS feeds](rss_feeds.md) are also
+created for each newsletter type, so it's easy for people to keep updated with
+the evolution of the site.
 
 It assumes that you're using [semantic versioning](https://semver.org/) or our
 [enhanced version](#commit-message-guidelines) to create your commits. Only
@@ -20,19 +22,34 @@ newsletter. You can use
 [mkdocs-rss-plugin](https://github.com/Guts/mkdocs-rss-plugin) instead if this
 workflow doesn't feel good.
 
-![ ](docs/img/screencast.gif)
+![ ](screencast.gif)
 
-Check [the live
-version](https://lyz-code.github.io/blue-book/newsletter/2021_02).
+Check [a live
+version](https://lyz-code.github.io/blue-book/newsletter/0_newsletter_index/).
 
 ## Help
 
 See [documentation](https://lyz-code.github.io/mkdocs-newsletter) for more details.
 
-## Installing
+## [Installing](https://lyz-code.github.io/mkdocs-newsletter/install/)
+
+You should check the [install
+docs](https://lyz-code.github.io/mkdocs-newsletter/install/), but in short,
+you'll need to:
 
 ```bash
 pip install mkdocs-newsletter
+```
+
+And enable this plugin, by changing your `mkdocs.yml`.
+
+```yaml
+plugins:
+  - git-revision-date-localized:
+      type: timeago
+  - autolinks
+  - section-index
+  - mkdocs-newsletter
 ```
 
 ## Contributing
