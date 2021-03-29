@@ -31,7 +31,7 @@ graph TD
     003:::accepted
     004:::accepted
     005:::accepted
-    006:::draft
+    006:::accepted
 
     classDef draft fill:#CDBFEA;
     classDef proposed fill:#B1CCE8;
