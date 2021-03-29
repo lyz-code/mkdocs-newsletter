@@ -7,7 +7,7 @@ friendly format, at the same time that it's easy for the authors to maintain.
 
 It creates daily, weekly, monthly and yearly newsletter articles with the
 changes of each period. Those pages, stored under the `Newsletters` section, are
-filled with the changes extracted from the git history and the commit messages.
+filled with the changes extracted from the commit messages of the git history.
 The changes are grouped by categories, subcategories and then by file using the
 order of the site's navigation structure. [RSS feeds](rss_feeds.md) are also
 created for each newsletter type, so it's easy for people to keep updated with
