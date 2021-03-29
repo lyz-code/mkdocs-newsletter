@@ -3,7 +3,7 @@ Date: 2021-03-26
 # Status
 <!-- What is the status? Draft, Proposed, Accepted, Rejected, Deprecated or Superseded?
 -->
-Draft
+Accepted
 
 # Context
 <!-- What is the issue that we're seeing that is motivating this decision or change? -->

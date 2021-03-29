@@ -219,7 +219,8 @@ def test_template_prints_changes_with_long_message() -> None:
     Given: a changes that affects a level 1 article with a long message.
     When: create_newsletter is called.
     Then: The category of the article is added as title 1 with the description
-        well indented.
+        well indented and without external line breaks. Wrapping the message has led
+        to broken links in the past.
     """
     changes = [
         Change(
@@ -238,15 +239,13 @@ def test_template_prints_changes_with_long_message() -> None:
 
     result = create_newsletter(changes)
 
-    assert (
-        result
-        == """\
-# [Introduction](index.md)
-
-* Improvement: Add new content
-
-    Really long long long long long long long long long long long long long
-    long long long long long long long change description."""
+    assert result == (
+        "# [Introduction](index.md)\n"
+        "\n"
+        "* Improvement: Add new content\n"
+        "\n"
+        "    Really long long long long long long long long long long long long long "
+        "long long long long long long long change description."
     )
 
 

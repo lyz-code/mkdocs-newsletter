@@ -23,7 +23,7 @@ workflow doesn't feel good.
 ![ ](screencast.gif)
 
 Check [a live
-version](https://lyz-code.github.io/blue-book/newsletter).
+version](https://lyz-code.github.io/blue-book/newsletter/0_newsletter_index/).
 
 # Alternatives
 

@@ -16,7 +16,7 @@
 {%- endif %}
 {%- if change.message is not none %}
 
-{{ ('    ' ~ change.message) | wordwrap(76) | replace('\n', '\n    ') }}
+{{ ('    ' ~ change.message) | replace('\n', '\n    ') }}
 {% endif -%}
 {% endfor -%}
 {% endmacro -%}

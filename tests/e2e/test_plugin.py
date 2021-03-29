@@ -253,7 +253,7 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: Config) -> None
         "DevOps</a></h2>\n"
         "<ul>\n<li>\n<p>New: Define DevOps.</p>\n"
         '<p><a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> is a set of '
-        "practices\nthat\ncombines software development (Dev) and "
+        "practices that\ncombines software development (Dev) and "
         "information-technology operations\n(Ops) which aims to shorten the systems "
         "development life cycle and "
         "provide\ncontinuous delivery with high software quality.</p>\n<p>One of the "
