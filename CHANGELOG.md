@@ -1,3 +1,9 @@
+## 0.2.1 (2021-03-29)
+
+### Fix
+
+- don't wrap commit messages when building articles
+
 ## 0.2.0 (2021-03-28)
 
 ### Feat
