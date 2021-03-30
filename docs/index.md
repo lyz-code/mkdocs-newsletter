@@ -51,12 +51,11 @@ use their plugin instead, as it's much easier to use.
 
 # Future plans
 
-The plugin will reach the first stable version once we:
+If there is enough people interested, we may develop:
 
-* Support more notification channels such as RSS feeds and email newsletters.
-
-We're also thinking of adding support for software repositories, to give updates
-on the releases.
+* Support more notification channels such as [email
+    newsletters](https://github.com/lyz-code/mkdocs-newsletter/issues/16).
+* Adding support for software repositories, to give updates on the releases.
 
 # References
 
