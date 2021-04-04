@@ -101,7 +101,7 @@ pymdown-extensions==8.1.1
     #   mkdocs-material
     #   mkdocs-mermaid2-plugin
     #   mkdocstrings
-pytkdocs==0.11.0
+pytkdocs==0.11.1
     # via mkdocstrings
 pytz==2021.1
     # via babel
