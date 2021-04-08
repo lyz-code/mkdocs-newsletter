@@ -16,7 +16,7 @@ created for each newsletter type, so it's easy for people to keep updated with
 the evolution of the site.
 
 It assumes that you're using [semantic versioning](https://semver.org/) or our
-[enhanced version](#commit-message-guidelines) to create your commits. Only
+[enhanced version](docs/usage.md#commit-message-guidelines) to create your commits. Only
 those changes that are interesting to the reader will be added to the
 newsletter. You can use
 [mkdocs-rss-plugin](https://github.com/Guts/mkdocs-rss-plugin) instead if this
