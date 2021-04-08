@@ -76,7 +76,7 @@ mkdocs==1.1.2
     #   mkdocs-autolinks-plugin
     #   mkdocs-newsletter (setup.py)
     #   mkdocs-section-index
-nltk==3.5
+nltk==3.6.1
     # via lunr
 ordered-set==4.0.2
     # via deepdiff

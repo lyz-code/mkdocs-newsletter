@@ -355,7 +355,7 @@ mypy-extensions==0.4.3
     #   mypy
 mypy==0.812
     # via -r requirements-dev.in
-nltk==3.5
+nltk==3.6.1
     # via
     #   -r docs/requirements.txt
     #   -r requirements.txt
@@ -504,7 +504,7 @@ rfc3986==1.4.0
     #   twine
 ruamel.yaml.clib==0.2.2
     # via ruamel.yaml
-ruamel.yaml==0.17.2
+ruamel.yaml==0.17.4
     # via yamlfix
 safety==1.10.3
     # via -r requirements-dev.in
