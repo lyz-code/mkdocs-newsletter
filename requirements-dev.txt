@@ -582,7 +582,7 @@ twine==3.4.1
     # via
     #   -r requirements.txt
     #   python-semantic-release
-typed-ast==1.4.2
+typed-ast==1.4.3
     # via
     #   astroid
     #   black
