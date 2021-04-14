@@ -40,7 +40,7 @@ jinja2==2.11.3
     #   mkdocstrings
 joblib==1.0.1
     # via nltk
-jsbeautifier==1.13.5
+jsbeautifier==1.13.11
     # via mkdocs-mermaid2-plugin
 livereload==2.6.3
     # via mkdocs

@@ -252,7 +252,7 @@ joblib==1.0.1
     #   -r docs/requirements.txt
     #   -r requirements.txt
     #   nltk
-jsbeautifier==1.13.5
+jsbeautifier==1.13.11
     # via
     #   -r docs/requirements.txt
     #   mkdocs-mermaid2-plugin
