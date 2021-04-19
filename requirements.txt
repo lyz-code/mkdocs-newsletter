@@ -32,7 +32,7 @@ gitpython==3.1.14
     # via mkdocs-git-revision-date-localized-plugin
 idna==2.10
     # via requests
-importlib-metadata==3.10.0
+importlib-metadata==3.10.1
     # via markdown
 jinja2==2.11.3
     # via
@@ -40,7 +40,7 @@ jinja2==2.11.3
     #   mkdocstrings
 joblib==1.0.1
     # via nltk
-jsbeautifier==1.13.5
+jsbeautifier==1.13.11
     # via mkdocs-mermaid2-plugin
 livereload==2.6.3
     # via mkdocs
@@ -64,13 +64,13 @@ mkdocs-autolinks-plugin==0.4.0
     # via -r docs/requirements.in
 mkdocs-autorefs==0.1.1
     # via mkdocstrings
-mkdocs-git-revision-date-localized-plugin==0.8
+mkdocs-git-revision-date-localized-plugin==0.9
     # via -r docs/requirements.in
 mkdocs-htmlproofer-plugin==0.1.0
     # via -r docs/requirements.in
 mkdocs-material-extensions==1.0.1
     # via mkdocs-material
-mkdocs-material==7.1.0
+mkdocs-material==7.1.1
     # via
     #   -r docs/requirements.in
     #   mkdocs-material-extensions
@@ -143,5 +143,5 @@ zipp==3.4.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==54.2.0
+setuptools==56.0.0
     # via mkdocs-mermaid2-plugin

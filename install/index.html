@@ -8,9 +8,9 @@
 <meta content="Lyz" name="author"/>
 <link href="https://lyz-code.github.io/mkdocs-newsletter/install/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.1.0" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
 <title>Installation - MkDocs Newsletter</title>
-<link href="../assets/stylesheets/main.33e2939f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <meta content="#546d78" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -502,12 +502,26 @@ and automatically build the newsletters.</p>
 <h3 id="exclude-the-newsletters-from-the-search">Exclude the newsletters from the search<a class="headerlink" href="#exclude-the-newsletters-from-the-search" title="Permanent link">¶</a></h3>
 <p>If you don't want to see the newsletters in the result of the search, use the
 <a href="https://pypi.org/project/mkdocs-exclude-search/">mkdocs-exclude-search</a> plugin
-to exclude all articles under <code>docs/newsletter</code>.</p>
+to exclude all articles under <code>newsletter/</code>.</p>
+<p>To do so:</p>
+<ol>
+<li>Install the plugin with
+   <div class="highlight"><pre><span></span><code>pip install mkdocs-exclude-search
+</code></pre></div></li>
+<li>Add the following configuration to your <code>mkdocs.yml</code>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">search</span>
+  <span class="p p-Indicator">-</span> <span class="nt">exclude-search</span><span class="p">:</span>
+      <span class="nt">exclude</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">newsletter/*</span>
+</code></pre></div></li>
+</ol>
+<p>Note that <code>newsletter/*</code> excludes all markdown files within a directory and its children. The paths must be relative to the <code>docs/</code> directory.</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-26T12:47:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-26</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-19T17:33:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-19</span>
 </small>
 </div>
 </article>
@@ -560,7 +574,7 @@ to exclude all articles under <code>docs/newsletter</code>.</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
-<script src="../assets/javascripts/bundle.d892486b.min.js"></script>
+<script src="../assets/javascripts/bundle.7353b375.min.js"></script>
 <script src="../js/timeago.min.js"></script>
 <script src="../js/timeago_mkdocs_material.js"></script>
 </body>
