@@ -217,4 +217,21 @@ It assumes that you have the next `Makefile`:
 
 If you don't want to see the newsletters in the result of the search, use the
 [mkdocs-exclude-search](https://pypi.org/project/mkdocs-exclude-search/) plugin
-to exclude all articles under `docs/newsletter`.
+to exclude all articles under `newsletter/`.
+
+To do so:
+
+1. Install the plugin with
+   ```bash
+   pip install mkdocs-exclude-search
+   ```
+1. Add the following configuration to your `mkdocs.yml`
+   ```yaml
+   plugins:
+     - search
+     - exclude-search:
+         exclude:
+           - newsletter/*
+   ```
+   
+Note that `newsletter/*` excludes all markdown files within a directory and its children. The paths must be relative to the `docs/` directory.
