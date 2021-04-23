@@ -99,6 +99,8 @@ deepdiff==5.3.0
     # via -r requirements.txt
 distlib==0.3.1
     # via virtualenv
+distro==1.5.0
+    # via ruyaml
 dlint==0.11.0
     # via -r requirements-dev.in
 docutils==0.17.1
@@ -502,9 +504,7 @@ rfc3986==1.4.0
     # via
     #   -r requirements.txt
     #   twine
-ruamel.yaml.clib==0.2.2
-    # via ruamel.yaml
-ruamel.yaml==0.17.4
+ruyaml==0.20.0
     # via yamlfix
 safety==1.10.3
     # via -r requirements-dev.in
@@ -617,7 +617,7 @@ wheel==0.36.2
     #   python-semantic-release
 wrapt==1.12.1
     # via astroid
-yamlfix==0.4.1
+yamlfix==0.5.0
     # via -r requirements-dev.in
 yamllint==1.26.1
     # via -r requirements-dev.in
@@ -639,6 +639,7 @@ setuptools==56.0.0
     #   flake8-expression-complexity
     #   flake8-variables-names
     #   mkdocs-mermaid2-plugin
+    #   ruyaml
     #   safety
     #   setuptools-scm
     #   yamllint
