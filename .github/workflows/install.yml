@@ -20,4 +20,6 @@ jobs:
       - name: Install the program
         run: pip install mkdocs-newsletter
       - name: Test the program works
-        run: mkdocs-newsletter --version
+        run: |-
+          python -c "import faker_optional.version;
+          print(faker_optional.version.version_info())"
