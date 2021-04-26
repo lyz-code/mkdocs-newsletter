@@ -12,14 +12,12 @@ astor==0.8.1
     # via flake8-simplify
 astpretty==2.1.0
     # via flake8-expression-complexity
-astroid==2.5.5
+astroid==2.5.6
     # via pylint
 asttokens==2.0.5
     # via flake8-aaa
 astunparse==1.6.3
-    # via
-    #   -r docs/requirements.txt
-    #   pytkdocs
+    # via -r docs/requirements.txt
 attrs==20.3.0
     # via
     #   flake8-bugbear
@@ -48,9 +46,7 @@ bleach==3.3.0
     #   -r requirements.txt
     #   readme-renderer
 cached-property==1.5.2
-    # via
-    #   -r docs/requirements.txt
-    #   pytkdocs
+    # via -r docs/requirements.txt
 certifi==2020.12.5
     # via
     #   -r docs/requirements.txt
@@ -215,19 +211,8 @@ importlib-metadata==4.0.1
     # via
     #   -r docs/requirements.txt
     #   -r requirements.txt
-    #   flake8
-    #   flake8-comprehensions
-    #   flake8-simplify
-    #   flake8-typing-imports
     #   keyring
-    #   markdown
-    #   pep517
-    #   pluggy
-    #   pre-commit
-    #   pytest
-    #   stevedore
     #   twine
-    #   virtualenv
 iniconfig==1.1.1
     # via pytest
 invoke==1.5.0
@@ -420,7 +405,7 @@ pygments==2.8.1
     #   flakehell
     #   mkdocs-material
     #   readme-renderer
-pylint==2.8.0
+pylint==2.8.1
     # via -r requirements-dev.in
 pymdown-extensions==8.1.1
     # via
@@ -584,19 +569,15 @@ twine==3.4.1
     #   python-semantic-release
 typed-ast==1.4.3
     # via
-    #   astroid
     #   black
-    #   flake8-annotations
     #   mypy
 typing-extensions==3.7.4.3
     # via
     #   -r docs/requirements.txt
     #   -r requirements.txt
     #   black
-    #   importlib-metadata
     #   mypy
     #   pydantic
-    #   pytkdocs
 urllib3==1.26.4
     # via
     #   -r docs/requirements.txt
@@ -626,7 +607,6 @@ zipp==3.4.1
     #   -r docs/requirements.txt
     #   -r requirements.txt
     #   importlib-metadata
-    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==21.1
@@ -642,4 +622,3 @@ setuptools==56.0.0
     #   ruyaml
     #   safety
     #   setuptools-scm
-    #   yamllint
