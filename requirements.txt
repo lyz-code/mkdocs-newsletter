@@ -69,7 +69,7 @@ markupsafe==1.1.1
     # via jinja2
 mkdocs-autolinks-plugin==0.4.0
     # via mkdocs-newsletter (setup.py)
-mkdocs-section-index==0.2.3
+mkdocs-section-index==0.3.0
     # via mkdocs-newsletter (setup.py)
 mkdocs==1.1.2
     # via
@@ -94,7 +94,7 @@ pyparsing==2.4.7
     # via packaging
 python-dateutil==2.8.1
     # via mkdocs-newsletter (setup.py)
-python-gitlab==2.6.0
+python-gitlab==2.7.0
     # via python-semantic-release
 python-semantic-release==7.15.3
     # via mkdocs-newsletter (setup.py)
