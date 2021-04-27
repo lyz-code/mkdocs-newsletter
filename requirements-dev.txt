@@ -379,7 +379,7 @@ pathspec==0.8.1
     # via
     #   black
     #   yamllint
-pbr==5.5.1
+pbr==5.6.0
     # via stevedore
 pep517==0.10.0
     # via pip-tools
@@ -420,7 +420,7 @@ pygments==2.8.1
     #   flakehell
     #   mkdocs-material
     #   readme-renderer
-pylint==2.8.1
+pylint==2.8.2
     # via -r requirements-dev.in
 pymdown-extensions==8.1.1
     # via
@@ -450,7 +450,7 @@ python-dateutil==2.8.1
     # via
     #   -r requirements.txt
     #   freezegun
-python-gitlab==2.7.0
+python-gitlab==2.7.1
     # via
     #   -r requirements.txt
     #   python-semantic-release
