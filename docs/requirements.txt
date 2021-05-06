@@ -115,7 +115,7 @@ requests==2.25.1
     # via
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
-six==1.15.0
+six==1.16.0
     # via
     #   astunparse
     #   jsbeautifier
