@@ -61,7 +61,7 @@ keyring==23.0.1
     # via twine
 livereload==2.6.3
     # via mkdocs
-lunr[languages]==0.5.8
+lunr[languages]==0.6.0
     # via mkdocs
 markdown==3.3.4
     # via mkdocs
