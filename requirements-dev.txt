@@ -4,6 +4,8 @@
 #
 #    pip-compile --allow-unsafe --output-file=requirements-dev.txt requirements-dev.in
 #
+apipkg==1.5
+    # via execnet
 appdirs==1.4.4
     # via
     #   black
@@ -109,6 +111,8 @@ entrypoints==0.3
     # via flakehell
 eradicate==2.0.0
     # via flake8-eradicate
+execnet==1.8.1
+    # via pytest-xdist
 feedparser==6.0.2
     # via -r requirements-dev.in
 filelock==3.0.12
@@ -352,7 +356,9 @@ pluggy==0.13.1
 pre-commit==2.13.0
     # via -r requirements-dev.in
 py==1.10.0
-    # via pytest
+    # via
+    #   pytest
+    #   pytest-forked
 pycodestyle==2.7.0
     # via
     #   flake8
@@ -390,16 +396,22 @@ pyprojroot==0.2.0
     # via autoimport
 pytest-cov==2.12.1
     # via -r requirements-dev.in
+pytest-forked==1.3.0
+    # via pytest-xdist
 pytest-freezegun==0.4.2
     # via -r requirements-dev.in
 pytest-pythonpath==0.7.3
+    # via -r requirements-dev.in
+pytest-xdist==2.2.1
     # via -r requirements-dev.in
 pytest==6.2.4
     # via
     #   -r requirements-dev.in
     #   pytest-cov
+    #   pytest-forked
     #   pytest-freezegun
     #   pytest-pythonpath
+    #   pytest-xdist
 python-dateutil==2.8.1
     # via
     #   -r requirements.txt
