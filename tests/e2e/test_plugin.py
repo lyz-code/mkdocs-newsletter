@@ -1,7 +1,10 @@
 """Test the plugin entrypoint."""
 
+from datetime import datetime
+
 import feedparser
 import pytest
+from dateutil import parser, tz
 from git import Repo
 from mkdocs.commands import build
 from mkdocs.config.base import Config
@@ -55,6 +58,8 @@ def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: Config) -> None:
     When: the site is built.
     Then: RSS valid daily feed is created with the expected information.
     """
+    now = datetime.now(tz=tz.tzlocal())
+
     build.build(config)  # act
 
     # --------------
@@ -68,7 +73,7 @@ def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: Config) -> None:
     assert feed.feed.description == "My second brain"
     assert feed.feed.link == "https://lyz-code.github.io/blue-book"
     assert feed.feed.links[1].href == "https://lyz-code.github.io/blue-book/daily.xml"
-    assert feed.feed.published == "2022-04-10 12:00:00+00:00"
+    assert parser.parse(feed.feed.published) == now
     assert feed.feed.author == "Lyz"
     assert feed.feed.ttl == "1440"
     assert feed.feed.generator == f"mkdocs-newsletter - v{__version__}"
@@ -95,7 +100,7 @@ def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: Config) -> None:
         "</ul>\n<hr />\n\n"
         "</article>"
     )
-    assert feed.entries[0].published == "2022-04-10 12:00:00+00:00"
+    assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 
 
@@ -111,6 +116,8 @@ def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: Config) -> None
     When: the site is built.
     Then: RSS valid weekly feed is created with the expected information.
     """
+    now = datetime.now(tz=tz.tzlocal())
+
     build.build(config)  # act
 
     # --------------
@@ -124,7 +131,9 @@ def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: Config) -> None
     assert feed.feed.description == "My second brain"
     assert feed.feed.link == "https://lyz-code.github.io/blue-book"
     assert feed.feed.links[1].href == "https://lyz-code.github.io/blue-book/weekly.xml"
-    assert feed.feed.published == "2022-04-10 12:00:00+00:00"
+    # We need to do the transformation as sometimes feed.feed.published is created
+    # with a different timezone
+    assert parser.parse(feed.feed.published) == now
     assert feed.feed.author == "Lyz"
     assert feed.feed.ttl == "10080"
     assert feed.feed.generator == f"mkdocs-newsletter - v{__version__}"
@@ -151,7 +160,7 @@ def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: Config) -> None
         "</ul>\n<hr />\n\n"
         "</article>"
     )
-    assert feed.entries[0].published == "2022-04-10 12:00:00+00:00"
+    assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 
 
@@ -167,6 +176,8 @@ def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: Config) -> Non
     When: the site is built.
     Then: RSS valid monthly feed is created with the expected information.
     """
+    now = datetime.now(tz=tz.tzlocal())
+
     build.build(config)  # act
 
     # --------------
@@ -180,7 +191,9 @@ def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: Config) -> Non
     assert feed.feed.description == "My second brain"
     assert feed.feed.link == "https://lyz-code.github.io/blue-book"
     assert feed.feed.links[1].href == "https://lyz-code.github.io/blue-book/monthly.xml"
-    assert feed.feed.published == "2022-04-10 12:00:00+00:00"
+    # We need to do the transformation as sometimes feed.feed.published is created
+    # with a different timezone
+    assert parser.parse(feed.feed.published) == now
     assert feed.feed.author == "Lyz"
     assert feed.feed.ttl == "43200"
     assert feed.feed.generator == f"mkdocs-newsletter - v{__version__}"
@@ -207,7 +220,7 @@ def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: Config) -> Non
         "</ul>\n<hr />\n\n"
         "</article>"
     )
-    assert feed.entries[0].published == "2022-04-10 12:00:00+00:00"
+    assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 
 
@@ -223,6 +236,8 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: Config) -> None
     When: the site is built.
     Then: RSS valid yearly feed is created with the expected information.
     """
+    now = datetime.now(tz=tz.tzlocal())
+
     build.build(config)  # act
 
     # --------------
@@ -236,7 +251,9 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: Config) -> None
     assert feed.feed.description == "My second brain"
     assert feed.feed.link == "https://lyz-code.github.io/blue-book"
     assert feed.feed.links[1].href == "https://lyz-code.github.io/blue-book/yearly.xml"
-    assert feed.feed.published == "2022-04-10 12:00:00+00:00"
+    # We need to do the transformation as sometimes feed.feed.published is created
+    # with a different timezone
+    assert parser.parse(feed.feed.published) == now
     assert feed.feed.author == "Lyz"
     assert feed.feed.ttl == "525600"
     assert feed.feed.generator == f"mkdocs-newsletter - v{__version__}"
@@ -281,7 +298,7 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: Config) -> None
         "</ul>\n<hr />\n\n"
         "</article>"
     )
-    assert feed.entries[0].published == "2022-04-10 12:00:00+00:00"
+    assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 
 

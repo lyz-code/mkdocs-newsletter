@@ -4,6 +4,8 @@
 #
 #    pip-compile --allow-unsafe --output-file=requirements-dev.txt requirements-dev.in
 #
+apipkg==1.5
+    # via execnet
 appdirs==1.4.4
     # via
     #   black
@@ -17,9 +19,7 @@ astroid==2.5.6
 asttokens==2.0.5
     # via flake8-aaa
 astunparse==1.6.3
-    # via
-    #   -r docs/requirements.txt
-    #   pytkdocs
+    # via pytkdocs
 attrs==21.2.0
     # via
     #   flake8-bugbear
@@ -30,41 +30,34 @@ autoflake==1.4
 autoimport==0.7.0
     # via -r requirements-dev.in
 babel==2.9.1
-    # via
-    #   -r docs/requirements.txt
-    #   mkdocs-git-revision-date-localized-plugin
+    # via mkdocs-git-revision-date-localized-plugin
 bandit==1.7.0
     # via -r requirements-dev.in
 beautifulsoup4==4.9.3
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
-black==21.5b0
+black==21.5b2
     # via -r requirements-dev.in
 bleach==3.3.0
     # via
     #   -r requirements.txt
     #   readme-renderer
 cached-property==1.5.2
+    # via pytkdocs
+certifi==2021.5.30
     # via
-    #   -r docs/requirements.txt
-    #   pytkdocs
-certifi==2020.12.5
-    # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   requests
 cffi==1.14.5
     # via
     #   -r requirements.txt
     #   cryptography
-cfgv==3.2.0
+cfgv==3.3.0
     # via pre-commit
 chardet==4.0.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   requests
 click-log==0.3.2
@@ -73,7 +66,6 @@ click-log==0.3.2
     #   python-semantic-release
 click==7.1.2
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   autoimport
     #   black
@@ -97,7 +89,7 @@ cryptography==3.4.7
     #   secretstorage
 deepdiff==5.5.0
     # via -r requirements.txt
-distlib==0.3.1
+distlib==0.3.2
     # via virtualenv
 distro==1.5.0
     # via ruyaml
@@ -114,13 +106,13 @@ dotty-dict==1.3.0
 dparse==0.5.1
     # via safety
 editorconfig==0.12.3
-    # via
-    #   -r docs/requirements.txt
-    #   jsbeautifier
+    # via jsbeautifier
 entrypoints==0.3
     # via flakehell
 eradicate==2.0.0
     # via flake8-eradicate
+execnet==1.8.1
+    # via pytest-xdist
 feedparser==6.0.2
     # via -r requirements-dev.in
 filelock==3.0.12
@@ -133,7 +125,7 @@ flake8-annotations==2.6.2
     # via -r requirements-dev.in
 flake8-bugbear==21.4.3
     # via -r requirements-dev.in
-flake8-comprehensions==3.4.0
+flake8-comprehensions==3.5.0
     # via -r requirements-dev.in
 flake8-debugger==4.0.0
     # via -r requirements-dev.in
@@ -153,11 +145,11 @@ flake8-plugin-utils==1.3.2
     # via flake8-pytest-style
 flake8-polyfill==1.0.2
     # via pep8-naming
-flake8-pytest-style==1.4.1
+flake8-pytest-style==1.4.2
     # via -r requirements-dev.in
 flake8-pytest==1.3
     # via -r requirements-dev.in
-flake8-simplify==0.14.0
+flake8-simplify==0.14.1
     # via -r requirements-dev.in
 flake8-typing-imports==1.10.1
     # via -r requirements-dev.in
@@ -165,7 +157,7 @@ flake8-use-fstring==1.1
     # via -r requirements-dev.in
 flake8-variables-names==0.0.4
     # via -r requirements-dev.in
-flake8==3.9.1
+flake8==3.9.2
     # via
     #   dlint
     #   flake8-annotations
@@ -189,31 +181,26 @@ freezegun==1.1.0
     # via pytest-freezegun
 future==0.18.2
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   lunr
 gitdb==4.0.7
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   gitpython
-gitpython==3.1.14
+gitpython==3.1.17
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   bandit
     #   mkdocs-git-revision-date-localized-plugin
     #   python-semantic-release
-identify==2.2.4
+identify==2.2.7
     # via pre-commit
 idna==2.10
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   requests
-importlib-metadata==4.0.1
+importlib-metadata==4.4.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   flake8
     #   flake8-comprehensions
@@ -243,21 +230,17 @@ jeepney==0.6.0
     #   -r requirements.txt
     #   keyring
     #   secretstorage
-jinja2==2.11.3
+jinja2==3.0.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   mkdocs
     #   mkdocstrings
 joblib==1.0.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   nltk
 jsbeautifier==1.13.13
-    # via
-    #   -r docs/requirements.txt
-    #   mkdocs-mermaid2-plugin
+    # via mkdocs-mermaid2-plugin
 keyring==23.0.1
     # via
     #   -r requirements.txt
@@ -266,21 +249,16 @@ lazy-object-proxy==1.6.0
     # via astroid
 livereload==2.6.3
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   mkdocs
 lunr[languages]==0.5.8
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   mkdocs
 markdown-include==0.6.0
-    # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+    # via -r requirements-dev.in
 markdown==3.3.4
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   markdown-include
     #   mkdocs
@@ -288,9 +266,8 @@ markdown==3.3.4
     #   mkdocs-material
     #   mkdocstrings
     #   pymdown-extensions
-markupsafe==1.1.1
+markupsafe==2.0.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   jinja2
     #   mkdocstrings
@@ -300,44 +277,30 @@ mccabe==0.6.1
     #   pylint
 mkdocs-autolinks-plugin==0.4.0
     # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+    #   -r requirements-dev.in
     #   -r requirements.txt
-mkdocs-autorefs==0.1.1
-    # via
-    #   -r docs/requirements.txt
-    #   mkdocstrings
+mkdocs-autorefs==0.2.1
+    # via mkdocstrings
 mkdocs-git-revision-date-localized-plugin==0.9.2
-    # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
-mkdocs-htmlproofer-plugin==0.1.0
-    # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+    # via -r requirements-dev.in
+mkdocs-htmlproofer-plugin==0.2.0
+    # via -r requirements-dev.in
 mkdocs-material-extensions==1.0.1
+    # via mkdocs-material
+mkdocs-material==7.1.6
     # via
-    #   -r docs/requirements.txt
-    #   mkdocs-material
-mkdocs-material==7.1.4
-    # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+    #   -r requirements-dev.in
     #   mkdocs-material-extensions
     #   mkdocs-mermaid2-plugin
 mkdocs-mermaid2-plugin==0.5.1
-    # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+    # via -r requirements-dev.in
 mkdocs-section-index==0.3.0
     # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+    #   -r requirements-dev.in
     #   -r requirements.txt
 mkdocs==1.1.2
     # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+    #   -r requirements-dev.in
     #   -r requirements.txt
     #   mkdocs-autolinks-plugin
     #   mkdocs-autorefs
@@ -347,10 +310,8 @@ mkdocs==1.1.2
     #   mkdocs-mermaid2-plugin
     #   mkdocs-section-index
     #   mkdocstrings
-mkdocstrings==0.15.0
-    # via
-    #   -r docs/requirements.in
-    #   -r docs/requirements.txt
+mkdocstrings==0.15.1
+    # via -r requirements-dev.in
 mypy-extensions==0.4.3
     # via
     #   black
@@ -359,7 +320,6 @@ mypy==0.812
     # via -r requirements-dev.in
 nltk==3.6.2
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   lunr
 nodeenv==1.6.0
@@ -393,10 +353,12 @@ pkginfo==1.7.0
     #   twine
 pluggy==0.13.1
     # via pytest
-pre-commit==2.12.1
+pre-commit==2.13.0
     # via -r requirements-dev.in
 py==1.10.0
-    # via pytest
+    # via
+    #   pytest
+    #   pytest-forked
 pycodestyle==2.7.0
     # via
     #   flake8
@@ -405,9 +367,9 @@ pycparser==2.20
     # via
     #   -r requirements.txt
     #   cffi
-pydantic==1.8.1
+pydantic==1.8.2
     # via -r requirements.txt
-pydocstyle==6.0.0
+pydocstyle==6.1.1
     # via flake8-docstrings
 pyflakes==2.3.1
     # via
@@ -415,16 +377,14 @@ pyflakes==2.3.1
     #   flake8
 pygments==2.9.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   flakehell
     #   mkdocs-material
     #   readme-renderer
-pylint==2.8.2
+pylint==2.8.3
     # via -r requirements-dev.in
-pymdown-extensions==8.1.1
+pymdown-extensions==8.2
     # via
-    #   -r docs/requirements.txt
     #   mkdocs-material
     #   mkdocs-mermaid2-plugin
     #   mkdocstrings
@@ -434,18 +394,24 @@ pyparsing==2.4.7
     #   packaging
 pyprojroot==0.2.0
     # via autoimport
-pytest-cov==2.11.1
+pytest-cov==2.12.1
     # via -r requirements-dev.in
+pytest-forked==1.3.0
+    # via pytest-xdist
 pytest-freezegun==0.4.2
     # via -r requirements-dev.in
 pytest-pythonpath==0.7.3
+    # via -r requirements-dev.in
+pytest-xdist==2.2.1
     # via -r requirements-dev.in
 pytest==6.2.4
     # via
     #   -r requirements-dev.in
     #   pytest-cov
+    #   pytest-forked
     #   pytest-freezegun
     #   pytest-pythonpath
+    #   pytest-xdist
 python-dateutil==2.8.1
     # via
     #   -r requirements.txt
@@ -454,19 +420,14 @@ python-gitlab==2.7.1
     # via
     #   -r requirements.txt
     #   python-semantic-release
-python-semantic-release==7.15.4
+python-semantic-release==7.15.5
     # via -r requirements.txt
 pytkdocs==0.11.1
-    # via
-    #   -r docs/requirements.txt
-    #   mkdocstrings
+    # via mkdocstrings
 pytz==2021.1
-    # via
-    #   -r docs/requirements.txt
-    #   babel
+    # via babel
 pyyaml==5.4.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   bandit
     #   dparse
@@ -480,7 +441,6 @@ readme-renderer==29.0
     #   twine
 regex==2021.4.4
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   black
     #   nltk
@@ -491,7 +451,6 @@ requests-toolbelt==0.9.1
     #   twine
 requests==2.25.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
@@ -522,11 +481,10 @@ setuptools-scm==6.0.1
     #   dotty-dict
 sgmllib3k==1.0.0
     # via feedparser
-sh==1.14.1
+sh==1.14.2
     # via autoimport
 six==1.16.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   asttokens
     #   astunparse
@@ -541,14 +499,12 @@ six==1.16.0
     #   virtualenv
 smmap==4.0.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   gitdb
 snowballstemmer==2.1.0
     # via pydocstyle
 soupsieve==2.2.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   beautifulsoup4
 stevedore==3.3.0
@@ -562,19 +518,18 @@ toml==0.10.2
     #   pre-commit
     #   pylint
     #   pytest
+    #   pytest-cov
 tomlkit==0.7.0
     # via
     #   -r requirements.txt
     #   python-semantic-release
 tornado==6.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   livereload
     #   mkdocs
-tqdm==4.60.0
+tqdm==4.61.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   nltk
     #   twine
@@ -590,20 +545,19 @@ typed-ast==1.4.3
     #   mypy
 typing-extensions==3.10.0.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   black
+    #   gitpython
     #   importlib-metadata
     #   mypy
     #   pydantic
     #   pytkdocs
-urllib3==1.26.4
+urllib3==1.26.5
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   flakehell
     #   requests
-virtualenv==20.4.6
+virtualenv==20.4.7
     # via pre-commit
 webencodings==0.5.1
     # via
@@ -611,7 +565,6 @@ webencodings==0.5.1
     #   bleach
 wheel==0.36.2
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   astunparse
     #   python-semantic-release
@@ -623,17 +576,15 @@ yamllint==1.26.1
     # via -r requirements-dev.in
 zipp==3.4.1
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   importlib-metadata
     #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==21.1.1
+pip==21.1.2
     # via pip-tools
-setuptools==56.1.0
+setuptools==57.0.0
     # via
-    #   -r docs/requirements.txt
     #   -r requirements.txt
     #   flake8-annotations-complexity
     #   flake8-expression-complexity
