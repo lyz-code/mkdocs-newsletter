@@ -8,7 +8,7 @@ beautifulsoup4==4.9.3
     # via mkdocs-newsletter (setup.py)
 bleach==3.3.0
     # via readme-renderer
-certifi==2020.12.5
+certifi==2021.5.30
     # via requests
 cffi==1.14.5
     # via cryptography
@@ -36,13 +36,13 @@ future==0.18.2
     # via lunr
 gitdb==4.0.7
     # via gitpython
-gitpython==3.1.14
+gitpython==3.1.17
     # via
     #   mkdocs-newsletter (setup.py)
     #   python-semantic-release
 idna==2.10
     # via requests
-importlib-metadata==4.0.1
+importlib-metadata==4.4.0
     # via
     #   keyring
     #   markdown
@@ -53,7 +53,7 @@ jeepney==0.6.0
     # via
     #   keyring
     #   secretstorage
-jinja2==2.11.3
+jinja2==3.0.1
     # via mkdocs
 joblib==1.0.1
     # via nltk
@@ -65,7 +65,7 @@ lunr[languages]==0.5.8
     # via mkdocs
 markdown==3.3.4
     # via mkdocs
-markupsafe==1.1.1
+markupsafe==2.0.1
     # via jinja2
 mkdocs-autolinks-plugin==0.4.0
     # via mkdocs-newsletter (setup.py)
@@ -86,9 +86,9 @@ pkginfo==1.7.0
     # via twine
 pycparser==2.20
     # via cffi
-pydantic==1.8.1
+pydantic==1.8.2
     # via mkdocs-newsletter (setup.py)
-pygments==2.8.1
+pygments==2.9.0
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
@@ -96,7 +96,7 @@ python-dateutil==2.8.1
     # via mkdocs-newsletter (setup.py)
 python-gitlab==2.7.1
     # via python-semantic-release
-python-semantic-release==7.15.4
+python-semantic-release==7.15.5
     # via mkdocs-newsletter (setup.py)
 pyyaml==5.4.1
     # via mkdocs
@@ -114,7 +114,7 @@ requests==2.25.1
     #   python-semantic-release
     #   requests-toolbelt
     #   twine
-rfc3986==1.4.0
+rfc3986==1.5.0
     # via twine
 secretstorage==3.3.1
     # via keyring
@@ -122,7 +122,7 @@ semver==2.13.0
     # via python-semantic-release
 setuptools-scm==6.0.1
     # via dotty-dict
-six==1.15.0
+six==1.16.0
     # via
     #   bleach
     #   livereload
@@ -139,17 +139,18 @@ tornado==6.1
     # via
     #   livereload
     #   mkdocs
-tqdm==4.60.0
+tqdm==4.61.0
     # via
     #   nltk
     #   twine
 twine==3.4.1
     # via python-semantic-release
-typing-extensions==3.7.4.3
+typing-extensions==3.10.0.0
     # via
+    #   gitpython
     #   importlib-metadata
     #   pydantic
-urllib3==1.26.4
+urllib3==1.26.5
     # via requests
 webencodings==0.5.1
     # via bleach
@@ -159,5 +160,5 @@ zipp==3.4.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==56.0.0
+setuptools==57.0.0
     # via setuptools-scm

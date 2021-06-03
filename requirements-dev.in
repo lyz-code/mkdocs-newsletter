@@ -1,5 +1,4 @@
 -r requirements.txt
--r docs/requirements.in
 
 # Testing
 pytest
@@ -48,3 +47,18 @@ autoimport
 black
 isort
 yamlfix
+
+# Docs (can't use -r docs/requirements.txt because it has incompatible click versions
+# -r docs/requirements.in
+
+mkdocs
+mkdocs-git-revision-date-localized-plugin
+mkdocs-htmlproofer-plugin
+# Not compatible with mermaidjs
+# mkdocs-minify-plugin
+mkdocs-autolinks-plugin
+mkdocs-mermaid2-plugin
+mkdocs-material
+mkdocstrings
+markdown-include
+mkdocs-section-index
