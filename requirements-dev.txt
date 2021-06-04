@@ -193,13 +193,13 @@ gitpython==3.1.17
     #   bandit
     #   mkdocs-git-revision-date-localized-plugin
     #   python-semantic-release
-identify==2.2.7
+identify==2.2.8
     # via pre-commit
 idna==2.10
     # via
     #   -r requirements.txt
     #   requests
-importlib-metadata==4.4.0
+importlib-metadata==4.5.0
     # via
     #   -r requirements.txt
     #   flake8
