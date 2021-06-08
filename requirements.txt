@@ -16,7 +16,7 @@ chardet==4.0.0
     # via requests
 click-log==0.3.2
     # via python-semantic-release
-click==7.1.2
+click==8.0.1
     # via
     #   click-log
     #   mkdocs
