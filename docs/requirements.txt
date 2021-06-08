@@ -105,6 +105,8 @@ keyring==23.0.1
     # via
     #   -r docs/../requirements.txt
     #   twine
+livereload==2.6.3
+    # via -r docs/requirements.in
 markdown-include==0.6.0
     # via -r docs/requirements.in
 markdown==3.3.4
@@ -259,6 +261,7 @@ six==1.16.0
     #   astunparse
     #   bleach
     #   jsbeautifier
+    #   livereload
     #   python-dateutil
     #   readme-renderer
 smmap==4.0.0
@@ -273,6 +276,8 @@ tomlkit==0.7.0
     # via
     #   -r docs/../requirements.txt
     #   python-semantic-release
+tornado==6.1
+    # via livereload
 tqdm==4.61.0
     # via
     #   -r docs/../requirements.txt
