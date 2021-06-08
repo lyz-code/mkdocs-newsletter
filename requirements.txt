@@ -20,7 +20,6 @@ click==7.1.2
     # via
     #   click-log
     #   mkdocs
-    #   nltk
     #   python-semantic-release
 colorama==0.4.4
     # via twine
@@ -32,8 +31,8 @@ docutils==0.17.1
     # via readme-renderer
 dotty-dict==1.3.0
     # via python-semantic-release
-future==0.18.2
-    # via lunr
+ghp-import==2.0.1
+    # via mkdocs
 gitdb==4.0.7
     # via gitpython
 gitpython==3.1.17
@@ -46,6 +45,7 @@ importlib-metadata==4.5.0
     # via
     #   keyring
     #   markdown
+    #   mkdocs
     #   twine
 invoke==1.5.0
     # via python-semantic-release
@@ -55,33 +55,29 @@ jeepney==0.6.0
     #   secretstorage
 jinja2==3.0.1
     # via mkdocs
-joblib==1.0.1
-    # via nltk
 keyring==23.0.1
     # via twine
-livereload==2.6.3
-    # via mkdocs
-lunr[languages]==0.5.8
-    # via mkdocs
 markdown==3.3.4
     # via mkdocs
 markupsafe==2.0.1
     # via jinja2
+mergedeep==1.3.4
+    # via mkdocs
 mkdocs-autolinks-plugin==0.4.0
     # via mkdocs-newsletter (setup.py)
-mkdocs-section-index==0.3.0
+mkdocs-section-index==0.3.1
     # via mkdocs-newsletter (setup.py)
-mkdocs==1.1.2
+mkdocs==1.2
     # via
     #   mkdocs-autolinks-plugin
     #   mkdocs-newsletter (setup.py)
     #   mkdocs-section-index
-nltk==3.6.2
-    # via lunr
 ordered-set==4.0.2
     # via deepdiff
 packaging==20.9
-    # via bleach
+    # via
+    #   bleach
+    #   mkdocs
 pkginfo==1.7.0
     # via twine
 pycparser==2.20
@@ -93,17 +89,21 @@ pygments==2.9.0
 pyparsing==2.4.7
     # via packaging
 python-dateutil==2.8.1
-    # via mkdocs-newsletter (setup.py)
+    # via
+    #   ghp-import
+    #   mkdocs-newsletter (setup.py)
 python-gitlab==2.7.1
     # via python-semantic-release
 python-semantic-release==7.15.5
     # via mkdocs-newsletter (setup.py)
-pyyaml==5.4.1
+pyyaml-env-tag==0.1
     # via mkdocs
+pyyaml==5.4.1
+    # via
+    #   mkdocs
+    #   pyyaml-env-tag
 readme-renderer==29.0
     # via twine
-regex==2021.4.4
-    # via nltk
 requests-toolbelt==0.9.1
     # via
     #   python-gitlab
@@ -125,8 +125,6 @@ setuptools-scm==6.0.1
 six==1.16.0
     # via
     #   bleach
-    #   livereload
-    #   lunr
     #   python-dateutil
     #   readme-renderer
 smmap==4.0.0
@@ -135,14 +133,8 @@ soupsieve==2.2.1
     # via beautifulsoup4
 tomlkit==0.7.0
     # via python-semantic-release
-tornado==6.1
-    # via
-    #   livereload
-    #   mkdocs
 tqdm==4.61.0
-    # via
-    #   nltk
-    #   twine
+    # via twine
 twine==3.4.1
     # via python-semantic-release
 typing-extensions==3.10.0.0
@@ -152,6 +144,8 @@ typing-extensions==3.10.0.0
     #   pydantic
 urllib3==1.26.5
     # via requests
+watchdog==2.1.2
+    # via mkdocs
 webencodings==0.5.1
     # via bleach
 wheel==0.36.2
