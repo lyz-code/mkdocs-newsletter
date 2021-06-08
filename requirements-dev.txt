@@ -243,6 +243,8 @@ keyring==23.0.1
     #   twine
 lazy-object-proxy==1.6.0
     # via astroid
+livereload==2.6.3
+    # via -r requirements-dev.in
 markdown-include==0.6.0
     # via -r requirements-dev.in
 markdown==3.3.4
@@ -484,6 +486,7 @@ six==1.16.0
     #   bleach
     #   flake8-debugger
     #   jsbeautifier
+    #   livereload
     #   python-dateutil
     #   readme-renderer
     #   virtualenv
@@ -513,6 +516,8 @@ tomlkit==0.7.0
     # via
     #   -r requirements.txt
     #   python-semantic-release
+tornado==6.1
+    # via livereload
 tqdm==4.61.0
     # via
     #   -r requirements.txt

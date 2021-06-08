@@ -63,3 +63,6 @@ mkdocs-material
 mkdocstrings
 markdown-include
 mkdocs-section-index
+
+# Until https://github.com/mkdocstrings/mkdocstrings/issues/295 is fixed
+livereload
