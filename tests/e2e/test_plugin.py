@@ -38,11 +38,13 @@ def test_plugin_builds_newsletters(full_repo: Repo, config: Config) -> None:
     )
     assert (
         '<a href="../2021_03_02/" class="md-footer__link '
-        'md-footer__link--prev" rel="prev">' in newsletter
+        'md-footer__link--prev" aria-label="Previous: 2nd March 2021" rel="prev">'
+        in newsletter
     )
     assert (
         '<a href="../2021_w06/" class="md-footer__link '
-        'md-footer__link--next" rel="next">' in newsletter
+        'md-footer__link--next" aria-label="Next: 6th Week of 2021" rel="next">'
+        in newsletter
     )
 
 
@@ -336,11 +338,12 @@ def test_plugin_creates_landing_page(full_repo: Repo, config: Config) -> None:
     )
     assert (
         '<a href="../../emojis/" class="md-footer__link '
-        'md-footer__link--prev" rel="prev">' in landing_page
+        'md-footer__link--prev" aria-label="Previous: Emojis" rel="prev">'
+        in landing_page
     )
     assert (
         '<a href="../2021/" class="md-footer__link '
-        'md-footer__link--next" rel="next">' in landing_page
+        'md-footer__link--next" aria-label="Next: 2021" rel="next">' in landing_page
     )
 
 

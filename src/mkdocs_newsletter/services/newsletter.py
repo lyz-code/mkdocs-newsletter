@@ -228,6 +228,7 @@ def create_newsletter_landing_page(config: Config, repo: Repo) -> None:
     """Create the newsletter landing page."""
     base_dir = repo.working_dir
     landing_path = os.path.join(base_dir, "docs/newsletter/0_newsletter_index.md")
+    site_url = re.sub("/$", "", config["site_url"])
 
     if not os.path.isfile(landing_path):
         env = Environment(
@@ -235,7 +236,7 @@ def create_newsletter_landing_page(config: Config, repo: Repo) -> None:
             autoescape=select_autoescape(["html", "xml"]),
         )
         template = env.get_template("newsletter_landing_page.j2")
-        landing_page = template.render(site_url=config["site_url"])
+        landing_page = template.render(site_url=site_url)
 
         with open(landing_path, "+w") as landing_file:
             landing_file.write(landing_page)

@@ -50,7 +50,7 @@ def build_rss_feed(config: Config, working_dir: str, type_: str) -> Feed:
     Returns:
         Feed object with the data
     """
-    site_url = config["site_url"]
+    site_url = re.sub("/$", "", config["site_url"])
 
     try:
         logo_url: Optional[str] = f"{site_url}/{config['theme']['logo']}"
@@ -98,6 +98,7 @@ def _build_rss_entries(
         List of FeedEntry objects with the data.
     """
     entries = []
+    site_url = re.sub("/$", "", config["site_url"])
 
     newsletter_dir = os.path.join(
         working_dir, f'{config.get("site_dir", "site")}/newsletter'
@@ -131,12 +132,12 @@ def _build_rss_entries(
             permalink.extract()
 
         description = re.sub(
-            r'<a href="../../', f'<a href="{config["site_url"]}/', str(html.article)
+            r'<a href="../../', f'<a href="{site_url}/', str(html.article)
         )
 
         entry = FeedEntry(
             title=title,
-            link=f"{config['site_url']}/newsletter/{newsletter.basename}/",
+            link=f"{site_url}/newsletter/{newsletter.basename}/",
             published=published,
             description=description,
             author=author,
