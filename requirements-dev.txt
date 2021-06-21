@@ -18,8 +18,6 @@ astroid==2.5.6
     # via pylint
 asttokens==2.0.5
     # via flake8-aaa
-astunparse==1.6.3
-    # via pytkdocs
 attrs==21.2.0
     # via
     #   flake8-bugbear
@@ -44,8 +42,6 @@ bleach==3.3.0
     # via
     #   -r requirements.txt
     #   readme-renderer
-cached-property==1.5.2
-    # via pytkdocs
 certifi==2021.5.30
     # via
     #   -r requirements.txt
@@ -112,7 +108,7 @@ eradicate==2.0.0
     # via flake8-eradicate
 execnet==1.8.1
     # via pytest-xdist
-feedparser==6.0.2
+feedparser==6.0.6
     # via -r requirements-dev.in
 filelock==3.0.12
     # via virtualenv
@@ -201,20 +197,9 @@ idna==2.10
 importlib-metadata==4.5.0
     # via
     #   -r requirements.txt
-    #   flake8
-    #   flake8-comprehensions
-    #   flake8-simplify
-    #   flake8-typing-imports
     #   keyring
-    #   markdown
     #   mkdocs
-    #   pep517
-    #   pluggy
-    #   pre-commit
-    #   pytest
-    #   stevedore
     #   twine
-    #   virtualenv
 iniconfig==1.1.1
     # via pytest
 invoke==1.5.0
@@ -481,7 +466,6 @@ six==1.16.0
     # via
     #   -r requirements.txt
     #   asttokens
-    #   astunparse
     #   bandit
     #   bleach
     #   flake8-debugger
@@ -527,20 +511,12 @@ twine==3.4.1
     #   -r requirements.txt
     #   python-semantic-release
 typed-ast==1.4.3
-    # via
-    #   astroid
-    #   black
-    #   flake8-annotations
-    #   mypy
+    # via mypy
 typing-extensions==3.10.0.0
     # via
     #   -r requirements.txt
-    #   black
-    #   gitpython
-    #   importlib-metadata
     #   mypy
     #   pydantic
-    #   pytkdocs
 urllib3==1.26.5
     # via
     #   -r requirements.txt
@@ -559,7 +535,6 @@ webencodings==0.5.1
 wheel==0.36.2
     # via
     #   -r requirements.txt
-    #   astunparse
     #   python-semantic-release
 wrapt==1.12.1
     # via astroid
@@ -571,7 +546,6 @@ zipp==3.4.1
     # via
     #   -r requirements.txt
     #   importlib-metadata
-    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==21.1.2
@@ -586,4 +560,3 @@ setuptools==57.0.0
     #   ruyaml
     #   safety
     #   setuptools-scm
-    #   yamllint
