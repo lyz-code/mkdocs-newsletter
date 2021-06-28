@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/contributing/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/install/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/reference/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/rss_feeds/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/usage/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/001-initial_approach/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/002-initial_plugin_design/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/003-select_the_changes_to_record/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/004-article_newsletter_structure/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/005-create_the_newsletter_articles/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/006-rss_feed_creation/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/00X-changelog_support/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/00x-selection_of_changes_to_be_notified/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/00x-sending_the_email_newsletter/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/00x-sending_the_notifications/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lyz-code.github.io/mkdocs-newsletter/adr/adr/</loc>
-         <lastmod>2021-06-08</lastmod>
+         <lastmod>2021-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
