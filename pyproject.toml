@@ -154,6 +154,11 @@ pycodestyle = [
            # cleaner if we show the actual result without splitting long lines.
 ]
 
+[tool.flakehell.exceptions."tests/unit/services/test_last_newsletters.py"]
+flake8-eradicate = [
+  "-E800", # confuses multi-line markdown string as commented out code
+]
+
 # --------- Pylint -------------
 [tool.pylint.'TYPECHECK']
 generated-members = "sh"
