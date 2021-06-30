@@ -12,7 +12,7 @@ astor==0.8.1
     # via flake8-simplify
 astpretty==2.1.0
     # via flake8-expression-complexity
-astroid==2.5.6
+astroid==2.6.1
     # via pylint
 asttokens==2.0.5
     # via flake8-aaa
@@ -371,7 +371,7 @@ pygments==2.9.0
     #   flakehell
     #   mkdocs-material
     #   readme-renderer
-pylint==2.8.3
+pylint==2.9.0
     # via -r requirements-dev.in
 pymdown-extensions==8.2
     # via
@@ -535,6 +535,7 @@ typed-ast==1.4.3
 typing-extensions==3.10.0.0
     # via
     #   -r requirements.txt
+    #   astroid
     #   black
     #   gitpython
     #   importlib-metadata
