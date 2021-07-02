@@ -371,7 +371,7 @@ pygments==2.9.0
     #   flakehell
     #   mkdocs-material
     #   readme-renderer
-pylint==2.9.1
+pylint==2.9.3
     # via -r requirements-dev.in
 pymdown-extensions==8.2
     # via
@@ -435,7 +435,7 @@ readme-renderer==29.0
     # via
     #   -r requirements.txt
     #   twine
-regex==2021.4.4
+regex==2021.7.1
     # via black
 requests==2.25.1
     # via
