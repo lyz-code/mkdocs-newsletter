@@ -569,7 +569,7 @@ yamlfix==0.5.0
     # via -r requirements-dev.in
 yamllint==1.26.1
     # via -r requirements-dev.in
-zipp==3.4.1
+zipp==3.5.0
     # via
     #   -r requirements.txt
     #   importlib-metadata

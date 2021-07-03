@@ -311,7 +311,7 @@ wheel==0.36.2
     #   -r docs/../requirements.txt
     #   astunparse
     #   python-semantic-release
-zipp==3.4.1
+zipp==3.5.0
     # via
     #   -r docs/../requirements.txt
     #   importlib-metadata
