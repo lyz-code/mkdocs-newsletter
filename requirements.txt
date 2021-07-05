@@ -41,7 +41,7 @@ gitpython==3.1.18
     #   python-semantic-release
 idna==2.10
     # via requests
-importlib-metadata==4.6.0
+importlib-metadata==4.6.1
     # via
     #   click
     #   keyring
@@ -155,5 +155,5 @@ zipp==3.5.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==57.0.0
+setuptools==57.1.0
     # via setuptools-scm
