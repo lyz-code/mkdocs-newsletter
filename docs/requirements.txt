@@ -279,7 +279,7 @@ tomlkit==0.7.0
     #   python-semantic-release
 tornado==6.1
     # via livereload
-tqdm==4.61.1
+tqdm==4.61.2
     # via
     #   -r docs/../requirements.txt
     #   twine

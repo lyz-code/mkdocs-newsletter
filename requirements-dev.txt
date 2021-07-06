@@ -435,7 +435,7 @@ readme-renderer==29.0
     # via
     #   -r requirements.txt
     #   twine
-regex==2021.7.1
+regex==2021.7.6
     # via black
 requests==2.25.1
     # via
@@ -518,7 +518,7 @@ tomlkit==0.7.0
     #   python-semantic-release
 tornado==6.1
     # via livereload
-tqdm==4.61.1
+tqdm==4.61.2
     # via
     #   -r requirements.txt
     #   twine
