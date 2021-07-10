@@ -86,7 +86,7 @@ importlib-metadata==4.6.1
     #   markdown
     #   mkdocs
     #   twine
-invoke==1.5.0
+invoke==1.6.0
     # via
     #   -r docs/../requirements.txt
     #   python-semantic-release
@@ -174,7 +174,7 @@ packaging==21.0
     #   -r docs/../requirements.txt
     #   bleach
     #   mkdocs
-pkginfo==1.7.0
+pkginfo==1.7.1
     # via
     #   -r docs/../requirements.txt
     #   twine
