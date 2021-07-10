@@ -39,7 +39,7 @@ gitpython==3.1.18
     # via
     #   mkdocs-newsletter (setup.py)
     #   python-semantic-release
-idna==2.10
+idna==3.2
     # via requests
 importlib-metadata==4.6.1
     # via
