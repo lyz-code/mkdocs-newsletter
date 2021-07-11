@@ -50,7 +50,7 @@ importlib-metadata==4.6.1
     #   twine
 invoke==1.6.0
     # via python-semantic-release
-jeepney==0.6.0
+jeepney==0.7.0
     # via
     #   keyring
     #   secretstorage
