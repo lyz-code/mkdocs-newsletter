@@ -27,7 +27,7 @@ cffi==1.14.6
     # via
     #   -r docs/../requirements.txt
     #   cryptography
-chardet==4.0.0
+charset-normalizer==2.0.1
     # via
     #   -r docs/../requirements.txt
     #   requests
@@ -74,7 +74,7 @@ gitpython==3.1.18
     #   -r docs/../requirements.txt
     #   mkdocs-git-revision-date-localized-plugin
     #   python-semantic-release
-idna==2.10
+idna==3.2
     # via
     #   -r docs/../requirements.txt
     #   requests
@@ -198,7 +198,7 @@ pyparsing==2.4.7
     # via
     #   -r docs/../requirements.txt
     #   packaging
-python-dateutil==2.8.1
+python-dateutil==2.8.2
     # via
     #   -r docs/../requirements.txt
     #   ghp-import
@@ -226,7 +226,7 @@ readme-renderer==29.0
     # via
     #   -r docs/../requirements.txt
     #   twine
-requests==2.25.1
+requests==2.26.0
     # via
     #   -r docs/../requirements.txt
     #   mkdocs-htmlproofer-plugin

@@ -12,7 +12,7 @@ certifi==2021.5.30
     # via requests
 cffi==1.14.6
     # via cryptography
-chardet==4.0.0
+charset-normalizer==2.0.1
     # via requests
 click==8.0.1
     # via
@@ -39,7 +39,7 @@ gitpython==3.1.18
     # via
     #   mkdocs-newsletter (setup.py)
     #   python-semantic-release
-idna==2.10
+idna==3.2
     # via requests
 importlib-metadata==4.6.1
     # via
@@ -89,7 +89,7 @@ pygments==2.9.0
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
-python-dateutil==2.8.1
+python-dateutil==2.8.2
     # via
     #   ghp-import
     #   mkdocs-newsletter (setup.py)
@@ -105,7 +105,7 @@ pyyaml-env-tag==0.1
     # via mkdocs
 readme-renderer==29.0
     # via twine
-requests==2.25.1
+requests==2.26.0
     # via
     #   python-gitlab
     #   python-semantic-release
