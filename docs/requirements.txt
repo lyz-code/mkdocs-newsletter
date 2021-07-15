@@ -13,7 +13,7 @@ beautifulsoup4==4.9.3
     #   -r docs/../requirements.txt
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
-bleach==3.3.0
+bleach==3.3.1
     # via
     #   -r docs/../requirements.txt
     #   readme-renderer
@@ -27,7 +27,7 @@ cffi==1.14.6
     # via
     #   -r docs/../requirements.txt
     #   cryptography
-charset-normalizer==2.0.1
+charset-normalizer==2.0.2
     # via
     #   -r docs/../requirements.txt
     #   requests
@@ -317,7 +317,7 @@ zipp==3.5.0
     #   importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==57.1.0
+setuptools==57.2.0
     # via
     #   -r docs/../requirements.txt
     #   mkdocs-mermaid2-plugin
