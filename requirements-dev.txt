@@ -36,7 +36,7 @@ beautifulsoup4==4.9.3
     #   -r requirements.txt
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
-black==21.6b0
+black==21.7b0
     # via -r requirements-dev.in
 bleach==3.3.1
     # via
@@ -54,7 +54,7 @@ cffi==1.14.6
     #   cryptography
 cfgv==3.3.0
     # via pre-commit
-charset-normalizer==2.0.2
+charset-normalizer==2.0.3
     # via
     #   -r requirements.txt
     #   requests
@@ -507,7 +507,6 @@ stevedore==3.3.0
     # via bandit
 toml==0.10.2
     # via
-    #   black
     #   dparse
     #   flakehell
     #   mypy
@@ -516,6 +515,8 @@ toml==0.10.2
     #   pylint
     #   pytest
     #   pytest-cov
+tomli==1.0.4
+    # via black
 tomlkit==0.7.0
     # via
     #   -r requirements.txt
