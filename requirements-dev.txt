@@ -222,11 +222,11 @@ invoke==1.6.0
     # via
     #   -r requirements.txt
     #   python-semantic-release
-isort==5.9.2
+isort==5.9.3
     # via
     #   -r requirements-dev.in
     #   pylint
-jeepney==0.7.0
+jeepney==0.7.1
     # via
     #   -r requirements.txt
     #   keyring
@@ -375,7 +375,7 @@ pygments==2.9.0
     #   flakehell
     #   mkdocs-material
     #   readme-renderer
-pylint==2.9.5
+pylint==2.9.6
     # via -r requirements-dev.in
 pymdown-extensions==8.2
     # via
@@ -411,7 +411,7 @@ python-dateutil==2.8.2
     #   -r requirements.txt
     #   freezegun
     #   ghp-import
-python-gitlab==2.9.0
+python-gitlab==2.10.0
     # via
     #   -r requirements.txt
     #   python-semantic-release

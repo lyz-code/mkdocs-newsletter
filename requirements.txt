@@ -50,7 +50,7 @@ importlib-metadata==4.6.1
     #   twine
 invoke==1.6.0
     # via python-semantic-release
-jeepney==0.7.0
+jeepney==0.7.1
     # via
     #   keyring
     #   secretstorage
@@ -93,7 +93,7 @@ python-dateutil==2.8.2
     # via
     #   ghp-import
     #   mkdocs-newsletter (setup.py)
-python-gitlab==2.9.0
+python-gitlab==2.10.0
     # via python-semantic-release
 python-semantic-release==7.16.2
     # via mkdocs-newsletter (setup.py)
