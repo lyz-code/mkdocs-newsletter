@@ -27,7 +27,7 @@ cffi==1.14.6
     # via
     #   -r docs/../requirements.txt
     #   cryptography
-charset-normalizer==2.0.3
+charset-normalizer==2.0.4
     # via
     #   -r docs/../requirements.txt
     #   requests
@@ -78,7 +78,7 @@ idna==3.2
     # via
     #   -r docs/../requirements.txt
     #   requests
-importlib-metadata==4.6.1
+importlib-metadata==4.6.2
     # via
     #   -r docs/../requirements.txt
     #   click
@@ -279,7 +279,7 @@ tomlkit==0.7.0
     #   python-semantic-release
 tornado==6.1
     # via livereload
-tqdm==4.61.2
+tqdm==4.62.0
     # via
     #   -r docs/../requirements.txt
     #   twine
