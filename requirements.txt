@@ -6,7 +6,7 @@
 #
 beautifulsoup4==4.9.3
     # via mkdocs-newsletter (setup.py)
-bleach==3.3.1
+bleach==4.0.0
     # via readme-renderer
 certifi==2021.5.30
     # via requests
@@ -41,7 +41,7 @@ gitpython==3.1.18
     #   python-semantic-release
 idna==3.2
     # via requests
-importlib-metadata==4.6.2
+importlib-metadata==4.6.3
     # via
     #   click
     #   keyring
@@ -95,7 +95,7 @@ python-dateutil==2.8.2
     #   mkdocs-newsletter (setup.py)
 python-gitlab==2.10.0
     # via python-semantic-release
-python-semantic-release==7.16.3
+python-semantic-release==7.16.4
     # via mkdocs-newsletter (setup.py)
 pyyaml==5.4.1
     # via
