@@ -207,7 +207,7 @@ python-gitlab==2.10.0
     # via
     #   -r docs/../requirements.txt
     #   python-semantic-release
-python-semantic-release==7.16.4
+python-semantic-release==7.17.0
     # via -r docs/../requirements.txt
 pytkdocs==0.11.1
     # via mkdocstrings
