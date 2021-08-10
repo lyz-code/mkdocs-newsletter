@@ -151,7 +151,7 @@ mkdocs-git-revision-date-localized-plugin==0.9.2
     # via -r docs/requirements.in
 mkdocs-htmlproofer-plugin==0.5.0
     # via -r docs/requirements.in
-mkdocs-material==7.2.2
+mkdocs-material==7.2.3
     # via
     #   -r docs/requirements.in
     #   mkdocs-material-extensions
@@ -207,7 +207,7 @@ python-gitlab==2.10.0
     # via
     #   -r docs/../requirements.txt
     #   python-semantic-release
-python-semantic-release==7.17.0
+python-semantic-release==7.18.0
     # via -r docs/../requirements.txt
 pytkdocs==0.11.1
     # via mkdocstrings
@@ -307,7 +307,7 @@ webencodings==0.5.1
     # via
     #   -r docs/../requirements.txt
     #   bleach
-wheel==0.36.2
+wheel==0.37.0
     # via
     #   -r docs/../requirements.txt
     #   astunparse

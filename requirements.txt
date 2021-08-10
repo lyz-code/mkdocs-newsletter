@@ -95,7 +95,7 @@ python-dateutil==2.8.2
     #   mkdocs-newsletter (setup.py)
 python-gitlab==2.10.0
     # via python-semantic-release
-python-semantic-release==7.17.0
+python-semantic-release==7.18.0
     # via mkdocs-newsletter (setup.py)
 pyyaml==5.4.1
     # via
@@ -149,7 +149,7 @@ watchdog==2.1.3
     # via mkdocs
 webencodings==0.5.1
     # via bleach
-wheel==0.36.2
+wheel==0.37.0
     # via python-semantic-release
 zipp==3.5.0
     # via importlib-metadata
