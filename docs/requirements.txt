@@ -102,7 +102,7 @@ jinja2==3.0.1
     #   mkdocstrings
 jsbeautifier==1.14.0
     # via mkdocs-mermaid2-plugin
-keyring==23.0.1
+keyring==23.1.0
     # via
     #   -r docs/../requirements.txt
     #   twine
@@ -185,7 +185,7 @@ pycparser==2.20
     #   cffi
 pydantic==1.8.2
     # via -r docs/../requirements.txt
-pygments==2.9.0
+pygments==2.10.0
     # via
     #   -r docs/../requirements.txt
     #   mkdocs-material
