@@ -280,7 +280,7 @@ tomlkit==0.7.0
     #   python-semantic-release
 tornado==6.1
     # via livereload
-tqdm==4.62.1
+tqdm==4.62.2
     # via
     #   -r docs/../requirements.txt
     #   twine
@@ -299,7 +299,7 @@ urllib3==1.26.6
     # via
     #   -r docs/../requirements.txt
     #   requests
-watchdog==2.1.4
+watchdog==2.1.5
     # via
     #   -r docs/../requirements.txt
     #   mkdocs
