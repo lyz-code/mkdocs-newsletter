@@ -23,7 +23,7 @@ click-log==0.3.2
     # via python-semantic-release
 colorama==0.4.4
     # via twine
-cryptography==3.4.7
+cryptography==3.4.8
     # via secretstorage
 deepdiff==5.5.0
     # via mkdocs-newsletter (setup.py)
