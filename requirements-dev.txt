@@ -38,7 +38,7 @@ beautifulsoup4==4.9.3
     #   mkdocs-mermaid2-plugin
 black==21.7b0
     # via -r requirements-dev.in
-bleach==4.0.0
+bleach==4.1.0
     # via
     #   -r requirements.txt
     #   readme-renderer
@@ -52,7 +52,7 @@ cffi==1.14.6
     # via
     #   -r requirements.txt
     #   cryptography
-cfgv==3.3.0
+cfgv==3.3.1
     # via pre-commit
 charset-normalizer==2.0.4
     # via
@@ -197,7 +197,7 @@ idna==3.2
     # via
     #   -r requirements.txt
     #   requests
-importlib-metadata==4.6.4
+importlib-metadata==4.7.0
     # via
     #   -r requirements.txt
     #   backports.entry-points-selectable

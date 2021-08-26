@@ -6,7 +6,7 @@
 #
 beautifulsoup4==4.9.3
     # via mkdocs-newsletter (setup.py)
-bleach==4.0.0
+bleach==4.1.0
     # via readme-renderer
 certifi==2021.5.30
     # via requests
@@ -41,7 +41,7 @@ gitpython==3.1.18
     #   python-semantic-release
 idna==3.2
     # via requests
-importlib-metadata==4.6.4
+importlib-metadata==4.7.0
     # via
     #   click
     #   keyring
