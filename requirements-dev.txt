@@ -197,7 +197,7 @@ idna==3.2
     # via
     #   -r requirements.txt
     #   requests
-importlib-metadata==4.7.0
+importlib-metadata==4.7.1
     # via
     #   -r requirements.txt
     #   backports.entry-points-selectable
@@ -442,7 +442,7 @@ readme-renderer==29.0
     # via
     #   -r requirements.txt
     #   twine
-regex==2021.8.21
+regex==2021.8.27
     # via black
 requests==2.26.0
     # via
