@@ -203,7 +203,7 @@ python-dateutil==2.8.2
     # via
     #   -r docs/../requirements.txt
     #   ghp-import
-python-gitlab==2.10.0
+python-gitlab==2.10.1
     # via
     #   -r docs/../requirements.txt
     #   python-semantic-release

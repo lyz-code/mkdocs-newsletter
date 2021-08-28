@@ -414,7 +414,7 @@ python-dateutil==2.8.2
     #   -r requirements.txt
     #   freezegun
     #   ghp-import
-python-gitlab==2.10.0
+python-gitlab==2.10.1
     # via
     #   -r requirements.txt
     #   python-semantic-release
@@ -442,7 +442,7 @@ readme-renderer==29.0
     # via
     #   -r requirements.txt
     #   twine
-regex==2021.8.27
+regex==2021.8.28
     # via black
 requests==2.26.0
     # via
