@@ -4,8 +4,6 @@
 #
 #    pip-compile --allow-unsafe --output-file=requirements-dev.txt requirements-dev.in
 #
-appdirs==1.4.4
-    # via black
 astor==0.8.1
     # via flake8-simplify
 astpretty==2.1.0
@@ -36,7 +34,7 @@ beautifulsoup4==4.9.3
     #   -r requirements.txt
     #   mkdocs-htmlproofer-plugin
     #   mkdocs-mermaid2-plugin
-black==21.7b0
+black==21.8b0
     # via -r requirements-dev.in
 bleach==4.1.0
     # via
@@ -197,7 +195,7 @@ idna==3.2
     # via
     #   -r requirements.txt
     #   requests
-importlib-metadata==4.7.1
+importlib-metadata==4.8.1
     # via
     #   -r requirements.txt
     #   backports.entry-points-selectable
@@ -346,11 +344,12 @@ pkginfo==1.7.1
     #   twine
 platformdirs==2.2.0
     # via
+    #   black
     #   pylint
     #   virtualenv
 pluggy==0.13.1
     # via pytest
-pre-commit==2.14.0
+pre-commit==2.14.1
     # via -r requirements-dev.in
 py==1.10.0
     # via
@@ -541,7 +540,7 @@ typed-ast==1.4.3
     #   black
     #   flake8-annotations
     #   mypy
-typing-extensions==3.10.0.0
+typing-extensions==3.10.0.1
     # via
     #   -r requirements.txt
     #   astroid
