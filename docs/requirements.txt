@@ -288,7 +288,7 @@ twine==3.4.2
     # via
     #   -r docs/../requirements.txt
     #   python-semantic-release
-typing-extensions==3.10.0.1
+typing-extensions==3.10.0.2
     # via
     #   -r docs/../requirements.txt
     #   gitpython
