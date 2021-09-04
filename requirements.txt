@@ -135,7 +135,7 @@ soupsieve==2.2.1
     # via beautifulsoup4
 tomli==1.2.1
     # via setuptools-scm
-tomlkit==0.7.0
+tomlkit==0.7.2
     # via python-semantic-release
 tqdm==4.62.2
     # via twine
