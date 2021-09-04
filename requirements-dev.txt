@@ -287,16 +287,15 @@ mkdocs-autolinks-plugin==0.4.0
     #   -r requirements.txt
 mkdocs-autorefs==0.2.1
     # via mkdocstrings
-mkdocs-git-revision-date-localized-plugin==0.9.2
+mkdocs-git-revision-date-localized-plugin==0.9.3
     # via -r requirements-dev.in
 mkdocs-htmlproofer-plugin==0.6.0
     # via -r requirements-dev.in
 mkdocs-material==7.2.6
     # via
     #   -r requirements-dev.in
-    #   mkdocs-material-extensions
     #   mkdocs-mermaid2-plugin
-mkdocs-material-extensions==1.0.1
+mkdocs-material-extensions==1.0.3
     # via mkdocs-material
 mkdocs-mermaid2-plugin==0.5.2
     # via -r requirements-dev.in
@@ -326,6 +325,7 @@ packaging==21.0
     #   mkdocs
     #   pytest
     #   safety
+    #   setuptools-scm
 pathspec==0.9.0
     # via
     #   black
@@ -474,7 +474,7 @@ semver==2.13.0
     # via
     #   -r requirements.txt
     #   python-semantic-release
-setuptools-scm==6.0.1
+setuptools-scm==6.3.1
     # via
     #   -r requirements.txt
     #   dotty-dict
@@ -518,8 +518,10 @@ toml==0.10.2
     #   pytest-cov
 tomli==1.2.1
     # via
+    #   -r requirements.txt
     #   black
     #   pep517
+    #   setuptools-scm
 tomlkit==0.7.0
     # via
     #   -r requirements.txt
