@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe
 #
-beautifulsoup4==4.9.3
+beautifulsoup4==4.10.0
     # via mkdocs-newsletter (setup.py)
 bleach==4.1.0
     # via readme-renderer
@@ -158,5 +158,5 @@ zipp==3.5.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==58.0.2
+setuptools==58.0.3
     # via setuptools-scm
