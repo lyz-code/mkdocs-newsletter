@@ -189,7 +189,7 @@ gitpython==3.1.18
     #   bandit
     #   mkdocs-git-revision-date-localized-plugin
     #   python-semantic-release
-identify==2.2.13
+identify==2.2.14
     # via pre-commit
 idna==3.2
     # via
@@ -588,7 +588,7 @@ zipp==3.5.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==21.2.4
     # via pip-tools
-setuptools==58.0.3
+setuptools==58.0.4
     # via
     #   -r requirements.txt
     #   astroid
