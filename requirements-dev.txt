@@ -236,7 +236,7 @@ jinja2==3.0.1
     #   mkdocstrings
 jsbeautifier==1.14.0
     # via mkdocs-mermaid2-plugin
-keyring==23.1.0
+keyring==23.2.0
     # via
     #   -r requirements.txt
     #   twine
@@ -287,7 +287,7 @@ mkdocs-autolinks-plugin==0.4.0
     #   -r requirements.txt
 mkdocs-autorefs==0.2.1
     # via mkdocstrings
-mkdocs-git-revision-date-localized-plugin==0.9.3
+mkdocs-git-revision-date-localized-plugin==0.10.0
     # via -r requirements-dev.in
 mkdocs-htmlproofer-plugin==0.6.0
     # via -r requirements-dev.in
@@ -474,7 +474,7 @@ semver==2.13.0
     # via
     #   -r requirements.txt
     #   python-semantic-release
-setuptools-scm==6.3.1
+setuptools-scm==6.3.2
     # via
     #   -r requirements.txt
     #   dotty-dict

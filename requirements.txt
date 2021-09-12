@@ -56,7 +56,7 @@ jeepney==0.7.1
     #   secretstorage
 jinja2==3.0.1
     # via mkdocs
-keyring==23.1.0
+keyring==23.2.0
     # via twine
 markdown==3.3.4
     # via mkdocs
@@ -122,7 +122,7 @@ secretstorage==3.3.1
     # via keyring
 semver==2.13.0
     # via python-semantic-release
-setuptools-scm==6.3.1
+setuptools-scm==6.3.2
     # via dotty-dict
 six==1.16.0
     # via
