@@ -56,7 +56,7 @@ jeepney==0.7.1
     #   secretstorage
 jinja2==3.0.1
     # via mkdocs
-keyring==23.2.0
+keyring==23.2.1
     # via twine
 markdown==3.3.4
     # via mkdocs
