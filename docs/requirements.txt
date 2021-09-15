@@ -27,7 +27,7 @@ cffi==1.14.6
     # via
     #   -r docs/../requirements.txt
     #   cryptography
-charset-normalizer==2.0.4
+charset-normalizer==2.0.5
     # via
     #   -r docs/../requirements.txt
     #   requests
