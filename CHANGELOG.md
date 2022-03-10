@@ -1,3 +1,10 @@
+## 1.0.0 (2022-03-10)
+
+### Feat
+
+- use pdm package manager
+- use pdm package manager
+
 ## 0.3.1 (2021-06-08)
 
 ### Fix
