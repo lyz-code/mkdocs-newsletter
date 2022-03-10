@@ -35,9 +35,6 @@ plugins:
   - git-revision-date-localized:
       type: timeago
       fallback_to_build_date: true
-  - mermaid2:
-      arguments:
-        securityLevel: loose
   # Not compatible with mermaid2
   # - minify:
   #    minify_html: true
@@ -66,12 +63,11 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences:
-      # make exceptions to highlighting of code:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid
-  - pymdownx.tabbed
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
