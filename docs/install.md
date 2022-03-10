@@ -35,6 +35,10 @@ markdown_extensions:
       baselevel: 2
 ```
 
+Finally make sure that you have a `nav` section in your `mkdocs.yml` file with
+at least one entry, otherwise [the plugin won't
+work](https://github.com/lyz-code/mkdocs-newsletter/issues/67).
+
 # MkDocs configuration enhancements
 
 There are some MkDocs tweaks that can make the plugin work better:
@@ -233,5 +237,5 @@ To do so:
          exclude:
            - newsletter/*
    ```
-   
+
 Note that `newsletter/*` excludes all markdown files within a directory and its children. The paths must be relative to the `docs/` directory.
