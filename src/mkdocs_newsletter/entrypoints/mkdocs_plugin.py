@@ -2,7 +2,7 @@
 
 import os
 
-from git import Repo
+from git import Repo  # type: ignore
 from mkdocs.config.base import Config
 from mkdocs.plugins import BasePlugin
 

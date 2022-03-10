@@ -5,7 +5,7 @@ from datetime import datetime
 import feedparser
 import pytest
 from dateutil import parser, tz
-from git import Repo
+from git import Repo  # type: ignore
 from mkdocs.commands import build
 from mkdocs.config.base import Config
 
@@ -29,7 +29,7 @@ def test_plugin_builds_newsletters(full_repo: Repo, config: Config) -> None:
     build.build(config)  # act
 
     newsletter_path = f"{full_repo.working_dir}/site/newsletter/2021_02/index.html"
-    with open(newsletter_path, "r") as newsletter_file:
+    with open(newsletter_path, "r", encoding="utf-8") as newsletter_file:
         newsletter = newsletter_file.read()
     assert "<title>February of 2021 - The Blue Book</title>" in newsletter
     assert (
@@ -68,7 +68,7 @@ def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: Config) -> None:
     # - Daily feed -
     # --------------
     rss_path = f"{full_repo.working_dir}/site/daily.xml"
-    with open(rss_path, "r") as rss_file:
+    with open(rss_path, "r", encoding="utf-8") as rss_file:
         feed = feedparser.parse(rss_file.read())
     # Channel attributes
     assert feed.feed.title == "The Blue Book"
@@ -126,7 +126,7 @@ def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: Config) -> None
     # - Weekly feed -
     # --------------
     rss_path = f"{full_repo.working_dir}/site/weekly.xml"
-    with open(rss_path, "r") as rss_file:
+    with open(rss_path, "r", encoding="utf-8") as rss_file:
         feed = feedparser.parse(rss_file.read())
     # Channel attributes
     assert feed.feed.title == "The Blue Book"
@@ -186,7 +186,7 @@ def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: Config) -> Non
     # - Monthly feed -
     # --------------
     rss_path = f"{full_repo.working_dir}/site/monthly.xml"
-    with open(rss_path, "r") as rss_file:
+    with open(rss_path, "r", encoding="utf-8") as rss_file:
         feed = feedparser.parse(rss_file.read())
     # Channel attributes
     assert feed.feed.title == "The Blue Book"
@@ -246,7 +246,7 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: Config) -> None
     # - Yearly feed -
     # --------------
     rss_path = f"{full_repo.working_dir}/site/yearly.xml"
-    with open(rss_path, "r") as rss_file:
+    with open(rss_path, "r", encoding="utf-8") as rss_file:
         feed = feedparser.parse(rss_file.read())
     # Channel attributes
     assert feed.feed.title == "The Blue Book"
@@ -321,7 +321,7 @@ def test_plugin_creates_landing_page(full_repo: Repo, config: Config) -> None:
     landing_path = (
         f"{full_repo.working_dir}/site/newsletter/0_newsletter_index/index.html"
     )
-    with open(landing_path, "r") as landing_file:
+    with open(landing_path, "r", encoding="utf-8") as landing_file:
         landing_page = landing_file.read()
     assert "<title>Newsletters - The Blue Book</title>" in landing_page
     assert (
@@ -360,7 +360,7 @@ def test_build_rss_feed_without_logo(config: Config, full_repo: Repo) -> None:
     build.build(config)  # act
 
     rss_path = f"{full_repo.working_dir}/site/yearly.xml"
-    with open(rss_path, "r") as rss_file:
+    with open(rss_path, "r", encoding="utf-8") as rss_file:
         feed = feedparser.parse(rss_file.read())
     # Channel attributes
     assert feed.feed.title == "The Blue Book"

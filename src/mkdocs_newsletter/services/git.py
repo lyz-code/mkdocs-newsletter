@@ -10,7 +10,7 @@ from contextlib import suppress
 from typing import List, Optional, Tuple
 
 from dateutil import tz
-from git import Commit, Repo
+from git import Commit, Repo  # type: ignore
 
 from ..model import Change
 
@@ -107,7 +107,7 @@ def _parse_change(
         ValueError: when the commit message doesn't follow the commit guidelines.
     """
     commit_regexp = re.compile(
-        fr"(?P<type>{'|'.join(TYPES.keys())})"
+        rf"(?P<type>{'|'.join(TYPES.keys())})"
         r"(?:\((?P<scope>[^\)]+)\))?"
         r": (?P<summary>[^\n\n]+)"
         r"(:?\n\n(?P<text>.+))?",
