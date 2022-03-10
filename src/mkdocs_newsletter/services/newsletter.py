@@ -11,7 +11,7 @@ from typing import Callable, List, Optional, Tuple
 from dateutil import tz
 from dateutil.relativedelta import relativedelta
 from deepdiff import grep
-from git import Repo
+from git import Repo  # type: ignore
 from jinja2 import Environment, PackageLoader, select_autoescape
 from mkdocs.config.base import Config
 
@@ -238,7 +238,7 @@ def create_newsletter_landing_page(config: Config, repo: Repo) -> None:
         template = env.get_template("newsletter_landing_page.j2")
         landing_page = template.render(site_url=site_url)
 
-        with open(landing_path, "+w") as landing_file:
+        with open(landing_path, "+w", encoding="utf-8") as landing_file:
             landing_file.write(landing_page)
 
 
@@ -293,7 +293,7 @@ def _create_feed_articles(
 
     for file_name, changes_group in changes_groups.items():
         newsletter_path = os.path.join(newsletter_dir, file_name)
-        with open(newsletter_path, "w+") as newsletter_file:
+        with open(newsletter_path, "w+", encoding="utf-8") as newsletter_file:
             newsletter_file.write(create_newsletter(changes_group))
         files.append(newsletter_path)
 

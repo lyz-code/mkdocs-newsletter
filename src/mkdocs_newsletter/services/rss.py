@@ -36,7 +36,7 @@ def create_rss(config: Config, working_dir: str) -> None:
 
         feed_path = os.path.join(config["site_dir"], f"{feed_type}.xml")
         feed_content = template.render(feed=feed)
-        with open(feed_path, "+w") as feed_file:
+        with open(feed_path, "+w", encoding="utf-8") as feed_file:
             feed_file.write(feed_content)
 
 
@@ -104,11 +104,11 @@ def _build_rss_entries(
         working_dir, f'{config.get("site_dir", "site")}/newsletter'
     )
 
-    newsletters = _list_newsletters(os.path.join(working_dir, "docs/newsletter"))
-
-    for newsletter in getattr(newsletters, type_):
+    for newsletter in getattr(
+        _list_newsletters(os.path.join(working_dir, "docs/newsletter")), type_
+    ):
         with open(
-            f"{newsletter_dir}/{newsletter.basename}/index.html", "r"
+            f"{newsletter_dir}/{newsletter.basename}/index.html", "r", encoding="utf-8"
         ) as newsletter_file:
             html = BeautifulSoup(newsletter_file, "html.parser")
 

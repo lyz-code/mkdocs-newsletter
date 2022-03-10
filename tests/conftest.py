@@ -7,7 +7,7 @@ import textwrap
 
 import pytest
 from dateutil import tz
-from git import Actor, Repo
+from git import Actor, Repo  # type: ignore
 from mkdocs import config
 from mkdocs.config.base import Config
 from py._path.local import LocalPath
@@ -104,7 +104,9 @@ def full_repo_(repo: Repo) -> Repo:
     )
 
     # Single change commit that corrects the style of a file.
-    with open(os.path.join(repo.working_dir, "docs/emojis.md"), "a") as file_object:
+    with open(
+        os.path.join(repo.working_dir, "docs/emojis.md"), "a", encoding="utf-8"
+    ) as file_object:
         # Simulate the change by appending a string at the end of the file.
         file_object.write("correct link")
     commit_date = datetime.datetime(2021, 2, 6, 12, tzinfo=tz.tzlocal())
