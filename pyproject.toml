@@ -29,6 +29,8 @@ dependencies = [
     "gitpython>=3.1.27",
     "python-semantic-release>=7.26.0",
     "deepdiff>=5.7.0",
+    "mkdocs-material>=8.2.5",
+    "mkdocs-git-revision-date-localized-plugin>=1.0.0",
 ]
 name = "mkdocs-newsletter"
 description = "Automatically create newsletters from the changes in a mkdocs repository"
