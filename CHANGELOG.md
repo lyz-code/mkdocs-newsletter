@@ -1,3 +1,10 @@
+## 1.0.1 (2022-03-10)
+
+### Fix
+
+- add the missing requirements
+- add the missing requirements
+
 ## 1.0.0 (2022-03-10)
 
 ### Feat
