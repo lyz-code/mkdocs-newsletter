@@ -191,8 +191,6 @@ filterwarnings = [
   "ignore::DeprecationWarning:pytest_freezegun.*",
   # Until https://github.com/mkdocs/mkdocs/issues/2794
   "ignore::DeprecationWarning:mkdocs",
-  # Until https://github.com/squidfunk/mkdocs-material/issues/3695
-  "ignore::DeprecationWarning:jinja2",
 ]
 
 # --------- Coverage -------------
