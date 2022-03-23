@@ -783,7 +783,7 @@ dependencies = [
 
 [[package]]
 name = "mkdocs-material"
-version = "8.2.5"
+version = "8.2.6"
 requires_python = ">=3.6"
 summary = "A Material Design theme for MkDocs"
 dependencies = [
@@ -2082,9 +2082,9 @@ content_hash = "sha256:b7fb98a554123d662ad68399c2f65d5e1ad347e11e480507f62bf2cb7
     {file = "mkdocs_htmlproofer_plugin-0.8.0-py3-none-any.whl", hash = "sha256:914fa007df4182e22440c5d23670eba36392e7f58f99de728f3b1d7cfb4847c6"},
     {file = "mkdocs-htmlproofer-plugin-0.8.0.tar.gz", hash = "sha256:48db49ede2d94939b4773feaa8159f88803bf5edd87ea99c78665f8d61107651"},
 ]
-"mkdocs-material 8.2.5" = [
-    {file = "mkdocs_material-8.2.5-py2.py3-none-any.whl", hash = "sha256:95283c6af633809f32ba688fcf9bce4604af320e188d3e26fcb40d0e5ab9b823"},
-    {file = "mkdocs-material-8.2.5.tar.gz", hash = "sha256:cdfb39edc77f5c2bbfca02b4fc3764de38b2093eff121aed37674204439901ce"},
+"mkdocs-material 8.2.6" = [
+    {file = "mkdocs_material-8.2.6-py2.py3-none-any.whl", hash = "sha256:b30b4cfe5b0a74cccf2c75b7127c22cd8d816e6260c9a8708c3baf08c59e6714"},
+    {file = "mkdocs-material-8.2.6.tar.gz", hash = "sha256:be76ba3e0c0d4482159fc2c00d060dbf22cfb29f25276ebd0db9a0eaf6a18712"},
 ]
 "mkdocs-material-extensions 1.0.3" = [
     {file = "mkdocs_material_extensions-1.0.3-py3-none-any.whl", hash = "sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44"},
