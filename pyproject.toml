@@ -189,8 +189,6 @@ filterwarnings = [
   "error",
   # Until https://github.com/ktosiek/pytest-freezegun/issues/35 is merged
   "ignore::DeprecationWarning:pytest_freezegun.*",
-  # Until https://github.com/mkdocs/mkdocs/issues/2794
-  "ignore::DeprecationWarning:mkdocs",
 ]
 
 # --------- Coverage -------------
