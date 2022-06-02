@@ -14,7 +14,7 @@ summary = "Read/rewrite/write Python ASTs"
 
 [[package]]
 name = "astpretty"
-version = "2.1.0"
+version = "2.0.0"
 requires_python = ">=3.6.1"
 summary = "Pretty print the output of python stdlib `ast.parse`."
 
@@ -601,7 +601,7 @@ summary = "Internationalized Domain Names in Applications (IDNA)"
 [[package]]
 name = "importlib-metadata"
 version = "4.11.1"
-requires_python = ">=3.7"
+requires_python = ">=3.6"
 summary = "Read metadata from Python packages"
 dependencies = [
     "typing-extensions>=3.6.4; python_version < \"3.8\"",
@@ -1105,7 +1105,7 @@ dependencies = [
 
 [[package]]
 name = "python-semantic-release"
-version = "7.29.0"
+version = "7.29.1"
 summary = "Automatic Semantic Versioning for Python projects"
 dependencies = [
     "click-log<1,>=0.3",
@@ -1446,9 +1446,9 @@ content_hash = "sha256:b7fb98a554123d662ad68399c2f65d5e1ad347e11e480507f62bf2cb7
     {file = "astor-0.8.1-py2.py3-none-any.whl", hash = "sha256:070a54e890cefb5b3739d19f30f5a5ec840ffc9c50ffa7d23cc9fc1a38ebbfc5"},
     {file = "astor-0.8.1.tar.gz", hash = "sha256:6a6effda93f4e1ce9f618779b2dd1d9d84f1e32812c23a29b3fff6fd7f63fa5e"},
 ]
-"astpretty 2.1.0" = [
-    {file = "astpretty-2.1.0-py2.py3-none-any.whl", hash = "sha256:f81f14b5636f7af81fadb1e3c09ca7702ce4615500d9cc6d6829befb2dec2e3c"},
-    {file = "astpretty-2.1.0.tar.gz", hash = "sha256:8a801fcda604ec741f010bb36d7cbadc3ec8a182ea6fb83e20ab663463e75ff6"},
+"astpretty 2.0.0" = [
+    {file = "astpretty-2.0.0-py2.py3-none-any.whl", hash = "sha256:7f27633ed885033da8b58666e7079ffff7e8e01869ec1aa66484cb5185ea3aa4"},
+    {file = "astpretty-2.0.0.tar.gz", hash = "sha256:e4724bfd753636ba4a84384702e9796e5356969f40af2596d846ce64addde086"},
 ]
 "astroid 2.11.5" = [
     {file = "astroid-2.11.5-py3-none-any.whl", hash = "sha256:14ffbb4f6aa2cf474a0834014005487f7ecd8924996083ab411e7fa0b508ce0b"},
@@ -2257,9 +2257,9 @@ content_hash = "sha256:b7fb98a554123d662ad68399c2f65d5e1ad347e11e480507f62bf2cb7
     {file = "python_gitlab-3.5.0-py3-none-any.whl", hash = "sha256:73b5aa6502efa557ee1a51227cceb0243fac5529627da34f08c5f265bf50417c"},
     {file = "python-gitlab-3.5.0.tar.gz", hash = "sha256:29ae7fb9b8c9aeb2e6e19bd2fd04867e93ecd7af719978ce68fac0cf116ab30d"},
 ]
-"python-semantic-release 7.29.0" = [
-    {file = "python_semantic_release-7.29.0-py3-none-any.whl", hash = "sha256:c8f45390caaa1c32886bd0af498bdbf4c5d6c8b8c947d67fce821f1689c132b1"},
-    {file = "python-semantic-release-7.29.0.tar.gz", hash = "sha256:63bc4f92e23442b87df87ca98a8b585efaa15bd4bd7a2caf028452cc01acda8f"},
+"python-semantic-release 7.29.1" = [
+    {file = "python_semantic_release-7.29.1-py3-none-any.whl", hash = "sha256:459ed4c09b4aa9ea94b5ceb240211cb7967069d635b1dd9b97b44a9893ec73fb"},
+    {file = "python-semantic-release-7.29.1.tar.gz", hash = "sha256:9bf10e1f9593259d9c139fb3dd2f54b7c61e8abdce62e4aada5b50253dd60dec"},
 ]
 "pytz 2022.1" = [
     {file = "pytz-2022.1-py2.py3-none-any.whl", hash = "sha256:e68985985296d9a66a881eb3193b0906246245294a881e7c8afe623866ac6a5c"},
