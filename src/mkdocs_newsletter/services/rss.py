@@ -70,9 +70,9 @@ def build_rss_feed(config: Config, working_dir: str, type_: str) -> Feed:
         ttl=TTL[type_],
         generator=f"mkdocs-newsletter - v{__version__}",
         title=config.get("site_name", None),
-        link=site_url,
-        rss_link=f"{site_url}/{type_}.xml",
-        logo=logo_url,
+        link=site_url,  # type: ignore
+        rss_link=f"{site_url}/{type_}.xml",  # type: ignore
+        logo=logo_url,  # type: ignore
         description=config.get("site_description", None),
         author=author,
         published=published,
@@ -137,7 +137,7 @@ def _build_rss_entries(
 
         entry = FeedEntry(
             title=title,
-            link=f"{site_url}/newsletter/{newsletter.basename}/",
+            link=f"{site_url}/newsletter/{newsletter.basename}/",  # type: ignore
             published=published,
             description=description,
             author=author,
