@@ -6,6 +6,7 @@ import operator
 import os
 import re
 from contextlib import suppress
+from pathlib import Path
 from typing import Callable, List, Optional, Tuple
 
 from dateutil import tz
@@ -79,18 +80,19 @@ def _list_newsletters(newsletter_dir: str) -> Newsletters:
         Newsletters object.
     """
     newsletters = Newsletters()
-    for file_ in os.scandir(newsletter_dir):
-        if file_.name == "0_newsletter_index.md":
-            continue
-        newsletter = Newsletter(file_=file_)
-        if newsletter.type_ == "yearly":
-            newsletters.yearly.append(newsletter)
-        elif newsletter.type_ == "monthly":
-            newsletters.monthly.append(newsletter)
-        elif newsletter.type_ == "weekly":
-            newsletters.weekly.append(newsletter)
-        elif newsletter.type_ == "daily":
-            newsletters.daily.append(newsletter)
+    with os.scandir(newsletter_dir) as files:
+        for file_ in files:
+            if file_.name == "0_newsletter_index.md":
+                continue
+            newsletter = Newsletter(file_=Path(file_.path))
+            if newsletter.type_ == "yearly":
+                newsletters.yearly.append(newsletter)
+            elif newsletter.type_ == "monthly":
+                newsletters.monthly.append(newsletter)
+            elif newsletter.type_ == "weekly":
+                newsletters.weekly.append(newsletter)
+            elif newsletter.type_ == "daily":
+                newsletters.daily.append(newsletter)
     newsletters.sort()
 
     return newsletters
