@@ -3,6 +3,7 @@
 from datetime import datetime
 from pathlib import Path
 
+import pytest
 from dateutil import tz
 
 from mkdocs_newsletter.model import (
@@ -84,13 +85,13 @@ def test_feedentry_can_order_objects() -> None:  # noqa: AAA01
     greater = FeedEntry(
         published=datetime(2021, 1, 1),
         title="Greater",
-        link="https://test.com",
+        link="https://test.com",  # type: ignore
         description="",
     )
     smaller = FeedEntry(
         published=datetime(2020, 1, 1),
         title="Smaller",
-        link="https://test.com",
+        link="https://test.com",  # type: ignore
         description="",
     )
 
@@ -98,3 +99,22 @@ def test_feedentry_can_order_objects() -> None:  # noqa: AAA01
     # SIM204, C0113: We don't want to simplify to important > unimportant because we
     # want to test the __lt__ method
     assert not greater < smaller  # noqa: C0113, SIM204
+
+
+@pytest.mark.parametrize(
+    ("property_", "message"),
+    [
+        ("type_", "Can't extract type from file path"),
+        ("date", "Can't extract date from file path"),
+    ],
+)
+def test_newsletter_handles_wrong_path(property_: str, message: str) -> None:
+    """
+    Given: A Newsletter with a path that doesn't have a date.
+    When: calling the type_ and date methods
+    Then: Errors are raised
+    """
+    newsletter = Newsletter(file_=Path("wrong_path.md"))
+
+    with pytest.raises(ValueError, match=message):
+        getattr(newsletter, property_)

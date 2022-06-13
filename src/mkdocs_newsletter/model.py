@@ -5,10 +5,10 @@ import re
 from datetime import datetime, timedelta
 from enum import Enum
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import List, Optional
 
 from dateutil import tz
-from pydantic import BaseModel, Field, HttpUrl, root_validator
+from pydantic import BaseModel, Field, HttpUrl
 
 
 class Change(BaseModel):
@@ -70,45 +70,44 @@ class Newsletter(BaseModel):
     """Represents a newsletter."""
 
     file_: Path
-    date: datetime
-    type_: NewsletterType
-    basename: str
 
-    @root_validator(pre=True)
-    @classmethod
-    def set_attributes(cls, values: Dict[str, Any]) -> Dict[str, Any]:
-        """Set the class attributes.
+    @property
+    def basename(self) -> str:
+        """Return the basename of the Newsletter."""
+        return os.path.splitext(self.file_.name)[0]
 
-        * basename: basename of the file.
-        * type_: Set the type of the newsletter.
-        * date: Set the datetime associated to the file name.
-        """
-        basename = os.path.splitext(values["file_"].name)[0]
-        values["basename"] = basename
+    @property
+    def type_(self) -> str:
+        """Return the type of the Newsletter."""
+        if re.match(r"\d{4}$", self.basename):
+            return "yearly"
+        if re.match(r"\d{4}_\d{2}$", self.basename):
+            return "monthly"
+        if re.match(r"\d{4}_w\d{2}$", self.basename):
+            return "weekly"
+        if re.match(r"\d{4}_\d{2}_\d{2}$", self.basename):
+            return "daily"
+        raise ValueError("Can't extract type from file path")
 
-        if re.match(r"\d{4}$", basename):
-            values["type_"] = "yearly"
-            values["date"] = datetime(int(basename), 1, 1, tzinfo=tz.tzlocal())
-        elif re.match(r"\d{4}_\d{2}$", basename):
-            values["type_"] = "monthly"
-            year = int(basename.split("_")[0])
-            month = int(basename.split("_")[1])
-            values["date"] = datetime(year, month, 1, tzinfo=tz.tzlocal())
-        elif re.match(r"\d{4}_w\d{2}$", basename):
-            values["type_"] = "weekly"
-            year = int(basename.split("_")[0])
-            week = int(basename.split("w")[1])
+    @property
+    def date(self) -> datetime:
+        """Return the date of the Newsletter."""
+        if re.match(r"\d{4}$", self.basename):
+            return datetime(int(self.basename), 1, 1, tzinfo=tz.tzlocal())
+        if re.match(r"\d{4}_\d{2}$", self.basename):
+            year = int(self.basename.split("_")[0])
+            month = int(self.basename.split("_")[1])
+            return datetime(year, month, 1, tzinfo=tz.tzlocal())
+        if re.match(r"\d{4}_w\d{2}$", self.basename):
+            year = int(self.basename.split("_")[0])
+            week = int(self.basename.split("w")[1])
             first_day = datetime(year, 1, 1, tzinfo=tz.tzlocal())
-            values["date"] = first_day + timedelta(
-                days=7 * (week - 1) - first_day.weekday()
-            )
-        elif re.match(r"\d{4}_\d{2}_\d{2}$", basename):
-            values["type_"] = "daily"
-            values["date"] = datetime.strptime(basename, "%Y_%m_%d").replace(
+            return first_day + timedelta(days=7 * (week - 1) - first_day.weekday())
+        if re.match(r"\d{4}_\d{2}_\d{2}$", self.basename):
+            return datetime.strptime(self.basename, "%Y_%m_%d").replace(
                 tzinfo=tz.tzlocal()
             )
-
-        return values
+        raise ValueError("Can't extract date from file path")
 
     def __lt__(self, other: "Newsletter") -> bool:
         """Assert if an object is smaller than us.
