@@ -40,27 +40,27 @@ jobs:
         run: make security
       - name: Test with pytest
         run: make test
-      - name: Upload Coverage
-        run: |
-          pip3 install 'coveralls[toml]'
-          coveralls --service=github
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
-          COVERALLS_PARALLEL: true
+      # - name: Upload Coverage
+      # run: |
+      #   pip3 install 'coveralls[toml]'
+      #    coveralls --service=github
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
+      #    COVERALLS_PARALLEL: true
       - name: Test documentation
         run: make build-docs
       - name: Build the package
         run: make build-package
-  Coveralls:
-    name: Finish Coveralls
-    needs: Tests
-    runs-on: ubuntu-latest
-    container: python:3-slim
-    steps:
-      - name: Finished
-        run: |
-          pip3 install 'coveralls[toml]'
-          coveralls --service=github --finish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#  Coveralls:
+#    name: Finish Coveralls
+#    needs: Tests
+#    runs-on: ubuntu-latest
+#    container: python:3-slim
+#    steps:
+#      - name: Finished
+#        run: |
+#          pip3 install 'coveralls[toml]'
+#          coveralls --service=github --finish
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
