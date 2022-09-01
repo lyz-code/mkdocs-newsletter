@@ -13,13 +13,11 @@ nav:
       - adr/adr.md
       - '001: High level problem analysis': adr/001-initial_approach.md
       - '002: Initial mkdocs plugin design': adr/002-initial_plugin_design.md
-      - '003: Select the changes to record': |
-          adr/003-select_the_changes_to_record.md
-      - '004: Article newsletter structure': |
-          adr/004-article_newsletter_structure.md
-      - '005: Article newsletter creation': |
-          adr/005-create_the_newsletter_articles.md
+      - '003: Select the changes to record': adr/003-select_the_changes_to_record.md
+      - '004: Article newsletter structure': adr/004-article_newsletter_structure.md
+      - '005: Article newsletter creation': adr/005-create_the_newsletter_articles.md
       - '006: RSS feed creation': adr/006-rss_feed_creation.md
+      - '00X: Changelog support': adr/00X-changelog_support.md
 
 plugins:
   - search
