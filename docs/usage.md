@@ -99,7 +99,7 @@ perf(prometheus_installation): Add upgrading notes from 10.x -> 11.1.7
 
 !!! warning "Don't upgrade to 12.x if you're still using Helm 2."
 
-    [Helm](helm.md#version-2) is deprecated and you should migrate to v3.
+    Helm is deprecated and you should migrate to v3.
 ~~~
 
 # Manual newsletter changes
