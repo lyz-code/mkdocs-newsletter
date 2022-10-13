@@ -7,12 +7,12 @@ import pytest
 from dateutil import parser, tz
 from git import Repo  # type: ignore
 from mkdocs.commands import build
-from mkdocs.config.base import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 from mkdocs_newsletter.version import __version__
 
 
-def test_plugin_builds_newsletters(full_repo: Repo, config: Config) -> None:
+def test_plugin_builds_newsletters(full_repo: Repo, config: MkDocsConfig) -> None:
     """
     Given:
         * A correct mkdocs directory structure.
@@ -49,7 +49,7 @@ def test_plugin_builds_newsletters(full_repo: Repo, config: Config) -> None:
 
 
 @pytest.mark.freeze_time("2022-04-10T12:00:00")
-def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: Config) -> None:
+def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: MkDocsConfig) -> None:
     """
     Given:
         * A correct mkdocs directory structure.
@@ -107,7 +107,7 @@ def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: Config) -> None:
 
 
 @pytest.mark.freeze_time("2022-04-10T12:00:00")
-def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: Config) -> None:
+def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: MkDocsConfig) -> None:
     """
     Given:
         * A correct mkdocs directory structure.
@@ -167,7 +167,7 @@ def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: Config) -> None
 
 
 @pytest.mark.freeze_time("2022-04-10T12:00:00")
-def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: Config) -> None:
+def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: MkDocsConfig) -> None:
     """
     Given:
         * A correct mkdocs directory structure.
@@ -227,7 +227,7 @@ def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: Config) -> Non
 
 
 @pytest.mark.freeze_time("2022-04-10T12:00:00")
-def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: Config) -> None:
+def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: MkDocsConfig) -> None:
     """
     Given:
         * A correct mkdocs directory structure.
@@ -305,7 +305,7 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: Config) -> None
 
 
 @pytest.mark.freeze_time("2022-04-10T12:00:00")
-def test_plugin_creates_landing_page(full_repo: Repo, config: Config) -> None:
+def test_plugin_creates_landing_page(full_repo: Repo, config: MkDocsConfig) -> None:
     """
     Given:
         * A correct mkdocs directory structure.
@@ -347,7 +347,7 @@ def test_plugin_creates_landing_page(full_repo: Repo, config: Config) -> None:
     )
 
 
-def test_build_rss_feed_without_logo(config: Config, full_repo: Repo) -> None:
+def test_build_rss_feed_without_logo(config: MkDocsConfig, full_repo: Repo) -> None:
     """
     Given: A Config site without logo.
     When: The site is built
