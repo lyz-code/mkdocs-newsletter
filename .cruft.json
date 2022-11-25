@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/lyz-code/cookiecutter-python-project",
-  "commit": "12cbe8c2e067d360e00083af8e3de8fa20170481",
+  "commit": "277256806dbb985ecbe9d21c9221a0d1bc166352",
   "context": {
     "cookiecutter": {
       "project_name": "MkDocs Newsletter",
