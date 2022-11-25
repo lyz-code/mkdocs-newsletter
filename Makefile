@@ -24,7 +24,7 @@ update-production:
 	@echo "- Updating production dependencies -"
 	@echo "------------------------------------"
 
-	pdm update --production --no-sync
+	pdm update --production --no-sync --update-eager
 	pdm sync --clean
 
 	@echo "\a"

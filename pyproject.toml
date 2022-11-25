@@ -76,8 +76,7 @@ allow_prereleases = true
 editable-backend = "path"
 
 [tool.pdm.overrides]
-
-# To be removed once https://github.com/flakeheaven/flakeheaven/issues/55 is solved
+# To be removed once https://github.com/flakeheaven/flakeheaven/issues/132 is solved
 "importlib-metadata" = ">=3.10"
 
 [tool.pdm.dev-dependencies]
