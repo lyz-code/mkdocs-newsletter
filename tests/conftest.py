@@ -4,24 +4,24 @@ import datetime
 import os
 import shutil
 import textwrap
+from pathlib import Path
 
 import pytest
 from dateutil import tz
 from git import Actor, Repo  # type: ignore
 from mkdocs import config
 from mkdocs.config.base import Config
-from py._path.local import LocalPath
 
 
 @pytest.fixture(name="repo")
-def repo_(tmpdir: LocalPath) -> Repo:
+def repo_(tmp_path: Path) -> Repo:
     """Initialize an empty git repository with fake unstaged data.
 
     Args:
-        tmpdir: Pytest fixture that creates a temporal directory
+        tmp_path: Pytest fixture that creates a temporal directory
     """
     # Copy the content from `tests/assets/test_data`.
-    repo_path = tmpdir / "test_data"
+    repo_path = tmp_path / "test_data"
     os.environ["NEWSLETTER_WORKING_DIR"] = str(repo_path)
     shutil.copytree("tests/assets/test_data", repo_path)
 
