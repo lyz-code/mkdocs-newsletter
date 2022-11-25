@@ -69,6 +69,7 @@ class Newsletter(BasePlugin):  # type: ignore
 
         return config
 
-    def on_post_build(self, config: Config) -> None:
+    # The * in the signature is to mimic the parent class signature
+    def on_post_build(self, *, config: Config) -> None:
         """Create the RSS feeds."""
         create_rss(config, self.working_dir)

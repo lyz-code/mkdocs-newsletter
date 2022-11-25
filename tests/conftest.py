@@ -9,8 +9,8 @@ from pathlib import Path
 import pytest
 from dateutil import tz
 from git import Actor, Repo  # type: ignore
-from mkdocs import config
-from mkdocs.config.base import Config
+from mkdocs.config.base import load_config
+from mkdocs.config.defaults import MkDocsConfig
 
 
 @pytest.fixture(name="repo")
@@ -161,10 +161,8 @@ def full_repo_(repo: Repo) -> Repo:
 
 
 @pytest.fixture(name="config")
-def config_(full_repo: Repo) -> Config:
+def config_(full_repo: Repo) -> MkDocsConfig:
     """Load the mkdocs configuration."""
-    mkdocs_config = config.load_config(
-        os.path.join(full_repo.working_dir, "mkdocs.yml")
-    )
+    mkdocs_config = load_config(os.path.join(full_repo.working_dir, "mkdocs.yml"))
     mkdocs_config["site_dir"] = os.path.join(full_repo.working_dir, "site")
     return mkdocs_config
