@@ -13,7 +13,7 @@ update:
 	@echo "- Updating dependencies -"
 	@echo "-------------------------"
 
-	pdm update --no-sync
+	pdm update --no-sync --update-eager
 	pdm sync --clean
 
 	@echo "\a"
