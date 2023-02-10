@@ -228,7 +228,7 @@ def digital_garden_changes(
 
 def create_newsletter_landing_page(config: Config, repo: Repo) -> None:
     """Create the newsletter landing page."""
-    base_dir = repo.working_dir
+    base_dir = str(repo.working_dir)
     landing_path = os.path.join(base_dir, "docs/newsletter/0_newsletter_index.md")
     site_url = re.sub("/$", "", config["site_url"])
 
@@ -256,7 +256,7 @@ def create_newsletters(changes: DigitalGardenChanges, repo: Repo) -> List[str]:
     Returns:
         List of file paths with the newsletter articles.
     """
-    base_dir = repo.working_dir
+    base_dir = str(repo.working_dir)
 
     files = (
         _create_feed_articles(changes.daily, _get_daily_newsletter_file, base_dir)

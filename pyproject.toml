@@ -24,7 +24,7 @@ authors = [
     {name = "Lyz", email = "lyz-code-security-advisories@riseup.net"},
 ]
 license = {text = "GPL-3.0-only"}
-requires-python = ">=3.7"
+requires-python = ">=3.7.2"
 dependencies = [
     "beautifulsoup4>=4.10.0",
     "mkdocs>=1.2.3",
@@ -183,7 +183,7 @@ exclude = '''
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-vv --tb=short -n auto"
+addopts = "-n auto"
 norecursedirs = [
     ".tox",
     ".git",

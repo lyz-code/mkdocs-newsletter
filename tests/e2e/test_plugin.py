@@ -32,10 +32,7 @@ def test_plugin_builds_newsletters(full_repo: Repo, config: MkDocsConfig) -> Non
     with open(newsletter_path, "r", encoding="utf-8") as newsletter_file:
         newsletter = newsletter_file.read()
     assert "<title>February of 2021 - The Blue Book</title>" in newsletter
-    assert (
-        '<nav class="md-nav" aria-label="February of 2021" data-md-level="3">'
-        in newsletter
-    )
+    assert "<h1>February of 2021</h1>" in newsletter
     assert (
         '<a href="../2021_03_02/" class="md-footer__link '
         'md-footer__link--prev" aria-label="Previous: 2nd March 2021" rel="prev">'
@@ -332,10 +329,7 @@ def test_plugin_creates_landing_page(full_repo: Repo, config: MkDocsConfig) -> N
         '<a href="https://lyz-code.github.io/blue-book/daily.xml">Daily</a>'
         in landing_page
     )
-    assert (
-        '<nav class="md-nav" aria-label="Newsletters" data-md-level="1">'
-        in landing_page
-    )
+    assert "<h1>Newsletters</h1>" in landing_page
     assert (
         '<a href="../../emojis/" class="md-footer__link '
         'md-footer__link--prev" aria-label="Previous: Emojis" rel="prev">'

@@ -35,3 +35,8 @@ theme:
   logo: img/logo.bmp
   features:
     - navigation.footer
+    - navigation.instant
+    - navigation.top
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
