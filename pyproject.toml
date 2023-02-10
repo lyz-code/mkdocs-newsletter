@@ -142,7 +142,6 @@ dev = [
     "twine>=3.8.0",
     "commitizen>=2.32.2",
 ]
-
 # The next ones are required to manually solve the dependencies issues
 dependencies = [
     # Until flakeheaven supports flake8 5.x
