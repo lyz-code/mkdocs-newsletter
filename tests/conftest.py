@@ -105,7 +105,7 @@ def full_repo_(repo: Repo) -> Repo:
 
     # Single change commit that corrects the style of a file.
     with open(
-        os.path.join(repo.working_dir, "docs/emojis.md"), "a", encoding="utf-8"
+        os.path.join(str(repo.working_dir), "docs/emojis.md"), "a", encoding="utf-8"
     ) as file_object:
         # Simulate the change by appending a string at the end of the file.
         file_object.write("correct link")
@@ -163,6 +163,6 @@ def full_repo_(repo: Repo) -> Repo:
 @pytest.fixture(name="config")
 def config_(full_repo: Repo) -> MkDocsConfig:
     """Load the mkdocs configuration."""
-    mkdocs_config = load_config(os.path.join(full_repo.working_dir, "mkdocs.yml"))
-    mkdocs_config["site_dir"] = os.path.join(full_repo.working_dir, "site")
+    mkdocs_config = load_config(os.path.join(str(full_repo.working_dir), "mkdocs.yml"))
+    mkdocs_config["site_dir"] = os.path.join(str(full_repo.working_dir), "site")
     return mkdocs_config

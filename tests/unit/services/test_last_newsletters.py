@@ -530,7 +530,7 @@ def test_create_newsletter_creates_daily_article(repo: Repo) -> None:
 
     assert result[0] == desired_file
     with open(
-        os.path.join(repo.working_dir, "docs/newsletter/2021_02_08.md"),
+        os.path.join(str(repo.working_dir), "docs/newsletter/2021_02_08.md"),
         encoding="utf-8",
     ) as file_descriptor:
         assert file_descriptor.read() == file_content
@@ -564,7 +564,8 @@ def test_create_newsletter_creates_weekly_articles(repo: Repo) -> None:
 
     assert result[0] == desired_file
     with open(
-        os.path.join(repo.working_dir, "docs/newsletter/2021_w06.md"), encoding="utf-8"
+        os.path.join(str(repo.working_dir), "docs/newsletter/2021_w06.md"),
+        encoding="utf-8",
     ) as file_descriptor:
         assert file_descriptor.read() == file_content
 
@@ -597,7 +598,8 @@ def test_create_newsletter_creates_monthly_articles(repo: Repo) -> None:
 
     assert result[0] == desired_file
     with open(
-        os.path.join(repo.working_dir, "docs/newsletter/2021_02.md"), encoding="utf-8"
+        os.path.join(str(repo.working_dir), "docs/newsletter/2021_02.md"),
+        encoding="utf-8",
     ) as file_descriptor:
         assert file_descriptor.read() == file_content
 
@@ -630,6 +632,6 @@ def test_create_newsletter_creates_yearly_articles(repo: Repo) -> None:
 
     assert result[0] == desired_file
     with open(
-        os.path.join(repo.working_dir, "docs/newsletter/2021.md"), encoding="utf-8"
+        os.path.join(str(repo.working_dir), "docs/newsletter/2021.md"), encoding="utf-8"
     ) as file_descriptor:
         assert file_descriptor.read() == file_content
