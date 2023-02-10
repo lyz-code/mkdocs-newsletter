@@ -24,7 +24,7 @@ authors = [
     {name = "Lyz", email = "lyz-code-security-advisories@riseup.net"},
 ]
 license = {text = "GPL-3.0-only"}
-requires-python = ">=3.7"
+requires-python = ">=3.7.2"
 dependencies = [
     "beautifulsoup4>=4.10.0",
     "mkdocs>=1.2.3",
@@ -85,8 +85,7 @@ lint = [
     "flake8-aaa>=0.12.2",
     "flake8-annotations>=2.9.1",
     "flake8-annotations-complexity>=0.0.7",
-    # Disable until we have flake8>=5.0
-    #"flake8-typing-imports>=0.12.0,!=1.13.0",
+    "flake8-typing-imports>=0.12.0,!=1.13.0",
     "flake8-bugbear>=22.8.23",
     "flake8-debugger>=4.1.2",
     "flake8-fixme>=1.1.1",
@@ -104,7 +103,6 @@ lint = [
     "pep8-naming>=0.13.2",
     "dlint>=0.13.0",
     "pylint>=2.15.2",
-    "flake8>=4.0.1",
     "flakeheaven>=3.0.0",
 ]
 test = [
@@ -145,6 +143,14 @@ dev = [
     "commitizen>=2.32.2",
 ]
 
+# The next ones are required to manually solve the dependencies issues
+dependencies = [
+    # Until flakeheaven supports flake8 5.x
+    # https://github.com/flakeheaven/flakeheaven/issues/132
+    "flake8>=4.0.1,<5.0.0",
+    "pyflakes<2.5.0",
+]
+
 [build-system]
 requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
@@ -178,7 +184,7 @@ exclude = '''
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-vv --tb=short -n auto"
+addopts = "-n auto"
 norecursedirs = [
     ".tox",
     ".git",

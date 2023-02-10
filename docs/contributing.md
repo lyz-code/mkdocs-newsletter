@@ -92,6 +92,14 @@ You'll need to have python 3.6, 3.7, or 3.8, virtualenv, git, and make installed
     source env/bin/activate
     ```
 
+* Install `pdm` our package manager with the next command or using any of the
+    other [recommended
+    methods](https://pdm.fming.dev/latest/#recommended-installation-method).
+
+    ```bash
+    curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+    ```
+
 * Install mkdocs-newsletter, dependencies and configure the
     pre-commits:
 
