@@ -12,8 +12,14 @@
       
         <link rel="canonical" href="https://lyz-code.github.io/mkdocs-newsletter/reference/">
       
+      
+        <link rel="prev" href="../usage/">
+      
+      
+        <link rel="next" href="../contributing/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0b4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
@@ -21,15 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.91872f81.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0d440cfe.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#546d78">
-        
       
       
 
@@ -63,6 +64,8 @@
   </head>
   
   
+    
+    
     
     
     
@@ -144,7 +147,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -267,7 +270,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
       
@@ -402,8 +405,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
       
@@ -418,7 +422,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Architecture Decision Records" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Architecture Decision Records
@@ -642,11 +646,12 @@
                 
                   
 
-  <a href="https://github.com/lyz-code/mkdocs-newsletter/edit/master/docs/reference.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
+
+
+  <h1>Reference</h1>
 
 <div class="doc doc-object doc-module">
 
@@ -834,7 +839,7 @@ the file.</p></td>
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Change</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Represent a single semantic change in a git repository.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represent a single semantic change in a git repository.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        date: When the change was done.</span>
@@ -965,10 +970,10 @@ the file.</p></td>
 <span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Newsletter</span><span class="p">(</span><span class="n">BasePlugin</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
-    <span class="sd">&quot;&quot;&quot;Define the MkDocs plugin to create newsletters.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Define the MkDocs plugin to create newsletters.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Initialize the basic attributes.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the basic attributes.</span>
 
 <span class="sd">        Attributes:</span>
 <span class="sd">            repo: Git repository to analyze.</span>
@@ -977,7 +982,7 @@ the file.</p></td>
         <span class="bp">self</span><span class="o">.</span><span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_dir</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Config</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Create the new newsletters and load them in the navigation.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the new newsletters and load them in the navigation.</span>
 
 <span class="sd">        Through the following steps:</span>
 
@@ -1015,7 +1020,7 @@ the file.</p></td>
 
     <span class="c1"># The * in the signature is to mimic the parent class signature</span>
     <span class="k">def</span> <span class="nf">on_post_build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Create the RSS feeds.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the RSS feeds.&quot;&quot;&quot;</span>
         <span class="n">create_rss</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">working_dir</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -1075,7 +1080,7 @@ the file.</p></td>
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Initialize the basic attributes.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the basic attributes.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        repo: Git repository to analyze.</span>
@@ -1191,7 +1196,7 @@ section.</p></td>
 <span class="normal">68</span>
 <span class="normal">69</span>
 <span class="normal">70</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Config</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Create the new newsletters and load them in the navigation.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create the new newsletters and load them in the navigation.</span>
 
 <span class="sd">    Through the following steps:</span>
 
@@ -1251,7 +1256,7 @@ section.</p></td>
         <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_post_build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Create the RSS feeds.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create the RSS feeds.&quot;&quot;&quot;</span>
     <span class="n">create_rss</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">working_dir</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
@@ -1413,7 +1418,7 @@ section.</p></td>
 <span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">digital_garden_changes</span><span class="p">(</span>
     <span class="n">changes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">],</span> <span class="n">last_published</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LastNewsletter</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DigitalGardenChanges</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Extract the changes that need to be published for digital_garden repositories.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the changes that need to be published for digital_garden repositories.</span>
 
 <span class="sd">    For a change to be published it needs to:</span>
 
@@ -1570,7 +1575,7 @@ section.</p></td>
 <span class="normal">68</span>
 <span class="normal">69</span>
 <span class="normal">70</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">last_newsletter_changes</span><span class="p">(</span><span class="n">newsletter_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LastNewsletter</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Extract the date of the last change of the last newsletter for each feed.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the date of the last change of the last newsletter for each feed.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        newsletter_dir: Directory containing the newsletter articles.</span>
@@ -1692,7 +1697,7 @@ section.</p></td>
 <span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">semantic_changes</span><span class="p">(</span>
     <span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">,</span> <span class="n">min_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Extract meaningful changes from a git repository.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract meaningful changes from a git repository.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        repo: Git repository to analyze.</span>
@@ -1756,6 +1761,44 @@ section.</p></td>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../usage/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Usage" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Usage
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Contributing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1777,16 +1820,15 @@ section.</p></td>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "content.code.annotate"], "search": "../assets/javascripts/workers/search.3de43c86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.footer", "navigation.top", "content.code.annotate"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ce0331ff.min.js"></script>
+      <script src="../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
         <script src="../js/timeago.min.js"></script>
       
         <script src="../js/timeago_mkdocs_material.js"></script>
       
-    
     
   </body>
 </html>

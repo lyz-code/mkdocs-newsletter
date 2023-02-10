@@ -12,8 +12,14 @@
       
         <link rel="canonical" href="https://lyz-code.github.io/mkdocs-newsletter/install/">
       
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../usage/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0b4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
@@ -21,15 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.91872f81.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0d440cfe.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#546d78">
-        
       
       
 
@@ -63,6 +64,8 @@
   </head>
   
   
+    
+    
     
     
     
@@ -144,7 +147,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -237,7 +240,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
       
@@ -381,8 +384,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
       
@@ -397,7 +401,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Architecture Decision Records" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Architecture Decision Records
@@ -600,10 +604,9 @@
                 
                   
 
-  <a href="https://github.com/lyz-code/mkdocs-newsletter/edit/master/docs/install.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
   <h1>Installation</h1>
@@ -611,15 +614,15 @@
 <p>We've envisioned the plugin with zero configuration as it's quicker to develop
 and easier to use. If you'd like to change the default behaviour, please open
 <a href="https://github.com/lyz-code/mkdocs-newsletter/issues/new">an issue</a>.</p>
-<div class="highlight"><pre><span></span><code>pip install mkdocs-newsletter
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-newsletter
 </code></pre></div>
 <p>To enable this plugin, you need to declare it in your config file <code>mkdocs.yml</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">git-revision-date-localized</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">timeago</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autolinks</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section-index</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs-newsletter</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">git-revision-date-localized</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">timeago</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autolinks</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section-index</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs-newsletter</span>
 </code></pre></div>
 <p>We rely on:</p>
 <ul>
@@ -631,10 +634,10 @@ and easier to use. If you'd like to change the default behaviour, please open
     make the sections clickable.</li>
 </ul>
 <p>To create the RSS feeds well we also need the next configuration:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://substitute.with.your.site.url</span><span class="w"></span>
-<span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">toc</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">baselevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://substitute.with.your.site.url</span>
+<span class="nt">markdown_extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">toc</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">baselevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div>
 <p>Finally make sure that you have a <code>nav</code> section in your <code>mkdocs.yml</code> file with
 at least one entry, otherwise <a href="https://github.com/lyz-code/mkdocs-newsletter/issues/67">the plugin won't
@@ -657,10 +660,10 @@ but I haven't tested it</p>
 <p>You can add the RSS icon to the <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links">Social
 links</a>
 footer section that points to the newsletter landing page with the next snippet:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">social</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/solid/rss</span><span class="w"></span>
-<span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://your.site/newsletter/0_newsletter_index/</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">social</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/solid/rss</span>
+<span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://your.site/newsletter/0_newsletter_index/</span>
 </code></pre></div>
 <p>You can select from
 <a href="https://github.com/squidfunk/mkdocs-material/blob/master/material/.icons/fontawesome/solid/rss-square.svg"><code>fontawesome/solid/rss-square</code></a>
@@ -677,9 +680,9 @@ with something like:</p>
 <p>Assuming that the override theme directory is <code>theme</code>:</p>
 <div class="admonition note">
 <p class="admonition-title">File: <code>mkdocs.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span><span class="w"></span>
-<span class="w">  </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">theme</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="w">  </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">theme</span>
 </code></pre></div>
 </div>
 <div class="admonition note">
@@ -702,102 +705,102 @@ and automatically build the newsletters.</p>
 <p>If you're using github, you can use the next configuration:</p>
 <details class="note">
 <summary>File: <code>.github/workflows/update.yml</code></summary>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github pages</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github pages</span>
 
-<span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
-<span class="nt">schedule</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11 08 * * *</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11 08 * * *</span>
 
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="nt">deploy</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">        </span><span class="c1"># Number of commits to fetch. 0 indicates all history.</span><span class="w"></span>
-<span class="w">        </span><span class="c1"># Default: 1</span><span class="w"></span>
-<span class="w">        </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="nt">deploy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="c1"># Number of commits to fetch. 0 indicates all history.</span>
+<span class="w">        </span><span class="c1"># Default: 1</span>
+<span class="w">        </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># https://github.com/actions/virtual-environments/issues/1202</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># with</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">        </span><span class="c1">#   python-version: &#39;3.7&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span><span class="w"></span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.7.7</span><span class="w"></span>
-<span class="w">        </span><span class="nt">architecture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x64</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># https://github.com/actions/virtual-environments/issues/1202</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># with</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="c1">#   python-version: &#39;3.7&#39;</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.7.7</span>
+<span class="w">        </span><span class="nt">architecture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x64</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cache dependencies</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/cache@v1</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.cache/pip</span><span class="w"></span>
-<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-pip-${{ hashFiles(&#39;**/requirements.txt&#39;) }}</span><span class="w"></span>
-<span class="w">        </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">            </span><span class="no">${{ runner.os }}-pip-</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cache dependencies</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/cache@v1</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.cache/pip</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-pip-${{ hashFiles(&#39;**/requirements.txt&#39;) }}</span>
+<span class="w">        </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">${{ runner.os }}-pip-</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install pip-tools</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install pip-tools</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update requirements</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make update</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update requirements</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make update</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Make the site</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make build-docs</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Make the site</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make build-docs</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commit files</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">        </span><span class="no">git config --local user.email &quot;action@github.com&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="no">git config --local user.name &quot;GitHub Action&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="no">git add requirements.txt</span><span class="w"></span>
-<span class="w">        </span><span class="no">git add docs/newsletter</span><span class="w"></span>
-<span class="w">        </span><span class="no">git diff-index --quiet HEAD \</span><span class="w"></span>
-<span class="w">            </span><span class="no">|| git commit -m &quot;chore: update dependency and publish newsletters&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commit files</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">git config --local user.email &quot;action@github.com&quot;</span>
+<span class="w">        </span><span class="no">git config --local user.name &quot;GitHub Action&quot;</span>
+<span class="w">        </span><span class="no">git add requirements.txt</span>
+<span class="w">        </span><span class="no">git add docs/newsletter</span>
+<span class="w">        </span><span class="no">git diff-index --quiet HEAD \</span>
+<span class="w">            </span><span class="no">|| git commit -m &quot;chore: update dependency and publish newsletters&quot;</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push changes</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-m/github-push-action@master</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w"></span>
-<span class="w">        </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push changes</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-m/github-push-action@master</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">        </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3</span><span class="w"></span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">deploy_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.ACTIONS_DEPLOY_KEY }}</span><span class="w"></span>
-<span class="w">        </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./site</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">deploy_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+<span class="w">        </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./site</span>
 </code></pre></div>
 </details>
 <p>It assumes that you have the next <code>Makefile</code>:</p>
 <details class="note">
 <summary>File: <code>Makefile</code></summary>
-<div class="highlight"><pre><span></span><code><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">update</span>
+<div class="highlight"><pre><span></span><code><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">update</span>
 <span class="nf">update</span><span class="o">:</span>
-    @echo <span class="s2">&quot;-------------------------&quot;</span>
-    @echo <span class="s2">&quot;- Updating dependencies -&quot;</span>
-    @echo <span class="s2">&quot;-------------------------&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;-------------------------&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;- Updating dependencies -&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;-------------------------&quot;</span>
 
-    rm requirements.txt
-    touch requirements.txt
-    pip-compile -Ur requirements.in --allow-unsafe
+<span class="w">    </span>rm<span class="w"> </span>requirements.txt
+<span class="w">    </span>touch<span class="w"> </span>requirements.txt
+<span class="w">    </span>pip-compile<span class="w"> </span>-Ur<span class="w"> </span>requirements.in<span class="w"> </span>--allow-unsafe
 
-    pip install -r requirements.txt
+<span class="w">    </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 
-    @echo <span class="s2">&quot;&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;&quot;</span>
 
-<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">build</span>-<span class="n">docs</span>
+<span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">build</span>-<span class="n">docs</span>
 <span class="nf">build-docs</span><span class="o">:</span>
-    @echo <span class="s2">&quot;--------------------------&quot;</span>
-    @echo <span class="s2">&quot;- Building documentation -&quot;</span>
-    @echo <span class="s2">&quot;--------------------------&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;--------------------------&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;- Building documentation -&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;--------------------------&quot;</span>
 
-    mkdocs build
+<span class="w">    </span>mkdocs<span class="w"> </span>build
 
-    @echo <span class="s2">&quot;&quot;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;&quot;</span>
 </code></pre></div>
 </details>
 <h3 id="exclude-the-newsletters-from-the-search">Exclude the newsletters from the search<a class="headerlink" href="#exclude-the-newsletters-from-the-search" title="Permanent link">&para;</a></h3>
@@ -807,14 +810,14 @@ to exclude all articles under <code>newsletter/</code>.</p>
 <p>To do so:</p>
 <ol>
 <li>Install the plugin with
-   <div class="highlight"><pre><span></span><code>pip install mkdocs-exclude-search
+   <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-exclude-search
 </code></pre></div></li>
 <li>Add the following configuration to your <code>mkdocs.yml</code>
-   <div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">exclude-search</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">exclude</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">newsletter/*</span><span class="w"></span>
+   <div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">exclude-search</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">exclude</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">newsletter/*</span>
 </code></pre></div></li>
 </ol>
 <p>Note that <code>newsletter/*</code> excludes all markdown files within a directory and its children. The paths must be relative to the <code>docs/</code> directory.</p>
@@ -850,6 +853,44 @@ to exclude all articles under <code>newsletter/</code>.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: MkDocs Newsletter" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                MkDocs Newsletter
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../usage/" class="md-footer__link md-footer__link--next" aria-label="Next: Usage" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Usage
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -871,16 +912,15 @@ to exclude all articles under <code>newsletter/</code>.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "content.code.annotate"], "search": "../assets/javascripts/workers/search.3de43c86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.footer", "navigation.top", "content.code.annotate"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ce0331ff.min.js"></script>
+      <script src="../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
         <script src="../js/timeago.min.js"></script>
       
         <script src="../js/timeago_mkdocs_material.js"></script>
       
-    
     
   </body>
 </html>
