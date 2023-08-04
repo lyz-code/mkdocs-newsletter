@@ -57,7 +57,7 @@ def build_rss_feed(config: Config, working_dir: str, type_: str) -> Feed:
     except KeyError:
         logo_url = None
 
-    author = config.get("site_author", None)
+    author = config.get("site_author")
 
     entries = _build_rss_entries(config, working_dir, type_, author)
 
@@ -69,11 +69,11 @@ def build_rss_feed(config: Config, working_dir: str, type_: str) -> Feed:
     return Feed(
         ttl=TTL[type_],
         generator=f"mkdocs-newsletter - v{__version__}",
-        title=config.get("site_name", None),
+        title=config.get("site_name"),
         link=site_url,  # type: ignore
         rss_link=f"{site_url}/{type_}.xml",  # type: ignore
         logo=logo_url,  # type: ignore
-        description=config.get("site_description", None),
+        description=config.get("site_description"),
         author=author,
         published=published,
         entries=entries,

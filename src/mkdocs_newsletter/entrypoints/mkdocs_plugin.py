@@ -1,9 +1,10 @@
 """Define the mkdocs plugin."""
 
 import os
+from typing import Optional
 
 from git import Repo  # type: ignore
-from mkdocs.config.base import Config
+from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 
 from ..services.git import semantic_changes
@@ -32,7 +33,7 @@ class Newsletter(BasePlugin):  # type: ignore
         self.working_dir = os.getenv("NEWSLETTER_WORKING_DIR", default=os.getcwd())
         self.repo = Repo(self.working_dir)
 
-    def on_config(self, config: Config) -> Config:
+    def on_config(self, config: Optional[MkDocsConfig]) -> MkDocsConfig:
         """Create the new newsletters and load them in the navigation.
 
         Through the following steps:
@@ -50,6 +51,8 @@ class Newsletter(BasePlugin):  # type: ignore
             config: MkDocs config object with the new newsletters in the Newsletter
                 section.
         """
+        if config is None:
+            config = MkDocsConfig()
         newsletter_dir = f"{self.working_dir}/docs/newsletter"
         if not os.path.exists(newsletter_dir):
             os.makedirs(newsletter_dir)
@@ -70,6 +73,6 @@ class Newsletter(BasePlugin):  # type: ignore
         return config
 
     # The * in the signature is to mimic the parent class signature
-    def on_post_build(self, *, config: Config) -> None:
+    def on_post_build(self, *, config: MkDocsConfig) -> None:
         """Create the RSS feeds."""
         create_rss(config, self.working_dir)

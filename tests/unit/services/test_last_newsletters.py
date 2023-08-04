@@ -9,7 +9,7 @@ from typing import List
 import pytest
 from dateutil import tz
 from git import Repo  # type: ignore
-from mkdocs.config.base import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 from mkdocs_newsletter import Change, digital_garden_changes, last_newsletter_changes
 from mkdocs_newsletter.model import DigitalGardenChanges, LastNewsletter
@@ -298,7 +298,7 @@ def test_digital_garden_ignores_other_change_types(change_type: str) -> None:
     assert len(result.daily) == 0
 
 
-def test_add_categories_detect_first_level(config: Config) -> None:
+def test_add_categories_detect_first_level(config: MkDocsConfig) -> None:
     """
     Given: a change whose affected file belongs to a first level document in the nav.
     When: add_change_categories is called.
@@ -321,7 +321,7 @@ def test_add_categories_detect_first_level(config: Config) -> None:
     assert result[0].subcategory is None
 
 
-def test_add_categories_detect_first_level_on_sections(config: Config) -> None:
+def test_add_categories_detect_first_level_on_sections(config: MkDocsConfig) -> None:
     """
     Given: a change whose affected file belongs to a first level document that is
         indexed as a section in the nav.
@@ -345,7 +345,7 @@ def test_add_categories_detect_first_level_on_sections(config: Config) -> None:
     assert result[0].subcategory is None
 
 
-def test_add_categories_detect_second_level(config: Config) -> None:
+def test_add_categories_detect_second_level(config: MkDocsConfig) -> None:
     """
     Given: a change whose affected file belongs to a second level document in the nav.
     When: add_change_categories is called.
@@ -372,7 +372,7 @@ def test_add_categories_detect_second_level(config: Config) -> None:
     assert result[0].file_section is None
 
 
-def test_add_categories_detect_third_level(config: Config) -> None:
+def test_add_categories_detect_third_level(config: MkDocsConfig) -> None:
     """
     Given: a change whose affected file belongs to a third level document in the nav.
     When: add_change_categories is called.
@@ -400,7 +400,7 @@ def test_add_categories_detect_third_level(config: Config) -> None:
     assert result[0].file_section_order == 0
 
 
-def test_add_categories_detect_fourth_level(config: Config) -> None:
+def test_add_categories_detect_fourth_level(config: MkDocsConfig) -> None:
     """
     Given: a change whose affected file belongs to a fourth level document in the nav.
     When: add_change_categories is called.
@@ -428,7 +428,7 @@ def test_add_categories_detect_fourth_level(config: Config) -> None:
     assert result[0].subcategory_order == 1
 
 
-def test_add_categories_detect_fifth_level_or_above(config: Config) -> None:
+def test_add_categories_detect_fifth_level_or_above(config: MkDocsConfig) -> None:
     """
     Given: a change whose affected file belongs to a fifth level or above document in
         the nav.
@@ -461,7 +461,7 @@ def test_add_categories_detect_fifth_level_or_above(config: Config) -> None:
     assert result[0].subcategory_order == 1
 
 
-def test_add_categories_extracts_file_subsection(config: Config) -> None:
+def test_add_categories_extracts_file_subsection(config: MkDocsConfig) -> None:
     """
     Given: a change whose scope contains the subsection information.
     When: add_change_categories is called.
@@ -480,7 +480,9 @@ def test_add_categories_extracts_file_subsection(config: Config) -> None:
     assert result[0].file_subsection == "#installation-procedure"
 
 
-def test_add_categories_groups_changes_with_scope_not_in_nav(config: Config) -> None:
+def test_add_categories_groups_changes_with_scope_not_in_nav(
+    config: MkDocsConfig,
+) -> None:
     """
     Given: a change whose scope references a file that is not in the nav.
     When: add_change_categories is called.

@@ -14,7 +14,7 @@ from dateutil.relativedelta import relativedelta
 from deepdiff import grep
 from git import Repo  # type: ignore
 from jinja2 import Environment, PackageLoader, select_autoescape
-from mkdocs.config.base import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 from ..model import (
     Change,
@@ -98,7 +98,7 @@ def _list_newsletters(newsletter_dir: str) -> Newsletters:
     return newsletters
 
 
-def add_change_categories(changes: List[Change], config: Config) -> List[Change]:
+def add_change_categories(changes: List[Change], config: MkDocsConfig) -> List[Change]:
     """Add category and subcategory to each change based on their file nav position.
 
     Args:
@@ -226,7 +226,7 @@ def digital_garden_changes(
     )
 
 
-def create_newsletter_landing_page(config: Config, repo: Repo) -> None:
+def create_newsletter_landing_page(config: MkDocsConfig, repo: Repo) -> None:
     """Create the newsletter landing page."""
     base_dir = str(repo.working_dir)
     landing_path = os.path.join(base_dir, "docs/newsletter/0_newsletter_index.md")
