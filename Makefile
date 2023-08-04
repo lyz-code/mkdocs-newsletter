@@ -44,9 +44,9 @@ format:
 	@echo "- Formating the code -"
 	@echo "----------------------"
 
-	$(isort)
 	$(black)
 	autoimport .
+	$(isort)
 
 	@echo ""
 

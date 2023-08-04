@@ -24,11 +24,9 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          rendering:
+          options:
             show_root_heading: true
             heading_level: 1
-      watch:
-        - src
   - autolinks
   - git-revision-date-localized:
       type: timeago
@@ -92,3 +90,5 @@ extra_css:
 
 repo_name: lyz-code/mkdocs-newsletter
 repo_url: https://github.com/lyz-code/mkdocs-newsletter
+watch:
+  - src

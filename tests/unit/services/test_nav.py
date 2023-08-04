@@ -5,7 +5,7 @@ list of Pages and SectionPages need to be stored in the `pages` attribute.
 """
 
 from git import Repo  # type: ignore
-from mkdocs.config.base import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 from mkdocs_newsletter.services.nav import build_nav
 
@@ -14,7 +14,7 @@ from .test_last_newsletters import create_files
 
 def test_build_nav_skips_files_whose_filename_doesnt_match_regexp(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: A file that doesn't match the newsletter file format.
@@ -30,7 +30,7 @@ def test_build_nav_skips_files_whose_filename_doesnt_match_regexp(
 
 def test_build_nav_accepts_newsletter_landing_page(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: A newsletter landing page file.
@@ -46,7 +46,7 @@ def test_build_nav_accepts_newsletter_landing_page(
 
 def test_build_nav_creates_year_entry(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: A new year file.
@@ -62,7 +62,7 @@ def test_build_nav_creates_year_entry(
 
 def test_build_nav_sorts_year_entries(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: two year files.
@@ -83,7 +83,7 @@ def test_build_nav_sorts_year_entries(
 
 def test_build_nav_creates_month_entry(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: A new month file.
@@ -101,7 +101,7 @@ def test_build_nav_creates_month_entry(
 
 def test_build_nav_sorts_month_entries(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: Two month files.
@@ -124,7 +124,7 @@ def test_build_nav_sorts_month_entries(
 
 def test_build_nav_creates_week_entry(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: A new week file.
@@ -142,7 +142,7 @@ def test_build_nav_creates_week_entry(
 
 def test_build_nav_sorts_week_entries(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: Two week files.
@@ -165,7 +165,7 @@ def test_build_nav_sorts_week_entries(
 
 def test_build_nav_creates_day_entry(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: A new day file.
@@ -184,7 +184,7 @@ def test_build_nav_creates_day_entry(
 
 def test_build_nav_sorts_day_entries(
     repo: Repo,
-    config: Config,
+    config: MkDocsConfig,
 ) -> None:
     """
     Given: Two day files.

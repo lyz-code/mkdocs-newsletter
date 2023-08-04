@@ -6,13 +6,13 @@ import os
 import re
 from typing import Any, Dict, List, Tuple, Union
 
-from mkdocs.config.base import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 NavData = Dict[Union[int, str], Any]
 Sections = List[Union[str, Dict[str, Any]]]
 
 
-def build_nav(config: Config, newsletter_dir: str) -> Config:
+def build_nav(config: MkDocsConfig, newsletter_dir: str) -> MkDocsConfig:
     """Build the navigation section of the newsletters.
 
     Args:
@@ -68,7 +68,7 @@ def build_nav(config: Config, newsletter_dir: str) -> Config:
     return _nav_data_to_nav(nav_data, config)
 
 
-def _nav_data_to_nav(nav_data: NavData, config: Config) -> Config:
+def _nav_data_to_nav(nav_data: NavData, config: MkDocsConfig) -> MkDocsConfig:
     """Convert the nav_data dictionary to the Mkdocs nav section.
 
     Args:
