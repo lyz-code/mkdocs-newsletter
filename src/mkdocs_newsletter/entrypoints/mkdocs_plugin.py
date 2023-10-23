@@ -3,7 +3,7 @@
 import os
 from typing import Optional
 
-from git import Repo  # type: ignore
+from git import Repo
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 

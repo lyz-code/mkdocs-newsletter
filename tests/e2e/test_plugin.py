@@ -5,7 +5,7 @@ from datetime import datetime
 import feedparser
 import pytest
 from dateutil import parser, tz
-from git import Repo  # type: ignore
+from git import Repo
 from mkdocs.commands import build
 from mkdocs.config.defaults import MkDocsConfig
 

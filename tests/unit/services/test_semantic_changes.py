@@ -11,7 +11,7 @@ from textwrap import dedent
 
 import pytest
 from dateutil import tz
-from git import Actor, Repo  # type: ignore
+from git import Actor, Repo
 
 from mkdocs_newsletter import Change, semantic_changes
 
