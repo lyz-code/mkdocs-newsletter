@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 from dateutil import tz
-from git import Actor, Repo  # type: ignore
+from git import Actor, Repo
 from mkdocs.config.base import load_config
 from mkdocs.config.defaults import MkDocsConfig
 

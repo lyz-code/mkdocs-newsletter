@@ -12,7 +12,7 @@ from typing import Callable, List, Optional, Tuple
 from dateutil import tz
 from dateutil.relativedelta import relativedelta
 from deepdiff import grep
-from git import Repo  # type: ignore
+from git import Repo
 from jinja2 import Environment, PackageLoader, select_autoescape
 from mkdocs.config.defaults import MkDocsConfig
 

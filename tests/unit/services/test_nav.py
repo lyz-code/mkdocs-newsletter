@@ -4,7 +4,7 @@ The sections and pages need to be defined in the `items` attribute and an ordere
 list of Pages and SectionPages need to be stored in the `pages` attribute.
 """
 
-from git import Repo  # type: ignore
+from git import Repo
 from mkdocs.config.defaults import MkDocsConfig
 
 from mkdocs_newsletter.services.nav import build_nav

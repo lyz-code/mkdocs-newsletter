@@ -8,7 +8,7 @@ from typing import List
 
 import pytest
 from dateutil import tz
-from git import Repo  # type: ignore
+from git import Repo
 from mkdocs.config.defaults import MkDocsConfig
 
 from mkdocs_newsletter import Change, digital_garden_changes, last_newsletter_changes
