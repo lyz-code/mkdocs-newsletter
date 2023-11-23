@@ -143,10 +143,10 @@ If you're using github, you can use the next configuration:
             # https://github.com/actions/virtual-environments/issues/1202
             # uses: actions/setup-python@v1
             # with:
-            #   python-version: '3.7'
+            #   python-version: '3.8'
             uses: actions/setup-python@v2
             with:
-            python-version: 3.7.7
+            python-version: 3.8
             architecture: x64
 
         - name: Cache dependencies

@@ -24,7 +24,7 @@ authors = [
     {name = "Lyz", email = "lyz-code-security-advisories@riseup.net"},
 ]
 license = {text = "GPL-3.0-only"}
-requires-python = ">=3.7.2"
+requires-python = ">=3.8"
 dependencies = [
     "beautifulsoup4>=4.10.0",
     "mkdocs>=1.2.3",
@@ -49,10 +49,10 @@ classifiers=[
     "Operating System :: POSIX",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Utilities",
     "Natural Language :: English",
 ]
@@ -66,13 +66,16 @@ documentation = "https://lyz-code.github.io/mkdocs-newsletter"
 mkdocs-newsletter = "mkdocs_newsletter:Newsletter"
 
 [tool.pdm]
-version = {from = "src/mkdocs_newsletter/version.py"}
-package-dir = "src"
-source-includes = ["tests/"]
 allow_prereleases = true
 
 [tool.pdm.build]
 editable-backend = "path"
+package-dir = "src"
+source-includes = ["tests/"]
+
+[tool.pdm.version]
+source = "file"
+path = "src/mkdocs_newsletter/version.py"
 
 [tool.pdm.overrides]
 # To be removed once https://github.com/flakeheaven/flakeheaven/issues/132 is solved
@@ -150,8 +153,8 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["pdm-pep517"]
-build-backend = "pdm.pep517.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 # --------- Black -------------
 
