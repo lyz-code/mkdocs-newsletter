@@ -1,3 +1,19 @@
+## 1.1.0 (2023-11-23)
+
+### Feat
+
+- support Python 3.11
+
+### Fix
+
+- ignore feedparser deprecation warning
+- drop support for Python 3.7
+- switch from pdm-pep517 to pdm-backend
+- pin pydantic < 2.0.0
+- mkdocs incompatibilities with latest version
+- correct mkdocs signature changes
+- remove dependency with py
+
 ## 1.0.1 (2022-03-10)
 
 ### Fix
