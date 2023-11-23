@@ -204,6 +204,7 @@ filterwarnings = [
   "ignore::DeprecationWarning:pytest_freezegun.*",
   # Until https://github.com/kurtmckee/feedparser/issues/330 is solved
   "ignore::DeprecationWarning:cgi",
+  "ignore::DeprecationWarning:feedparser.*",
 ]
 
 # --------- Coverage -------------
