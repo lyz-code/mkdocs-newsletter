@@ -1,5 +1,6 @@
 """Test the plugin entrypoint."""
 
+import re
 from datetime import datetime
 
 import feedparser
@@ -33,15 +34,11 @@ def test_plugin_builds_newsletters(full_repo: Repo, config: MkDocsConfig) -> Non
         newsletter = newsletter_file.read()
     assert "<title>February of 2021 - The Blue Book</title>" in newsletter
     assert "<h1>February of 2021</h1>" in newsletter
-    assert (
-        '<a href="../2021_03_02/" class="md-footer__link '
-        'md-footer__link--prev" aria-label="Previous: 2nd March 2021" rel="prev">'
-        in newsletter
+    assert re.search(
+        r'href="../2021_03_02/"[^>]*aria-label="Previous: 2nd March 2021"', newsletter
     )
-    assert (
-        '<a href="../2021_w06/" class="md-footer__link '
-        'md-footer__link--next" aria-label="Next: 6th Week of 2021" rel="next">'
-        in newsletter
+    assert re.search(
+        r'href="../2021_w06/"[^>]*aria-label="Next: 6th Week of 2021"', newsletter
     )
 
 
@@ -330,15 +327,10 @@ def test_plugin_creates_landing_page(full_repo: Repo, config: MkDocsConfig) -> N
         in landing_page
     )
     assert "<h1>Newsletters</h1>" in landing_page
-    assert (
-        '<a href="../../emojis/" class="md-footer__link '
-        'md-footer__link--prev" aria-label="Previous: Emojis" rel="prev">'
-        in landing_page
+    assert re.search(
+        r'href="../../emojis/"[^>]*aria-label="Previous: Emojis"', landing_page
     )
-    assert (
-        '<a href="../2021/" class="md-footer__link '
-        'md-footer__link--next" aria-label="Next: 2021" rel="next">' in landing_page
-    )
+    assert re.search(r'href="../2021/"[^>]*aria-label="Next: 2021"', landing_page)
 
 
 def test_build_rss_feed_without_logo(config: MkDocsConfig, full_repo: Repo) -> None:
