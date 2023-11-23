@@ -202,6 +202,8 @@ filterwarnings = [
   "error",
   # Until https://github.com/ktosiek/pytest-freezegun/issues/35 is merged
   "ignore::DeprecationWarning:pytest_freezegun.*",
+  # Until https://github.com/kurtmckee/feedparser/issues/330 is solved
+  "ignore::DeprecationWarning:cgi.*",
 ]
 
 # --------- Coverage -------------
