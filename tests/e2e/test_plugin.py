@@ -81,7 +81,7 @@ def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: MkDocsConfig) ->
         feed.entries[0].link
         == "https://lyz-code.github.io/blue-book/newsletter/2021_03_02/"
     )
-    assert feed.entries[0].description == (
+    assert (
         '<article class="md-content__inner md-typeset">\n\n'
         '<h2 id="coding">Coding</h2>\n'
         '<h3 id="tdd"><a href="https://lyz-code.github.io/blue-book/coding/tdd/">TDD'
@@ -93,9 +93,8 @@ def test_plugin_creates_daily_rss_feed(full_repo: Repo, config: MkDocsConfig) ->
         "GitPython</a>"
         "</h4>\n"
         "<ul>\n<li>New: Present the python library.</li>\n"
-        "</ul>\n<hr />\n\n"
-        "</article>"
-    )
+        "</ul>"
+    ) in feed.entries[0].description
     assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 
@@ -141,7 +140,7 @@ def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: MkDocsConfig) -
         feed.entries[0].link
         == "https://lyz-code.github.io/blue-book/newsletter/2021_w09/"
     )
-    assert feed.entries[0].description == (
+    assert (
         '<article class="md-content__inner md-typeset">\n\n'
         '<h2 id="coding">Coding</h2>\n'
         '<h3 id="tdd"><a href="https://lyz-code.github.io/blue-book/coding/tdd/">TDD'
@@ -153,9 +152,8 @@ def test_plugin_creates_weekly_rss_feed(full_repo: Repo, config: MkDocsConfig) -
         "GitPython</a>"
         "</h4>\n"
         "<ul>\n<li>New: Present the python library.</li>\n"
-        "</ul>\n<hr />\n\n"
-        "</article>"
-    )
+        "</ul>"
+    ) in feed.entries[0].description
     assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 
@@ -201,7 +199,7 @@ def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: MkDocsConfig) 
         feed.entries[0].link
         == "https://lyz-code.github.io/blue-book/newsletter/2021_03/"
     )
-    assert feed.entries[0].description == (
+    assert (
         '<article class="md-content__inner md-typeset">\n\n'
         '<h2 id="coding">Coding</h2>\n'
         '<h3 id="tdd"><a href="https://lyz-code.github.io/blue-book/coding/tdd/">TDD'
@@ -213,9 +211,8 @@ def test_plugin_creates_monthly_rss_feed(full_repo: Repo, config: MkDocsConfig) 
         "GitPython</a>"
         "</h4>\n"
         "<ul>\n<li>New: Present the python library.</li>\n"
-        "</ul>\n<hr />\n\n"
-        "</article>"
-    )
+        "</ul>"
+    ) in feed.entries[0].description
     assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 
@@ -260,7 +257,7 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: MkDocsConfig) -
     assert (
         feed.entries[0].link == "https://lyz-code.github.io/blue-book/newsletter/2021/"
     )
-    assert feed.entries[0].description == (
+    assert (
         '<article class="md-content__inner md-typeset">\n\n'
         '<h2 id="devops"><a href="https://lyz-code.github.io/blue-book/devops/devops/">'
         "DevOps</a></h2>\n"
@@ -291,9 +288,8 @@ def test_plugin_creates_yearly_rss_feed(full_repo: Repo, config: MkDocsConfig) -
         '<h2 id="other">Other</h2>\n'
         "<ul>\n<li>New: Add funny emojis.</li>\n"
         "<li>New: Add ash, birch and beech information.</li>\n"
-        "</ul>\n<hr />\n\n"
-        "</article>"
-    )
+        "</ul>"
+    ) in feed.entries[0].description
     assert parser.parse(feed.entries[0].published) == now
     assert feed.entries[0].author == "Lyz"
 

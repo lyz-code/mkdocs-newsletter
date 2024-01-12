@@ -83,8 +83,7 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
     commit_date = datetime.datetime(2021, 2, 5, tzinfo=tz.tzlocal())
     repo.index.add(["docs/devops/helm/helm.md", "docs/devops/devops.md"])
     repo.index.commit(
-        textwrap.dedent(
-            """\
+        textwrap.dedent("""\
             feat(helm): introduce Helm the Kubernetes package manager
 
             [Helm](https://helm.sh/) is the package manager for Kubernetes.
@@ -100,8 +99,7 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
 
             One of the most important goals of the DevOps initiative is to break
             the silos between the developers and the sysadmins, that lead to ill
-            feelings and unproductivity."""
-        ),
+            feelings and unproductivity."""),
         author=author,
         committer=committer,
         author_date=commit_date,
@@ -111,20 +109,17 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
         Change(
             date=commit_date,
             summary="Introduce Helm the Kubernetes package manager.",
-            message=dedent(
-                """\
+            message=dedent("""\
                 [Helm](https://helm.sh/) is the package manager for Kubernetes.
                 Through charts it helps you define, install and upgrade even the most
-                complex Kubernetes applications."""
-            ),
+                complex Kubernetes applications."""),
             type_="feature",
             scope="helm",
         ),
         Change(
             date=commit_date,
             summary="Define DevOps.",
-            message=dedent(
-                """\
+            message=dedent("""\
                 [DevOps](https://en.wikipedia.org/wiki/DevOps) is a set of practices
                 that combines software development (Dev) and information-technology
                 operations (Ops) which aims to shorten the systems development life
@@ -132,8 +127,7 @@ def test_changes_extracts_commits_with_multiple_changes(repo: Repo) -> None:
 
                 One of the most important goals of the DevOps initiative is to break
                 the silos between the developers and the sysadmins, that lead to ill
-                feelings and unproductivity."""
-            ),
+                feelings and unproductivity."""),
             type_="feature",
             scope="devops",
         ),
