@@ -520,12 +520,10 @@ def test_create_newsletter_creates_daily_article(repo: Repo) -> None:
         category_order=0,
         file_="index.md",
     )
-    file_content = dedent(
-        """\
+    file_content = dedent("""\
         # [Introduction](index.md)
 
-        * New: Create the introduction page"""
-    )
+        * New: Create the introduction page""")
     changes_to_publish = DigitalGardenChanges(daily=[change])
 
     result = create_newsletters(changes_to_publish, repo)
@@ -554,12 +552,10 @@ def test_create_newsletter_creates_weekly_articles(repo: Repo) -> None:
         category_order=0,
         file_="index.md",
     )
-    file_content = dedent(
-        """\
+    file_content = dedent("""\
         # [Introduction](index.md)
 
-        * New: Create the introduction page"""
-    )
+        * New: Create the introduction page""")
     changes_to_publish = DigitalGardenChanges(weekly=[change])
 
     result = create_newsletters(changes_to_publish, repo)
@@ -588,12 +584,10 @@ def test_create_newsletter_creates_monthly_articles(repo: Repo) -> None:
         category_order=0,
         file_="index.md",
     )
-    file_content = dedent(
-        """\
+    file_content = dedent("""\
         # [Introduction](index.md)
 
-        * New: Create the introduction page"""
-    )
+        * New: Create the introduction page""")
     changes_to_publish = DigitalGardenChanges(monthly=[change])
 
     result = create_newsletters(changes_to_publish, repo)
@@ -622,12 +616,10 @@ def test_create_newsletter_creates_yearly_articles(repo: Repo) -> None:
         category_order=0,
         file_="index.md",
     )
-    file_content = dedent(
-        """\
+    file_content = dedent("""\
         # [Introduction](index.md)
 
-        * New: Create the introduction page"""
-    )
+        * New: Create the introduction page""")
     changes_to_publish = DigitalGardenChanges(yearly=[change])
 
     result = create_newsletters(changes_to_publish, repo)

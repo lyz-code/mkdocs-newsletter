@@ -24,7 +24,7 @@ authors = [
     {name = "Lyz", email = "lyz-code-security-advisories@riseup.net"},
 ]
 license = {text = "GPL-3.0-only"}
-requires-python = ">=3.8"
+requires-python = ">=3.8.1"
 dependencies = [
     "beautifulsoup4>=4.10.0",
     "mkdocs>=1.2.3",
@@ -77,7 +77,7 @@ source-includes = ["tests/"]
 source = "file"
 path = "src/mkdocs_newsletter/version.py"
 
-[tool.pdm.overrides]
+[tool.pdm.resolution.overrides]
 # To be removed once https://github.com/flakeheaven/flakeheaven/issues/132 is solved
 "importlib-metadata" = ">=3.10"
 
