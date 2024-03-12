@@ -29,10 +29,12 @@ def test_newsletter_prints_level_1_change() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # [Introduction](index.md)
 
-        * New: Add introduction""")
+        * New: Add introduction"""
+    )
 
 
 def test_newsletter_prints_level_2_change() -> None:
@@ -57,12 +59,14 @@ def test_newsletter_prints_level_2_change() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # Botany
 
         ## [Trees](trees.md)
 
-        * New: Add trees""")
+        * New: Add trees"""
+    )
 
 
 def test_newsletter_prints_level_3_change() -> None:
@@ -89,14 +93,16 @@ def test_newsletter_prints_level_3_change() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # DevOps
 
         ## Infrastructure as Code
 
         ### [Helm](helm.md)
 
-        * New: Add helm""")
+        * New: Add helm"""
+    )
 
 
 def test_template_prints_changes_in_chronological_order() -> None:
@@ -127,11 +133,13 @@ def test_template_prints_changes_in_chronological_order() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # [Introduction](index.md)
 
         * New: Add introduction
-        * Improvement: Add new content""")
+        * Improvement: Add new content"""
+    )
 
 
 def test_template_prints_changes_with_subsection_link() -> None:
@@ -154,10 +162,12 @@ def test_template_prints_changes_with_subsection_link() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # [Introduction](index.md)
 
-        * Improvement: [Add new content](index.md#article-subsection)""")
+        * Improvement: [Add new content](index.md#article-subsection)"""
+    )
 
 
 def test_template_prints_changes_with_message() -> None:
@@ -190,7 +200,8 @@ def test_template_prints_changes_with_message() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # [Introduction](index.md)
 
         * Improvement: Add new content
@@ -199,7 +210,8 @@ def test_template_prints_changes_with_message() -> None:
 
         * Improvement: Add more content
 
-            Another short change description.""")
+            Another short change description."""
+    )
 
 
 def test_template_prints_changes_with_long_message() -> None:
@@ -269,14 +281,16 @@ def test_template_sorts_changes_without_subsection() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # [DevOps](devops.md)
 
         * New: Create the devops introduction page.
 
         ## [Helm](helm.md)
 
-        * New: Create the helm introduction page.""")
+        * New: Create the helm introduction page."""
+    )
 
 
 def test_template_group_changes_by_category() -> None:
@@ -320,7 +334,8 @@ def test_template_group_changes_by_category() -> None:
 
     result = create_newsletter(changes)
 
-    assert result == dedent("""\
+    assert result == dedent(
+        """\
         # [DevOps](devops.md)
 
         * New: Create the devops introduction page.
@@ -330,4 +345,5 @@ def test_template_group_changes_by_category() -> None:
 
         ## [Trees](trees.md)
 
-        * New: Create the trees introduction page.""")
+        * New: Create the trees introduction page."""
+    )

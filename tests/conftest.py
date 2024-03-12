@@ -78,7 +78,8 @@ def full_repo_(repo: Repo) -> Repo:
     commit_date = datetime.datetime(2021, 2, 5, 12, tzinfo=tz.tzlocal())
     index.add(["docs/devops/helm/helm.md", "docs/devops/devops.md"])
     index.commit(
-        textwrap.dedent("""\
+        textwrap.dedent(
+            """\
             feat(helm): introduce Helm the Kubernetes package manager
 
             [Helm](https://helm.sh/) is the package manager for Kubernetes. Through
@@ -94,7 +95,8 @@ def full_repo_(repo: Repo) -> Repo:
 
             One of the most important goals of the DevOps initiative is to break the
             silos between the developers and the sysadmins, that lead to ill feelings
-            and unproductivity."""),
+            and unproductivity."""
+        ),
         author=author,
         committer=committer,
         author_date=commit_date,
@@ -143,10 +145,12 @@ def full_repo_(repo: Repo) -> Repo:
     commit_date = datetime.datetime(2021, 3, 2, 12, tzinfo=tz.tzlocal())
     index.add(["docs/coding/tdd.md", "docs/coding/python/gitpython.md"])
     index.commit(
-        textwrap.dedent("""\
+        textwrap.dedent(
+            """\
             feat(tdd): define test driven development
 
-            feat(gitpython): present the python library"""),
+            feat(gitpython): present the python library"""
+        ),
         author=author,
         committer=committer,
         author_date=commit_date,
