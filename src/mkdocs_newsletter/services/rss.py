@@ -113,7 +113,7 @@ def _build_rss_entries(
             html = BeautifulSoup(newsletter_file, "html.parser")
 
         try:
-            published = html.findAll("span", {"class": "timeago"})[0]["datetime"]
+            published = html.find_all("span", {"class": "timeago"})[0]["datetime"]
         except IndexError:
             published = newsletter.date.isoformat()
 
@@ -128,7 +128,7 @@ def _build_rss_entries(
             html.article.div.extract()
 
         # Remove the permalinks
-        for permalink in html.article.findAll("a", {"class": "headerlink"}):
+        for permalink in html.article.find_all("a", {"class": "headerlink"}):
             permalink.extract()
 
         description = re.sub(
