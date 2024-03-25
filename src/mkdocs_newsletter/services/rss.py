@@ -113,35 +113,34 @@ def _build_rss_entries(
             html = BeautifulSoup(newsletter_file, "html.parser")
 
         try:
-            timeago = html.find("span", {"class": "timeago"})
-            if timeago is None:
+            if html.find("span", {"class": "timeago"}) is None:
                 raise ValueError("Could not find timeago")
-            # ignore: The object doesn't have __getitem__ defined but it still works. It's probably a typing error
-            published = timeago["datetime"]  # type: ignore
+            # ignore: The object doesn't have __getitem__ defined but it still works.
+            # It's probably a typing error
+            published = html.find("span", {"class": "timeago"})[
+                "datetime"
+            ]  # type: ignore
         except IndexError:
             published = newsletter.date.isoformat()
 
         # Clean the source code
 
         # Remove the h1 as it's already in the title
-        article = html.article
-        if article is None:
+        if html.article is None:
             raise ValueError("Could not find the article")
-        h1 = article.h1
-        if h1 is None:
+        if html.article.h1 is None:
             raise ValueError("Could not find h1 title")
-        title = h1.text
-        h1.extract()
+        title = html.article.h1.text
+        html.article.h1.extract()
 
         # Remove the Last updated: line
         with suppress(AttributeError):
-            div = article.div
-            if div is None:
-                pass
-            div.extract()
+            if html.article.div is None:
+                raise AttributeError
+            html.article.div.extract()
 
         # Remove the permalinks
-        for permalink in article.find_all("a", {"class": "headerlink"}):
+        for permalink in html.article.find_all("a", {"class": "headerlink"}):
             permalink.extract()
 
         description = re.sub(
