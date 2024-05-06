@@ -10,7 +10,7 @@ from contextlib import suppress
 from typing import List, Optional, Tuple
 
 from dateutil import tz
-from git import Commit, Repo  # type: ignore
+from git import Commit, Repo
 
 from ..model import Change
 
@@ -80,14 +80,17 @@ def commit_to_changes(commit: Commit) -> List[Change]:
         changes: List of semantic changes.
     """
     changes: List[Change] = []
-    remaining = commit.message
+    remaining = str(commit.message)
 
-    while remaining is not None:
+    while True:
         try:
-            change, remaining = _parse_change(remaining, commit.authored_date)
+            change, next_remaining = _parse_change(remaining, commit.authored_datetime)
         except ValueError:
             return changes
         changes.append(change)
+        if next_remaining is None:
+            break
+        remaining = next_remaining
     return changes
 
 

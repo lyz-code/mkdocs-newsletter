@@ -65,8 +65,8 @@ documentation = "https://lyz-code.github.io/mkdocs-newsletter"
 [project.entry-points."mkdocs.plugins"]
 mkdocs-newsletter = "mkdocs_newsletter:Newsletter"
 
-[tool.pdm]
-allow_prereleases = true
+[tool.pdm.resolution]
+allow-prereleases = true
 
 [tool.pdm.build]
 editable-backend = "path"

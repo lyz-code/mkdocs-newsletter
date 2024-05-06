@@ -335,9 +335,7 @@ def test_build_rss_feed_without_logo(config: MkDocsConfig, full_repo: Repo) -> N
     When: The site is built
     Then: No error is shown and the site builds correctly.
     """
-    # W0212: access to a protected attribute of a class, it's just to simulate a site
-    # without logo.
-    config["theme"]._vars.pop("logo")  # noqa: W0212
+    config["theme"]["logo"] = None
 
     build.build(config)  # act
 
