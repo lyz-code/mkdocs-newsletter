@@ -209,7 +209,7 @@ security:
 	@echo "- Testing security -"
 	@echo "--------------------"
 
-	pdm run safety check
+	pdm run pip-audit
 	@echo ""
 	pdm run bandit -r src
 

@@ -16,54 +16,7 @@ version_files = [
 
 # --------- PDM -------------
 
-[project]
-# PEP 621 project metadata
-# See https://www.python.org/dev/peps/pep-0621/
-dynamic = ["version"]
-authors = [
-    {name = "Lyz", email = "lyz-code-security-advisories@riseup.net"},
-]
-license = {text = "GPL-3.0-only"}
-requires-python = ">=3.8.1"
-dependencies = [
-    "beautifulsoup4>=4.10.0",
-    "mkdocs>=1.2.3",
-    "mkdocs-section-index>=0.3.3",
-    "mkdocs-autolinks-plugin>=0.4.0",
-    # Until https://github.com/lyz-code/mkdocs-newsletter/issues/104 is fixed
-    "pydantic<2.0.0",
-    "gitpython>=3.1.27",
-    "python-semantic-release>=7.26.0",
-    "deepdiff>=5.7.0",
-    "mkdocs-material>=8.2.5",
-    "mkdocs-git-revision-date-localized-plugin>=1.0.0",
-]
-name = "mkdocs-newsletter"
-description = "Automatically create newsletters from the changes in a mkdocs repository"
-readme = "README.md"
-classifiers=[
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-    "Operating System :: Unix",
-    "Operating System :: POSIX",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Topic :: Utilities",
-    "Natural Language :: English",
-]
 
-[project.urls]
-Issues = "https://github.com/lyz-code/mkdocs-newsletter/issues"
-homepage = "https://github.com/lyz-code/mkdocs-newsletter"
-documentation = "https://lyz-code.github.io/mkdocs-newsletter"
-
-[project.entry-points."mkdocs.plugins"]
-mkdocs-newsletter = "mkdocs_newsletter:Newsletter"
 
 [tool.pdm.resolution]
 allow-prereleases = true
@@ -127,8 +80,8 @@ doc = [
     "mkdocs-section-index>=0.3.4",
 ]
 security = [
-    "safety>=2.3.1",
     "bandit>=1.7.3",
+    "pip-audit>=2.7.3",
 ]
 fixers = [
     "autoimport>=1.2.2",
@@ -151,6 +104,55 @@ dependencies = [
     "flake8>=4.0.1,<5.0.0",
     "pyflakes<2.5.0",
 ]
+
+[project]
+# PEP 621 project metadata
+# See https://www.python.org/dev/peps/pep-0621/
+dynamic = ["version"]
+authors = [
+    {name = "Lyz", email = "lyz-code-security-advisories@riseup.net"},
+]
+license = {text = "GPL-3.0-only"}
+requires-python = ">=3.8.1"
+dependencies = [
+    "beautifulsoup4>=4.10.0",
+    "mkdocs>=1.2.3",
+    "mkdocs-section-index>=0.3.3",
+    "mkdocs-autolinks-plugin>=0.4.0",
+    # Until https://github.com/lyz-code/mkdocs-newsletter/issues/104 is fixed
+    "pydantic<2.0.0",
+    "gitpython>=3.1.27",
+    "python-semantic-release>=7.26.0",
+    "deepdiff>=5.7.0",
+    "mkdocs-material>=8.2.5",
+    "mkdocs-git-revision-date-localized-plugin>=1.0.0",
+]
+name = "mkdocs-newsletter"
+description = "Automatically create newsletters from the changes in a mkdocs repository"
+readme = "README.md"
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: Unix",
+    "Operating System :: POSIX",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Utilities",
+    "Natural Language :: English",
+]
+
+[project.urls]
+Issues = "https://github.com/lyz-code/mkdocs-newsletter/issues"
+homepage = "https://github.com/lyz-code/mkdocs-newsletter"
+documentation = "https://lyz-code.github.io/mkdocs-newsletter"
+
+[project.entry-points."mkdocs.plugins"]
+mkdocs-newsletter = "mkdocs_newsletter:Newsletter"
 
 [build-system]
 requires = ["pdm-backend"]
